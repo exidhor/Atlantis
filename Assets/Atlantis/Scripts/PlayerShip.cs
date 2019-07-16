@@ -16,6 +16,8 @@ public class PlayerShip : MonoBehaviour
     [SerializeField] float _angularSpeed;
     [SerializeField] float _speedAffectAngular = 0.8f;
 
+    [SerializeField] float _swingStrength;
+
     [SerializeField, UnityReadOnly] float _speed;
     [SerializeField, UnityReadOnly] float _angular;
 
@@ -120,6 +122,6 @@ public class PlayerShip : MonoBehaviour
         angular = Mathf.LerpAngle(_angular * dt, angular, _dampling * dt);
 
         _angular = angular / dt;
-        transform.localRotation = Quaternion.Euler(0, orientation + angular, 0);
+        transform.localRotation = Quaternion.Euler(0, orientation + angular, _swingStrength * angular);
     }
 }
