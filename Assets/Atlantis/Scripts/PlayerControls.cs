@@ -3,6 +3,10 @@ using System.Collections;
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header("Move")]
+    [SerializeField] float _moveScale = 0.5f;
+    [SerializeField] float _maxDistance = 3f;
+
     [Header("Linking")]
     [SerializeField] PlayerInputFeedback _feedback;
     [SerializeField] PlayerShip _ship;
@@ -26,8 +30,15 @@ public class PlayerControls : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             Vector2 mousePosition = Input.mousePosition;
-            _move = _originScreenPoint - mousePosition;
-            _feedback.SetScale(mousePosition);
+            _move = mousePosition - _originScreenPoint;
+
+            if(_move.magnitude > _maxDistance)
+            {
+                _move.Normalize();
+                _move *= _maxDistance;
+            }
+
+            _feedback.SetScale(_move);
         }
         else
         {
@@ -42,7 +53,7 @@ public class PlayerControls : MonoBehaviour
     {
         if(_shipInput)
         {
-            _ship.Move(false, _move, Time.fixedDeltaTime);
+            _ship.Move(false, _move * _moveScale, Time.fixedDeltaTime);
         }
         else
         {
