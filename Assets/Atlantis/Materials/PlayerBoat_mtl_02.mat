@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Test Mat Sander 1
-  m_Shader: {fileID: 4800000, guid: ebb2fb7a4733bdb4fa4ad853934161e5, type: 3}
+  m_Name: PlayerBoat_mtl_02
+  m_Shader: {fileID: 10755, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -74,9 +74,9 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - Color_33B93515: {r: 0, g: 0.4400001, b: 1, a: 0}
+    - Color_33B93515: {r: 0.8392157, g: 0.25071925, b: 0.12941177, a: 0}
     - Color_C8D4C166: {r: 0, g: 0.072096266, b: 0.16037738, a: 0}
     - Vector2_1CDCCFC8: {r: 300, g: -300, b: 0, a: 0}
     - Vector2_F66F694A: {r: 300, g: 300, b: 0, a: 0}
-    - _Color: {r: 0.03244037, g: 0.14531824, b: 0.254717, a: 1}
+    - _Color: {r: 0.5, g: 0.1244285, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
