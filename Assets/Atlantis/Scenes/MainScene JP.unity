@@ -254,6 +254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1801027210202478, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 224268272223492452, guid: 2e237f7c691d44576b8208b629b443ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -293,6 +297,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224268272223492452, guid: 2e237f7c691d44576b8208b629b443ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224268272223492452, guid: 2e237f7c691d44576b8208b629b443ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224268272223492452, guid: 2e237f7c691d44576b8208b629b443ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224268272223492452, guid: 2e237f7c691d44576b8208b629b443ad,
         type: 3}
@@ -344,12 +363,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114965267494247258, guid: 2e237f7c691d44576b8208b629b443ad,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d6c52cfa56c035845a76fd2289aea424,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
 --- !u!1001 &401175275
@@ -417,8 +430,11 @@ PrefabInstance:
       propertyPath: _line
       value: 
       objectReference: {fileID: 1299717242}
-    m_RemovedComponents:
-    - {fileID: 991982017, guid: 5ba74af247f33448fae725749855add4, type: 3}
+    - target: {fileID: 42509386, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: _fishCountText
+      value: 
+      objectReference: {fileID: 1578866240}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba74af247f33448fae725749855add4, type: 3}
 --- !u!1001 &1184648205
 PrefabInstance:
@@ -524,6 +540,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 400676850}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1578866240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1578866240, guid: 2e237f7c691d44576b8208b629b443ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 400676850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2716728560436578446
 PrefabInstance:
   m_ObjectHideFlags: 0

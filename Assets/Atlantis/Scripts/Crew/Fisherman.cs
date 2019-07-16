@@ -4,8 +4,10 @@ using System.Collections;
 public class Fisherman : Crew
 {
     [SerializeField] GameObject _floatModel;
+    [SerializeField] float _fishTime;
 
     FishZone _fishZone;
+    float _currentFishTime;
 
     void OnEnable()
     {
@@ -18,6 +20,7 @@ public class Fisherman : Crew
         {
             _fishZone = other.gameObject.GetComponent<FishZone>();
             _floatModel.SetActive(true);
+            _currentFishTime = 0f;
         }
     }
 
@@ -41,6 +44,12 @@ public class Fisherman : Crew
 
     void Fish(float dt)
     {
-        // todo
+        _currentFishTime += dt;
+
+        if(_currentFishTime > _fishTime)
+        {
+            _currentFishTime -= _fishTime;
+            Cargo.instance.AddFish(1);
+        }
     }
 }
