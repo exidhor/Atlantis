@@ -10,6 +10,7 @@ public class PlayerShip : MonoBehaviour
     [SerializeField] float _breakSpeed;
     //[SerializeField] float _startSpeed;
     [SerializeField] float _maxSpeed;
+    [SerializeField] float _slideStrength;
 
     [SerializeField] float _angularSpeed;
     [SerializeField] float _speedAffectAngular = 0.8f;
@@ -38,11 +39,12 @@ public class PlayerShip : MonoBehaviour
 
         Vector3 move = transform.forward * _currentSpeed;
 
-        //Vector2 move2d = new Vector2(move.x, move.z);
-        //float orientation = transform.rotation.eulerAngles.y;
-        //move2d = MathHelper.RotateVector(move2d, (orientation + _angle) * Mathf.Deg2Rad);
-        //move.x = move2d.x;
-        //move.z = move2d.y;
+
+        Vector2 move2d = new Vector2(move.x, move.z);
+        float orientation = transform.rotation.eulerAngles.y;
+        move2d = MathHelper.RotateVector(move2d, (-_angle * _slideStrength * (_speed / _maxSpeed)) * Mathf.Deg2Rad);
+        move.x = move2d.x;
+        move.z = move2d.y;
 
         transform.position += move;
     }
@@ -110,7 +112,7 @@ public class PlayerShip : MonoBehaviour
             angular = angular * Mathf.Sign(angle);
         }
 
-        //_angle = angular;
+        _angle = angular;
         transform.localRotation = Quaternion.Euler(0, orientation + angular, 0);
     }
 }
