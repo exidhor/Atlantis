@@ -37,15 +37,13 @@ public class PlayerInputFeedback : MonoBehaviour
         SetPos(screenPosition);
     }
 
-    public void SetScale(Vector2 currentPos)
+    public void SetScale(Vector2 move)
     {
-        Vector2 offset = currentPos - _originPos;
-
         float orientation = transform.eulerAngles.z;
-        float angle = Vector2.SignedAngle(Vector2.up, offset);
+        float angle = Vector2.SignedAngle(Vector2.up, move);
         _line.localRotation = Quaternion.Euler(0, 0, angle);
 
-        float distance = offset.magnitude;
+        float distance = move.magnitude;
         float scale = distance * _scaleSize;
 
         Vector3 sizeDelta = _line.sizeDelta;
