@@ -3,15 +3,17 @@ using System.Collections;
 
 public class PlayerCamera : MonoBehaviour
 {
-    // Use this for initialization
-    void Start()
-    {
+    [SerializeField] PlayerShip _ship;
 
+    Vector3 _offset;
+
+    void OnEnable()
+    {
+        _offset = _ship.transform.position - transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Follow()
     {
-
+        transform.position = _ship.transform.position - _offset;
     }
 }
