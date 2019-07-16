@@ -11,15 +11,16 @@ public class PlayerShip : MonoBehaviour
     //[SerializeField] float _startSpeed;
     [SerializeField] float _maxSpeed;
     [SerializeField] float _slideStrength;
+    [SerializeField] float _dampling;
 
     [SerializeField] float _angularSpeed;
     [SerializeField] float _speedAffectAngular = 0.8f;
 
     [SerializeField, UnityReadOnly] float _speed;
+    [SerializeField, UnityReadOnly] float _angular;
 
     Vector3 _targetMove;
     float _currentSpeed;
-    float _angle;
 
     public void Move(bool isBreaking, Vector2 inputMove, float dt)
     {
@@ -27,7 +28,7 @@ public class PlayerShip : MonoBehaviour
         {
             Debug.Log("Break");
             HandleBreak(dt);
-            _angle = 0;
+            _angular = 0;
         }
         else
         {
@@ -42,7 +43,7 @@ public class PlayerShip : MonoBehaviour
 
         Vector2 move2d = new Vector2(move.x, move.z);
         float orientation = transform.rotation.eulerAngles.y;
-        move2d = MathHelper.RotateVector(move2d, (-_angle * _slideStrength * (_speed / _maxSpeed)) * Mathf.Deg2Rad);
+        move2d = MathHelper.RotateVector(move2d, (-_angular * dt * _slideStrength * (_speed / _maxSpeed)) * Mathf.Deg2Rad);
         move.x = move2d.x;
         move.z = move2d.y;
 
@@ -105,14 +106,20 @@ public class PlayerShip : MonoBehaviour
 
         if (Mathf.Abs(angle) < angular)
         {
-            angular = angle;
+            angular = angle * dt;
         }
         else
         {
-            angular = angular * Mathf.Sign(angle);
+            angular *= Mathf.Sign(angle);
         }
 
-        _angle = angular;
+        //if (Mathf.Abs(_angular) < angular)
+        //{
+        //    angular = Mathf.LerpAngle(_angular, angular, _dampling * dt);
+        //}
+        angular = Mathf.LerpAngle(_angular * dt, angular, _dampling * dt);
+
+        _angular = angular / dt;
         transform.localRotation = Quaternion.Euler(0, orientation + angular, 0);
     }
 }
