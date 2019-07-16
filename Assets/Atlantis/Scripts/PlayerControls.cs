@@ -20,15 +20,19 @@ public class PlayerControls : MonoBehaviour
         {
             _shipInput = true;
             _originScreenPoint = Input.mousePosition;
+            _feedback.SetOrigin(_originScreenPoint);
         }
 
         if(Input.GetMouseButton(0))
         {
-            _move = _originScreenPoint - (Vector2)Input.mousePosition;
+            Vector2 mousePosition = Input.mousePosition;
+            _move = _originScreenPoint - mousePosition;
+            _feedback.SetScale(mousePosition);
         }
         else
         {
             _shipInput = false;
+            _feedback.SetActive(false);
         }
 
         _camera.Follow();

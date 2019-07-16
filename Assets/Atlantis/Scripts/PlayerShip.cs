@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Tools;
 
 public class PlayerShip : MonoBehaviour
 {
@@ -13,9 +14,7 @@ public class PlayerShip : MonoBehaviour
     [SerializeField] float _angularSpeed;
 
     Vector3 _targetMove;
-    Vector3 _move;
-
-    float _currentSpeed = 0f;
+    [SerializeField, UnityReadOnly] float _currentSpeed;
 
     public void Move(bool isBreaking, Vector2 inputMove, float dt)
     {
@@ -29,8 +28,9 @@ public class PlayerShip : MonoBehaviour
 
             HandleSpeed(dt);
             HandleRotation(dt);
-            transform.position += _move;
         }
+
+        transform.position += transform.forward * _currentSpeed;
     }
 
     void HandleBreak(float dt)
@@ -43,10 +43,10 @@ public class PlayerShip : MonoBehaviour
 
     void HandleSpeed(float dt)
     {
-        _move = _targetMove * dt;
+        Vector3 move = _targetMove;
 
-        float speed = _move.magnitude;
-        _move.Normalize();
+        float speed = move.magnitude;
+        move.Normalize();
 
         if (speed > _currentSpeed)
         {
@@ -67,17 +67,16 @@ public class PlayerShip : MonoBehaviour
             }
         }
 
-        _move *= speed;
+        _currentSpeed = speed;
+        _currentSpeed = speed * dt;
     }
 
     void HandleRotation(float dt)
     {
-        Vector2 forward = transform.forward;
+        Vector3 forward = transform.forward;
 
-        Vector2 pos = transform.position;
-
-        float orientation = transform.eulerAngles.z;
-        float angle = Vector2.SignedAngle(forward, _targetMove);
+        float orientation = transform.eulerAngles.y;
+        float angle = Vector3.SignedAngle(forward, _targetMove, Vector3.up);
 
         float angular = _angularSpeed * dt;
 
@@ -90,6 +89,8 @@ public class PlayerShip : MonoBehaviour
             angular = angular * Mathf.Sign(angle);
         }
 
-        transform.localRotation = Quaternion.Euler(0, 0, orientation + angular);
+        transform.localRotation = Quaternion.Euler(0, orientation + angular, 0);
+
+        Debug.Log("Angle " + angle);
     }
 }
