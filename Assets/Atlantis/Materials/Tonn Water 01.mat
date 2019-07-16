@@ -5,8 +5,9 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Test Mat Sander 1
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tonn Water 01
   m_Shader: {fileID: 4800000, guid: ebb2fb7a4733bdb4fa4ad853934161e5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -56,6 +57,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_565E86B2: 0.1
+    - Vector1_7DC53582: 0.5
     - Vector1_CBB23825: 0.01
     - _BumpScale: 1
     - _Cutoff: 0.5
