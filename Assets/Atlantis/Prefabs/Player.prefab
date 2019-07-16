@@ -395,6 +395,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448598cd220a34d51a41cb6354cfc6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _moveOffsetScale: 0.5
+  _speedOffset: 30
+  _slowing: 30
   _ship: {fileID: 114834937207041870}
 --- !u!114 &114834937207041870
 MonoBehaviour:
@@ -408,13 +411,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _acceleration: 10
-  _decceleration: -1.5
-  _breakSpeed: -5
-  _maxSpeed: 20
-  _slideStrength: -10
-  _dampling: 3
+  _decceleration: -0.1
+  _breakSpeed: -0.3
+  _maxSpeed: 18
+  _slideStrength: -18
+  _dampling: 1.5
   _angularSpeed: 60
   _speedAffectAngular: 0.1
-  _swingStrength: 1
+  _swingStrength: 12
   _speed: 0
   _angular: 0

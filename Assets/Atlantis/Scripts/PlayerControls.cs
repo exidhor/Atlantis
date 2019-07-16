@@ -46,7 +46,7 @@ public class PlayerControls : MonoBehaviour
             _feedback.SetActive(false);
         }
 
-        _camera.Follow();
+        _camera.Follow(Time.deltaTime);
     }
 
     void FixedUpdate()

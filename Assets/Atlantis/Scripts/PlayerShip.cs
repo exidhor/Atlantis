@@ -4,6 +4,11 @@ using Tools;
 
 public class PlayerShip : MonoBehaviour
 {
+    public Vector3 direction
+    {
+        get { return _direction; }
+    }
+
     [Header("Speed controls")]
     [SerializeField] float _acceleration;
     [SerializeField] float _decceleration;
@@ -21,6 +26,7 @@ public class PlayerShip : MonoBehaviour
     [SerializeField, UnityReadOnly] float _speed;
     [SerializeField, UnityReadOnly] float _angular;
 
+    Vector3 _direction;
     Vector3 _targetMove;
     float _currentSpeed;
 
@@ -28,7 +34,7 @@ public class PlayerShip : MonoBehaviour
     {
         if(isBreaking)
         {
-            Debug.Log("Break");
+            //Debug.Log("Break");
             HandleBreak(dt);
             _angular = 0;
         }
@@ -41,6 +47,7 @@ public class PlayerShip : MonoBehaviour
         }
 
         Vector3 move = transform.forward * _currentSpeed;
+        _direction = transform.forward * _speed;
 
 
         Vector2 move2d = new Vector2(move.x, move.z);
