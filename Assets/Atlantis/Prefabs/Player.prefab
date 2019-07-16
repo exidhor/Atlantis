@@ -365,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f3b79b00f644def9020afbb4c30ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleSize: 0.2
+  _scaleSize: 0.6
   _origin: {fileID: 0}
   _line: {fileID: 0}
 --- !u!114 &114027286958930622
@@ -406,8 +406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _acceleration: 3
-  _decceleration: -1
-  _breakSpeed: -10
-  _maxSpeed: 10
-  _angularSpeed: 180
-  _currentSpeed: 0
+  _decceleration: -0.5
+  _breakSpeed: -5
+  _maxSpeed: 15
+  _angularSpeed: 50
+  _speed: 0

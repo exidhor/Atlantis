@@ -13,13 +13,16 @@ public class PlayerShip : MonoBehaviour
 
     [SerializeField] float _angularSpeed;
 
+    [SerializeField, UnityReadOnly] float _speed;
+
     Vector3 _targetMove;
-    [SerializeField, UnityReadOnly] float _currentSpeed;
+    float _currentSpeed;
 
     public void Move(bool isBreaking, Vector2 inputMove, float dt)
     {
         if(isBreaking)
         {
+            Debug.Log("Break");
             HandleBreak(dt);
         }
         else
@@ -35,10 +38,12 @@ public class PlayerShip : MonoBehaviour
 
     void HandleBreak(float dt)
     {
-        _currentSpeed += _breakSpeed * dt;
+        _speed += _breakSpeed;
 
-        if (_currentSpeed < 0)
-            _currentSpeed = 0;
+        if (_speed < 0)
+            _speed = 0;
+
+        _currentSpeed = _speed * dt;
     }
 
     void HandleSpeed(float dt)
@@ -48,9 +53,9 @@ public class PlayerShip : MonoBehaviour
         float speed = move.magnitude;
         move.Normalize();
 
-        if (speed > _currentSpeed)
+        if (speed > _speed)
         {
-            float maxSpeed = _currentSpeed + _acceleration * dt;
+            float maxSpeed = _speed + _acceleration * dt;
 
             if (maxSpeed < speed)
             {
@@ -59,7 +64,7 @@ public class PlayerShip : MonoBehaviour
         }
         else
         {
-            float minSpeed = _currentSpeed * _decceleration * dt;
+            float minSpeed = _speed * _decceleration * dt;
 
             if (minSpeed > speed)
             {
@@ -67,7 +72,12 @@ public class PlayerShip : MonoBehaviour
             }
         }
 
-        _currentSpeed = speed;
+        if(speed > _maxSpeed)
+        {
+            speed = _maxSpeed;
+        }
+
+        _speed = speed;
         _currentSpeed = speed * dt;
     }
 
@@ -90,7 +100,5 @@ public class PlayerShip : MonoBehaviour
         }
 
         transform.localRotation = Quaternion.Euler(0, orientation + angular, 0);
-
-        Debug.Log("Angle " + angle);
     }
 }

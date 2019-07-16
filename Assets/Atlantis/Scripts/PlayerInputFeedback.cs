@@ -7,8 +7,8 @@ public class PlayerInputFeedback : MonoBehaviour
     [SerializeField] float _scaleSize = 0.2f;
 
     [Header("Linking")]
-    [SerializeField] GameObject _origin;
-    [SerializeField] GameObject _line;
+    [SerializeField] RectTransform _origin;
+    [SerializeField] RectTransform _line;
 
     Vector2 _originPos;
 
@@ -19,14 +19,14 @@ public class PlayerInputFeedback : MonoBehaviour
 
     public void SetActive(bool state)
     {
-        _origin.SetActive(state);
-        _line.SetActive(state);
+        _origin.gameObject.SetActive(state);
+        _line.gameObject.SetActive(state);
     }
 
     void SetPos(Vector2 pos)
     {
-        _origin.transform.position = pos;
-        _line.transform.position = pos;
+        _origin.position = pos;
+        _line.position = pos;
     }
 
     public void SetOrigin(Vector2 screenPosition)
@@ -39,13 +39,17 @@ public class PlayerInputFeedback : MonoBehaviour
 
     public void SetScale(Vector2 currentPos)
     {
-        _line.transform.LookAt(currentPos);
         Vector2 offset = currentPos - _originPos;
+
+        float orientation = transform.eulerAngles.z;
+        float angle = Vector2.SignedAngle(Vector2.up, offset);
+        _line.localRotation = Quaternion.Euler(0, 0, angle);
+
         float distance = offset.magnitude;
         float scale = distance * _scaleSize;
 
-        Vector3 vScale = transform.localScale;
-        vScale.y = scale;
-        transform.localScale = vScale;
+        Vector3 sizeDelta = _line.sizeDelta;
+        sizeDelta.y = scale;
+        _line.sizeDelta = sizeDelta;
     }
 }
