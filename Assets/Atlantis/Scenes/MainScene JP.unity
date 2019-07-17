@@ -435,29 +435,10 @@ PrefabInstance:
       propertyPath: _speedText
       value: 
       objectReference: {fileID: 2019716481}
-    - target: {fileID: 114202363100061032, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: _slowing
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 114202363100061032, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: _speedOffset
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 42509386, guid: 5ba74af247f33448fae725749855add4, type: 3}
       propertyPath: _fishCountText
       value: 
       objectReference: {fileID: 1578866240}
-    - target: {fileID: 838620156352793245, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: _disableInputsTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 729088331, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: _correctorCoef
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba74af247f33448fae725749855add4, type: 3}
 --- !u!4 &645304513 stripped

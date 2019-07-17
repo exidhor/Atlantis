@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocityCurveRepulse: repulseSpeed
   _angularCurveRepulse: repulseAngular
-  _disableInputsTime: 1
+  _disableInputsTime: 0.5
   _velocity: {x: 0, y: 0}
   _angular: 0
 --- !u!50 &670777756
@@ -464,8 +464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveOffsetScale: 0.5
-  _speedOffset: 30
-  _slowing: 30
+  _speedOffset: 3
+  speedScale: 10
   _ship: {fileID: 114834937207041870}
 --- !u!1 &1505852414269956
 GameObject:
@@ -789,3 +789,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30da017ad9dca486db0c2e64f69f57ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _minRepulseSpeed: 3
+  _correctorCoef: 0.1

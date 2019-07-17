@@ -18,31 +18,12 @@ public class PlayerCollider : MonoBehaviour
         _collider = GetComponent<Collider2D>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision with " + collision.collider.name);
-    }
-
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.gameObject.layer == LayerType.instance.decors)
-    //    {
-    //        if(!_contacts.Contains(other))
-    //        {
-    //            _contacts.Add(other);
-    //            //Repulse(other);
-    //        }
-    //    }
-    //}
-
     void FixedUpdate()
     {
         int count = _collider.GetContacts(_buffer);
 
         for(int i = 0; i < count; i++)
         {
-            Debug.Log("Collision");
-
             GameObject go = _buffer[i].collider.gameObject;
 
             if(go.layer == LayerType.instance.decors)
@@ -69,14 +50,4 @@ public class PlayerCollider : MonoBehaviour
 
         PlayerShip.instance.ApplyRepulseForce(velocity, angular, origin);
     }
-
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    if (_fishZone != null
-    //        && _fishZone.gameObject == other.gameObject)
-    //    {
-    //        _fishZone = null;
-    //        StopFishing();
-    //    }
-    //}
 }
