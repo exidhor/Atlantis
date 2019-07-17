@@ -112,6 +112,13 @@ public class PlayerShip : MonoSingleton<PlayerShip>
         _direction = transform.up * _speed;
         _direction.x += _body.velocity.x;
         _direction.y += _body.velocity.y;
+
+        if(_direction.magnitude > _maxSpeed)
+        {
+            _direction.Normalize();
+            _direction *= _maxSpeed;
+        }
+
         Vector3 move = _direction * dt;
 
         Vector2 move2d = new Vector2(move.x, move.y);
