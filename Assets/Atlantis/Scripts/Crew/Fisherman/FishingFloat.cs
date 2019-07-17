@@ -8,6 +8,11 @@ public class FishingFloat : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    public void SetPosition(Vector3 pos)
+    {
+        transform.position = pos;
+    }
+
     public void Stop()
     {
         gameObject.SetActive(false);
