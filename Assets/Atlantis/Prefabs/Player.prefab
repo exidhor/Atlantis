@@ -239,13 +239,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366589494960490}
-  m_LocalRotation: {x: -0.13549949, y: 0, z: 0, w: 0.99077743}
-  m_LocalPosition: {x: 0, y: -2.1, z: -26}
+  m_LocalRotation: {x: -0.2194261, y: -0, z: -0, w: 0.97562915}
+  m_LocalPosition: {x: 0, y: -9.4, z: -26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4209788449346548}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -15.575, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -25.351002, y: 0, z: 0}
 --- !u!20 &20650396677551114
 Camera:
   m_ObjectHideFlags: 0
@@ -643,6 +643,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4345230169796760}
     m_Modifications:
+    - target: {fileID: 5161354125149482098, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_Name
+      value: Fisherman
+      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482097, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -698,10 +703,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5161354125149482098, guid: 67b83f7d1db714357b9ea09e71f3c773,
+    - target: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
-      propertyPath: m_Name
-      value: Fisherman
+      propertyPath: _maxSpeedToFish
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: _duration
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b83f7d1db714357b9ea09e71f3c773, type: 3}
