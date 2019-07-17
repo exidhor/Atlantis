@@ -122,6 +122,7 @@ public class FishingLine : MonoBehaviour
         }
 
         _renderer.SetPositions(_points);
+        _fishingFloat.SetPosition(_points[_pointCount - 1]);
     }
 
     Vector3 GetPoint(float t)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44875288, g: 0.49880743, b: 0.5756881, a: 1}
+  m_IndirectSpecularColor: {r: 0.20410383, g: 0.17856684, b: 0.13052657, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,13 +240,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: -0.411293, y: -0.09730009, z: -0.20364793, w: -0.8831185}
-  m_LocalPosition: {x: 0, y: 133.7, z: 0}
+  m_LocalRotation: {x: 0.043878723, y: -0.18046883, z: -0.13553898, w: -0.97320855}
+  m_LocalPosition: {x: 0, y: 133.7, z: -14.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 43.378002, y: -332.166, z: 37.228}
+  m_LocalEulerAnglesHint: {x: -7.7200003, y: -339.972, z: 14.492001}
 --- !u!1001 &400676850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -439,6 +439,34 @@ PrefabInstance:
       propertyPath: _fishCountText
       value: 
       objectReference: {fileID: 1578866240}
+    - target: {fileID: 4570032454655500, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570032454655500, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570032454655500, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570032454655500, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.2194261
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570032454655500, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97562915
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570032454655500, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -25.351002
+      objectReference: {fileID: 0}
+    - target: {fileID: 628586380, guid: 5ba74af247f33448fae725749855add4, type: 3}
+      propertyPath: _maxSpeedToFish
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba74af247f33448fae725749855add4, type: 3}
 --- !u!4 &645304513 stripped
