@@ -46,8 +46,8 @@ MonoBehaviour:
   _curves:
   - name: repulseSpeed
     curve:
-      _startValue: 0.5
-      _endValue: 2
+      _startValue: 0.25
+      _endValue: 1
       _duration: 0.4
       _curve:
         serializedVersion: 2
@@ -84,9 +84,9 @@ MonoBehaviour:
         m_RotationOrder: 0
   - name: repulseAngular
     curve:
-      _startValue: 0.1
-      _endValue: 0.3
-      _duration: 0.3
+      _startValue: 0.05
+      _endValue: 0.2
+      _duration: 0.1
       _curve:
         serializedVersion: 2
         m_Curve:
@@ -116,6 +116,122 @@ MonoBehaviour:
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - name: xyFinishingLine
+    curve:
+      _startValue: 0
+      _endValue: 1
+      _duration: 1
+      _curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - name: zFishingLine
+    curve:
+      _startValue: 0
+      _endValue: 1
+      _duration: 1
+      _curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 2.8493092
+          outSlope: 2.8493092
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.028792912
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - name: zAmplitudeFishingLine
+    curve:
+      _startValue: 0
+      _endValue: 5
+      _duration: 0.5
+      _curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 2.8493092
+          outSlope: 2.8493092
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.028792912
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+  - name: xyAmplitudeFishingLine
+    curve:
+      _startValue: 0
+      _endValue: 0.5
+      _duration: 1
+      _curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 2.8493092
+          outSlope: 2.8493092
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.028792912
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2

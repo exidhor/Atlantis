@@ -8,7 +8,7 @@ public class Fisherman : Crew
     [SerializeField] float _fishTime;
 
     [Header("Linking")]
-    [SerializeField] GameObject _floatModel;
+    [SerializeField] FishingLine _fishingLine;
 
     FishZone _fishZone;
     bool _isFishing;
@@ -21,7 +21,7 @@ public class Fisherman : Crew
 
     void OnEnable()
     {
-        _floatModel.SetActive(false);
+        _fishingLine.StopFishing();
     }
 
     void OnTriggerEnter(Collider other)
@@ -82,12 +82,12 @@ public class Fisherman : Crew
     {
         _isFishing = true;
         _currentFishTime = 0f;
-        _floatModel.gameObject.SetActive(true);
+        _fishingLine.Land(transform.position, _fishZone.transform.position);
     }
 
     void StopFishing()
     {
         _isFishing = false;
-        _floatModel.gameObject.SetActive(false);
+        _fishingLine.StopFishing();
     }
 }
