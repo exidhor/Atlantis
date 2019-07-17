@@ -435,10 +435,30 @@ PrefabInstance:
       propertyPath: _speedText
       value: 
       objectReference: {fileID: 2019716481}
+    - target: {fileID: 114834937207041870, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: _swingStrength
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 42509386, guid: 5ba74af247f33448fae725749855add4, type: 3}
       propertyPath: _fishCountText
       value: 
       objectReference: {fileID: 1578866240}
+    - target: {fileID: 8384576977451222328, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384576977451222328, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384576977451222328, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba74af247f33448fae725749855add4, type: 3}
 --- !u!4 &645304513 stripped
