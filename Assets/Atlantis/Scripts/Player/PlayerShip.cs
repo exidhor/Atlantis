@@ -9,19 +9,22 @@ public class PlayerShip : MonoBehaviour
         get { return _direction; }
     }
 
-    [Header("Speed controls")]
+    [Header("Speed Movement")]
     [SerializeField] float _acceleration;
     [SerializeField] float _decceleration;
     [SerializeField] float _breakSpeed;
     [SerializeField] float _maxSpeed;
-    [SerializeField] float _slideStrength;
-    [SerializeField] float _dampling;
 
+    [Header("Rotation Y")]
     [SerializeField] float _angularSpeed;
     [SerializeField] float _speedAffectAngular = 0.8f;
+    [SerializeField] float _dampling;
 
+    [Header("Effects")]
+    [SerializeField] float _slideStrength;
     [SerializeField] float _swingStrength;
 
+    [Header("Infos")]
     [SerializeField, UnityReadOnly] float _speed;
     [SerializeField, UnityReadOnly] float _angular;
 
@@ -131,30 +134,12 @@ public class PlayerShip : MonoBehaviour
         if (Mathf.Abs(angle) < targetAngular)
         {
             angular = angle;
-            //targetAngular = angle * dt;
         }
         else
         {
             angular *= Mathf.Sign(angle);
-            //targetAngular *= Mathf.Sign(angle);
         }
 
-        //angular = Mathf.LerpAngle(_angular * dt, angular, _dampling * dt);
-
-
         _angular = angular;
-
-
-
-        //angular = Mathf.LerpAngle(_angular, angular, _dampling * dt);
-       
-        //_angular = angular;
-
-        //float orientationY = transform.eulerAngles.y;
-        //float orientationZ = transform.eulerAngles.z;
-
-        //float angleY = orientationY + angular * dt;
-        //float angleZ = orientationZ + _swingStrength * angular * dt;
-        //transform.localRotation = Quaternion.Euler(0, angleY, angleZ);
     }
 }
