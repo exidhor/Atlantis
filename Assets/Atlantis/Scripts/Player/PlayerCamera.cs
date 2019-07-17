@@ -26,8 +26,6 @@ public class PlayerCamera : MonoBehaviour
         float t = Mathf.Lerp(0f, 1f, (target - _offset).magnitude * _slowing);
         Vector3 o = Vector3.MoveTowards(_offset, target, maxDist * t);
 
-        //Debug.Log("target : " + target + " o : " + o);
-
         transform.position = pos + o;
 
         _offset = o;
