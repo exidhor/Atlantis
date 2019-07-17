@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cc0d6aa45079ba42b0dae49796d42ea
+guid: c27de274bd5159f4ba6e2a9f80439bba
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -7,11 +7,11 @@ ModelImporter:
     100002: l_bot_window_02
     100004: l_bot_window_03
     100006: l_float_01
-    100008: l_float_01_ncl1_1
+    100008: l_float_01 1
     100010: l_float_02
-    100012: l_float_02_ncl1_1
+    100012: l_float_02 1
     100014: l_float_03
-    100016: l_float_03_ncl1_1
+    100016: l_float_03 1
     100018: l_floats_01
     100020: l_top_window_01
     100022: l_windows
@@ -40,11 +40,11 @@ ModelImporter:
     400002: l_bot_window_02
     400004: l_bot_window_03
     400006: l_float_01
-    400008: l_float_01_ncl1_1
+    400008: l_float_01 1
     400010: l_float_02
-    400012: l_float_02_ncl1_1
+    400012: l_float_02 1
     400014: l_float_03
-    400016: l_float_03_ncl1_1
+    400016: l_float_03 1
     400018: l_floats_01
     400020: l_top_window_01
     400022: l_windows
@@ -74,11 +74,11 @@ ModelImporter:
     2300002: l_bot_window_02
     2300004: l_bot_window_03
     2300006: l_float_01
-    2300008: l_float_01_ncl1_1
+    2300008: l_float_01 1
     2300010: l_float_02
-    2300012: l_float_02_ncl1_1
+    2300012: l_float_02 1
     2300014: l_float_03
-    2300016: l_float_03_ncl1_1
+    2300016: l_float_03 1
     2300018: l_top_window_01
     2300020: pCube1
     2300022: pCube10
@@ -102,11 +102,11 @@ ModelImporter:
     3300002: l_bot_window_02
     3300004: l_bot_window_03
     3300006: l_float_01
-    3300008: l_float_01_ncl1_1
+    3300008: l_float_01 1
     3300010: l_float_02
-    3300012: l_float_02_ncl1_1
+    3300012: l_float_02 1
     3300014: l_float_03
-    3300016: l_float_03_ncl1_1
+    3300016: l_float_03 1
     3300018: l_top_window_01
     3300020: pCube1
     3300022: pCube10
@@ -151,9 +151,9 @@ ModelImporter:
     4300044: l_float_03
     4300046: l_float_02
     4300048: l_float_01
-    4300050: l_float_03_ncl1_1
-    4300052: l_float_02_ncl1_1
-    4300054: l_float_01_ncl1_1
+    4300050: l_float_03
+    4300052: l_float_02
+    4300054: l_float_01
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -185,7 +185,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
