@@ -430,6 +430,11 @@ PrefabInstance:
       propertyPath: _line
       value: 
       objectReference: {fileID: 1299717242}
+    - target: {fileID: 114834937207041870, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: _swingStrength
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 42509386, guid: 5ba74af247f33448fae725749855add4, type: 3}
       propertyPath: _fishCountText
       value: 

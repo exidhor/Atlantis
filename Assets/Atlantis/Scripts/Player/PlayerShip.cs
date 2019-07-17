@@ -13,7 +13,6 @@ public class PlayerShip : MonoBehaviour
     [SerializeField] float _acceleration;
     [SerializeField] float _decceleration;
     [SerializeField] float _breakSpeed;
-    //[SerializeField] float _startSpeed;
     [SerializeField] float _maxSpeed;
     [SerializeField] float _slideStrength;
     [SerializeField] float _dampling;
@@ -26,15 +25,15 @@ public class PlayerShip : MonoBehaviour
     [SerializeField, UnityReadOnly] float _speed;
     [SerializeField, UnityReadOnly] float _angular;
 
+    float _previousAngular;
+
     Vector3 _direction;
     Vector3 _targetMove;
-    float _currentSpeed;
 
     public void Move(bool isBreaking, Vector2 inputMove, float dt)
     {
-        if(isBreaking)
+        if (isBreaking)
         {
-            //Debug.Log("Break");
             HandleBreak(dt);
             _angular = 0;
         }
@@ -46,13 +45,32 @@ public class PlayerShip : MonoBehaviour
             HandleRotation(dt);
         }
 
-        Vector3 move = transform.forward * _currentSpeed;
+        UpdateRotation(dt);
+        UpdateMovement(dt);
+    }
+
+    void UpdateRotation(float dt)
+    {
+        _angular = Mathf.Lerp(_previousAngular, _angular, _dampling * dt);
+
+        float orientationY = transform.eulerAngles.y;
+        float orientationZ = 0f; //transform.eulerAngles.z;
+
+        float angleY = orientationY + _angular * dt;
+        float angleZ = orientationZ + _swingStrength * _angular * dt;
+        transform.localRotation = Quaternion.Euler(0, angleY, angleZ);
+
+        _previousAngular = _angular;
+    }
+
+    void UpdateMovement(float dt)
+    {
+        Vector3 move = transform.forward * _speed * dt;
         _direction = transform.forward * _speed;
 
-
         Vector2 move2d = new Vector2(move.x, move.z);
-        float orientation = transform.rotation.eulerAngles.y;
-        move2d = MathHelper.RotateVector(move2d, (-_angular * dt * _slideStrength * (_speed / _maxSpeed)) * Mathf.Deg2Rad);
+        float angle = -_angular * dt * _slideStrength * (_speed / _maxSpeed);
+        move2d = MathHelper.RotateVector(move2d, angle * Mathf.Deg2Rad);
         move.x = move2d.x;
         move.z = move2d.y;
 
@@ -65,8 +83,6 @@ public class PlayerShip : MonoBehaviour
 
         if (_speed < 0)
             _speed = 0;
-
-        _currentSpeed = _speed * dt;
     }
 
     void HandleSpeed(float dt)
@@ -101,34 +117,44 @@ public class PlayerShip : MonoBehaviour
         }
 
         _speed = speed;
-        _currentSpeed = speed * dt;
     }
 
     void HandleRotation(float dt)
     {
         Vector3 forward = transform.forward;
 
-        float orientation = transform.eulerAngles.y;
         float angle = Vector3.SignedAngle(forward, _targetMove, Vector3.up);
 
-        float angular = _angularSpeed * dt * _speedAffectAngular * _speed;
+        float angular = _angularSpeed * _speedAffectAngular * _speed;
+        float targetAngular = angular * dt;
 
-        if (Mathf.Abs(angle) < angular)
+        if (Mathf.Abs(angle) < targetAngular)
         {
-            angular = angle * dt;
+            angular = angle;
+            //targetAngular = angle * dt;
         }
         else
         {
             angular *= Mathf.Sign(angle);
+            //targetAngular *= Mathf.Sign(angle);
         }
 
-        //if (Mathf.Abs(_angular) < angular)
-        //{
-        //    angular = Mathf.LerpAngle(_angular, angular, _dampling * dt);
-        //}
-        angular = Mathf.LerpAngle(_angular * dt, angular, _dampling * dt);
+        //angular = Mathf.LerpAngle(_angular * dt, angular, _dampling * dt);
 
-        _angular = angular / dt;
-        transform.localRotation = Quaternion.Euler(0, orientation + angular, _swingStrength * angular);
+
+        _angular = angular;
+
+
+
+        //angular = Mathf.LerpAngle(_angular, angular, _dampling * dt);
+       
+        //_angular = angular;
+
+        //float orientationY = transform.eulerAngles.y;
+        //float orientationZ = transform.eulerAngles.z;
+
+        //float angleY = orientationY + angular * dt;
+        //float angleZ = orientationZ + _swingStrength * angular * dt;
+        //transform.localRotation = Quaternion.Euler(0, angleY, angleZ);
     }
 }
