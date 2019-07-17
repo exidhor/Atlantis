@@ -8,6 +8,11 @@ public class Force
         get { return _currentVelocity; }
     }
 
+    public Vector2 velocity
+    {
+        get { return _velocity; }
+    }
+
     public float currentAngular
     {
         get { return _currentAngular; }
