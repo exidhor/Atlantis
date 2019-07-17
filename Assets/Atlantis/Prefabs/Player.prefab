@@ -90,8 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374fbcba76ced4c2dbf0a92d0aa7d980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _floatModel: {fileID: 991982015}
+  _maxSpeedToFish: 3
   _fishTime: 1
+  _floatModel: {fileID: 991982015}
 --- !u!135 &628586379
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -291,8 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53be4c556f9294e7db52f8f47cfb70e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveScale: 0.5
-  _maxDistance: 100
+  _moveScale: 0.2
+  _maxDistance: 300
   _feedback: {fileID: 114020861080097592}
   _ship: {fileID: 114834937207041870}
   _camera: {fileID: 114202363100061032}
@@ -444,11 +445,12 @@ MonoBehaviour:
   _decceleration: -0.1
   _breakSpeed: -0.3
   _maxSpeed: 18
-  _slideStrength: -18
-  _dampling: 1.5
   _angularSpeed: 60
   _speedAffectAngular: 0.1
+  _dampling: 1.5
+  _slideStrength: -18
   _swingStrength: 12
+  _speedText: {fileID: 0}
   _speed: 0
   _angular: 0
 --- !u!1 &1568998870580894

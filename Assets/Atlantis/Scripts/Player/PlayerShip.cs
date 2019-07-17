@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Tools;
 
-public class PlayerShip : MonoBehaviour
+public class PlayerShip : MonoSingleton<PlayerShip>
 {
     public Vector3 direction
     {
         get { return _direction; }
+    }
+
+    public float speed
+    {
+        get { return _speed; }
     }
 
     [Header("Speed Movement")]
@@ -23,6 +29,9 @@ public class PlayerShip : MonoBehaviour
     [Header("Effects")]
     [SerializeField] float _slideStrength;
     [SerializeField] float _swingStrength;
+
+    [Header("Linking")]
+    [SerializeField] Text _speedText;
 
     [Header("Infos")]
     [SerializeField, UnityReadOnly] float _speed;
@@ -141,5 +150,10 @@ public class PlayerShip : MonoBehaviour
         }
 
         _angular = angular;
+    }
+
+    void LateUpdate()
+    {
+        _speedText.text = "Speed : " + _speed;
     }
 }

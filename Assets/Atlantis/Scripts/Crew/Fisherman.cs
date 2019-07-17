@@ -3,11 +3,21 @@ using System.Collections;
 
 public class Fisherman : Crew
 {
-    [SerializeField] GameObject _floatModel;
+    [Header("Logic")]
+    [SerializeField] float _maxSpeedToFish;
     [SerializeField] float _fishTime;
 
+    [Header("Linking")]
+    [SerializeField] GameObject _floatModel;
+
     FishZone _fishZone;
+    bool _isFishing;
     float _currentFishTime;
+
+    bool canFish
+    {
+        get { return (PlayerShip.instance.speed < _maxSpeedToFish); }
+    }
 
     void OnEnable()
     {
@@ -19,8 +29,6 @@ public class Fisherman : Crew
         if (other.gameObject.layer == LayerType.instance.layerFish)
         {
             _fishZone = other.gameObject.GetComponent<FishZone>();
-            _floatModel.SetActive(true);
-            _currentFishTime = 0f;
         }
     }
 
@@ -30,7 +38,7 @@ public class Fisherman : Crew
             && _fishZone.gameObject == other.gameObject)
         {
             _fishZone = null;
-            _floatModel.SetActive(false);
+            StopFishing();
         }
     }
 
@@ -44,12 +52,42 @@ public class Fisherman : Crew
 
     void Fish(float dt)
     {
-        _currentFishTime += dt;
-
-        if(_currentFishTime > _fishTime)
+        if(!_isFishing)
         {
-            _currentFishTime -= _fishTime;
-            Cargo.instance.AddFish(1);
+            if(canFish)
+            {
+                StartFishing();
+            }
         }
+        else
+        {
+            if(!canFish)
+            {
+                StopFishing();
+            }
+            else
+            {
+                _currentFishTime += dt;
+
+                if (_currentFishTime > _fishTime)
+                {
+                    _currentFishTime -= _fishTime;
+                    Cargo.instance.AddFish(1);
+                }
+            }
+        }
+    }
+
+    void StartFishing()
+    {
+        _isFishing = true;
+        _currentFishTime = 0f;
+        _floatModel.gameObject.SetActive(true);
+    }
+
+    void StopFishing()
+    {
+        _isFishing = false;
+        _floatModel.gameObject.SetActive(false);
     }
 }

@@ -430,11 +430,16 @@ PrefabInstance:
       propertyPath: _line
       value: 
       objectReference: {fileID: 1299717242}
+    - target: {fileID: 114027286958930622, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: _maxDistance
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 114834937207041870, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
-      propertyPath: _swingStrength
-      value: 12
-      objectReference: {fileID: 0}
+      propertyPath: _speedText
+      value: 
+      objectReference: {fileID: 2019716481}
     - target: {fileID: 42509386, guid: 5ba74af247f33448fae725749855add4, type: 3}
       propertyPath: _fishCountText
       value: 
@@ -548,6 +553,18 @@ RectTransform:
 --- !u!114 &1578866240 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1578866240, guid: 2e237f7c691d44576b8208b629b443ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 400676850}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2019716481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3351837047589754620, guid: 2e237f7c691d44576b8208b629b443ad,
     type: 3}
   m_PrefabInstance: {fileID: 400676850}
   m_PrefabAsset: {fileID: 0}
