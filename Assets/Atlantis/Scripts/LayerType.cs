@@ -9,6 +9,11 @@ public class LayerType : MonoSingleton<LayerType>
         get { return _layerFish; }
     }
 
-    [SerializeField] int _layerFish;
+    public int decors
+    {
+        get { return _decors; }
+    }
 
+    [SerializeField] int _layerFish;
+    [SerializeField] int _decors;
 }

@@ -20,7 +20,7 @@ public class PlayerCamera : MonoBehaviour
     {
         Vector3 pos = _ship.transform.position - _offsetOrigin;
 
-        Vector3 target = _ship.direction * _moveOffsetScale;
+        Vector3 target = _ship.velocity * _moveOffsetScale;
 
         float maxDist = _speedOffset * dt;
         float t = Mathf.Lerp(0f, 1f, (target - _offset).magnitude * _slowing);

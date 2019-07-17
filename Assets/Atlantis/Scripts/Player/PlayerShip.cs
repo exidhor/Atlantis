@@ -5,7 +5,7 @@ using Tools;
 
 public class PlayerShip : MonoSingleton<PlayerShip>
 {
-    public Vector3 direction
+    public Vector3 velocity
     {
         get { return _direction; }
     }
@@ -33,6 +33,7 @@ public class PlayerShip : MonoSingleton<PlayerShip>
     [Header("Linking")]
     [SerializeField] Text _speedText;
     [SerializeField] Transform _shipModel;
+    [SerializeField] PlayerShipBody _body;
 
     [Header("Infos")]
     [SerializeField, UnityReadOnly] float _speed;
@@ -43,19 +44,46 @@ public class PlayerShip : MonoSingleton<PlayerShip>
     Vector3 _direction;
     Vector3 _targetMove;
 
+    float _disableInputsTime;
+
+    public void DisableInputs(float time)
+    {
+        _disableInputsTime = time;
+    }
+
+    public void ApplyRepulseForce(Vector2 velocity, float angular, GameObject origin)
+    {
+        _body.ApplyRepulseForce(velocity, angular, origin);
+    }
+
     public void Move(bool isBreaking, Vector2 inputMove, float dt)
     {
-        if (isBreaking)
-        {
-            HandleBreak(dt);
-            _angular = 0;
-        }
-        else
-        {
-            _targetMove = new Vector3(inputMove.x, inputMove.y, 0);
+        _body.Refresh(dt);
 
-            HandleSpeed(dt);
-            HandleRotation(dt);
+        if (_disableInputsTime > 0)
+        {
+            _disableInputsTime -= dt;
+        }
+
+        if (_disableInputsTime > 0)
+        {
+            _angular = 0f;
+            _speed = 0f;
+        }
+        else 
+        {
+            if (isBreaking)
+            {
+                HandleBreak(dt);
+                _angular = 0f;
+            }
+            else
+            {
+                _targetMove = new Vector3(inputMove.x, inputMove.y, 0f);
+
+                HandleSpeed(dt);
+                HandleRotation(dt);
+            }
         }
 
         UpdateRotation(dt);
@@ -69,6 +97,8 @@ public class PlayerShip : MonoSingleton<PlayerShip>
         float orientationY = 0f;
         float orientationZ = transform.eulerAngles.z;
 
+        _angular += _body.angular;
+
         float angleY = orientationY + _swingStrength * _angular * dt; 
         float angleZ = orientationZ + _angular * dt;
         transform.localRotation = Quaternion.Euler(0, 0, angleZ);
@@ -79,9 +109,9 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
     void UpdateMovement(float dt)
     {
-        Debug.Log("Up = " + transform.up);
-
         _direction = transform.up * _speed;
+        _direction.x += _body.velocity.x;
+        _direction.y += _body.velocity.y;
         Vector3 move = _direction * dt;
 
         Vector2 move2d = new Vector2(move.x, move.y);
