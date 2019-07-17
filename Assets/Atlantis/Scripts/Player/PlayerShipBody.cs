@@ -18,6 +18,7 @@ public class PlayerShipBody : MonoBehaviour
     [SerializeField] string _velocityCurveRepulse;
     [SerializeField] string _angularCurveRepulse;
     [SerializeField] float _disableInputsTime;
+    [SerializeField] float _maxMagnitude;
 
     [Header("Debug")]
     [SerializeField, UnityReadOnly] Vector2 _velocity;
@@ -125,7 +126,13 @@ public class PlayerShipBody : MonoBehaviour
             _angular += _forces[i].currentAngular;
         }
 
-        for(int i = 0; i < _forces.Count; i++)
+        if(_velocity.magnitude > _maxMagnitude)
+        {
+            _velocity.Normalize();
+            _velocity *= _maxMagnitude;
+        }
+
+        for (int i = 0; i < _forces.Count; i++)
         {
             if(_forces[i].isFinish)
             {

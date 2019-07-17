@@ -99,6 +99,13 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         _angular += _body.angular;
 
+        float max = _angularSpeed * _speed * _speedAffectAngular;
+
+        if (Mathf.Abs(_angular) > max)
+        {
+            _angular = Mathf.Sign(_angular) * max;
+        }
+
         float angleY = orientationY + _swingStrength * _angular * dt; 
         float angleZ = orientationZ + _angular * dt;
         transform.localRotation = Quaternion.Euler(0, 0, angleZ);

@@ -91,7 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocityCurveRepulse: repulseSpeed
   _angularCurveRepulse: repulseAngular
-  _disableInputsTime: 0.5
+  _disableInputsTime: 0.3
+  _maxMagnitude: 8
   _velocity: {x: 0, y: 0}
   _angular: 0
 --- !u!50 &670777756
@@ -361,12 +362,12 @@ MonoBehaviour:
   _acceleration: 10
   _decceleration: -0.1
   _breakSpeed: -0.3
-  _maxSpeed: 18
-  _angularSpeed: 60
-  _speedAffectAngular: 0.1
-  _dampling: 1.5
-  _slideStrength: 18
-  _swingStrength: 12
+  _maxSpeed: 20
+  _angularSpeed: 80
+  _speedAffectAngular: 0.15
+  _dampling: 2
+  _slideStrength: 12
+  _swingStrength: 0
   _speedText: {fileID: 0}
   _shipModel: {fileID: 8384576977451222328}
   _body: {fileID: 838620156352793245}
@@ -429,13 +430,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.1698794, y: 2.078483}
-      - {x: 0.8344542, y: 2.8542511}
-      - {x: -0.037088633, y: 3.361672}
-      - {x: -0.8985347, y: 2.773739}
-      - {x: -1.1869463, y: 1.8624895}
-      - {x: -0.9828622, y: -3.2562616}
-      - {x: 1.0080438, y: -3.231492}
+    - - {x: 0.959908, y: -2.282793}
+      - {x: 1.6428983, y: -0.624136}
+      - {x: 1.6085081, y: 0.7060375}
+      - {x: 1.3513553, y: 1.6801319}
+      - {x: 0.4872278, y: 3.0670013}
+      - {x: -0.3906238, y: 3.0531769}
+      - {x: -1.2710257, y: 1.7496967}
+      - {x: -1.528666, y: 0.6185684}
+      - {x: -1.4649751, y: -1.2423878}
+      - {x: -0.28196597, y: -3.0783138}
+      - {x: 0.20198011, y: -3.1049366}
 --- !u!114 &729088331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,8 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30da017ad9dca486db0c2e64f69f57ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minRepulseSpeed: 3
-  _correctorCoef: 0.1
+  _minRepulseSpeed: 2
+  _correctorCoef: 0
+  _angularCoef: 0
 --- !u!1001 &5161354125610277883
 PrefabInstance:
   m_ObjectHideFlags: 0
