@@ -46,9 +46,9 @@ MonoBehaviour:
   _curves:
   - name: repulseSpeed
     curve:
-      _startValue: 0.25
+      _startValue: 0
       _endValue: 1
-      _duration: 0.4
+      _duration: 1
       _curve:
         serializedVersion: 2
         m_Curve:
@@ -84,9 +84,9 @@ MonoBehaviour:
         m_RotationOrder: 0
   - name: repulseAngular
     curve:
-      _startValue: 0.05
+      _startValue: 0
       _endValue: 0.2
-      _duration: 0.1
+      _duration: 0.3
       _curve:
         serializedVersion: 2
         m_Curve:
