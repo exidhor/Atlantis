@@ -299,6 +299,16 @@ PrefabInstance:
       propertyPath: _maxSpeedToFish
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4638597070192488709, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _minLineLength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _pointCount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3734943845749287684, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: m_Layer
