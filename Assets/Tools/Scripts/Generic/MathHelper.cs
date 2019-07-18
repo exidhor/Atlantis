@@ -1,7 +1,27 @@
 ﻿using UnityEngine;
+using System;
 
 namespace Tools
 {
+    [Serializable]
+    public struct CircleCircleIntersection
+    {
+        public static CircleCircleIntersection invalid = new CircleCircleIntersection(false, Vector2.zero, Vector2.zero, Vector2.zero);
+
+        public bool isValid;
+        public Vector2 left;
+        public Vector2 right;
+        public Vector2 middle;
+
+        public CircleCircleIntersection(bool isValid, Vector2 left, Vector2 right, Vector2 middle)
+        {
+            this.isValid = isValid;
+            this.left = left;
+            this.right = right;
+            this.middle = middle; 
+        }
+    }
+
     /// <summary>
     /// Gather all the usefull methods around globalbounds
     /// </summary>
@@ -253,6 +273,54 @@ namespace Tools
         public static Vector2 ClosestPointToBounds(Bounds bounds, Vector2 outsidePoint)
         {
             return ClosestPointToRect(bounds.min.x, bounds.max.x, bounds.max.y, bounds.min.y, outsidePoint);
+        }
+
+        /// <summary>
+        /// Find the intersection between two circles.
+        /// source : https://stackoverflow.com/questions/3349125/circle-circle-intersection-points
+        /// </summary>
+        /// <returns>The circle intersects.</returns>
+        /// <param name="centerA">Center a.</param>
+        /// <param name="centerB">Center b.</param>
+        public static CircleCircleIntersection CircleCircleIntersects(Vector2 centerA, float radiusA, Vector2 centerB, float radiusB)
+        {
+            float d = Vector2.Distance(centerA, centerB);
+
+            if (d > radiusA + radiusB)
+                return CircleCircleIntersection.invalid;
+
+            if (d < Mathf.Abs(radiusA - radiusB))
+                return CircleCircleIntersection.invalid;
+
+            if (d == 0)
+                return CircleCircleIntersection.invalid;
+
+            // a = (r02 - r12 + d2 ) / (2 d)
+            float a = (radiusA * radiusA - radiusB * radiusB + d * d) / (2 * d);
+
+            // P2 = P0 + a ( P1 - P0 ) / d
+            Vector2 middle = centerA + a * (centerB - centerA) / d;
+
+            // h2 = r02 - a2
+            float h = Mathf.Sqrt(radiusA * radiusA - a * a);
+
+            // x3 = x2 +- h ( y1 - y0 ) / d
+            float m = h * (centerB.y - centerA.y) / d;
+
+            float xLeft = middle.x + m;
+            float xRight = middle.x - m;
+
+            // y3 = y2 -+ h ( x1 - x0 ) / d
+
+            float n = h * (centerB.x - centerA.x) / d;
+
+            float yLeft = middle.y - n;
+            float yRight = middle.y + n;
+
+            return new CircleCircleIntersection(true,
+                                                new Vector2(xLeft, yLeft),
+                                                new Vector2(xRight, yRight),
+                                                middle);
         }
     }
 }
