@@ -127,11 +127,13 @@ public class FishingLine : MonoBehaviour
             _isStopping = true;
             _stopAnimation.Init();
             _currentAnimation = _stopAnimation;
+            _fishingFloat.Disappear();
         }
         else
         {
             renderer.enabled = false;
-            _fishingFloat.Stop();
+            _fishingFloat.gameObject.SetActive(false);
+            //_fishingFloat.Disappear();
         }
 
         _time = 0f;
@@ -159,7 +161,7 @@ public class FishingLine : MonoBehaviour
             if (_time > _currentAnimation.duration)
             {
                 _isStopping = false;
-                _fishingFloat.Stop();
+                //_fishingFloat.Disappear();
                 renderer.enabled = false;
                 _time = _currentAnimation.duration;
             }

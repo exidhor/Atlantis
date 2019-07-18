@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7779948108172431711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3758927808208795254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 258ffeed43bb8431aad081bb2d47beee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5161354125149482098
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxSpeedToFish: 3
   _fishTime: 1
+  _extendCoef: 1.5
+  _minLineLength: 2
   _fishingLine: {fileID: 5161354125444000022}
 --- !u!50 &7267215939528735112
 Rigidbody2D:
@@ -168,18 +158,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a7142c8e94909e4f887882cd6e9bbbf, type: 3}
---- !u!1 &3758927808208795254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3044766590539287683, guid: 5a7142c8e94909e4f887882cd6e9bbbf,
-    type: 3}
-  m_PrefabInstance: {fileID: 2191929172262992629}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3758927808208366166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3044766590539518115, guid: 5a7142c8e94909e4f887882cd6e9bbbf,
     type: 3}
   m_PrefabInstance: {fileID: 2191929172262992629}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5133728976368479669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6437298314351187776, guid: 5a7142c8e94909e4f887882cd6e9bbbf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2191929172262992629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258ffeed43bb8431aad081bb2d47beee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4318333584267021118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,7 +252,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _fishingFloat
       value: 
-      objectReference: {fileID: 7779948108172431711}
+      objectReference: {fileID: 5133728976368479669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a596de65f7e664240b5792500f7b9a21, type: 3}
 --- !u!4 &4738855254719082304 stripped

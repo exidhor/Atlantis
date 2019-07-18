@@ -3,9 +3,22 @@ using System.Collections;
 
 public class FishingFloat : MonoBehaviour
 {
+    [SerializeField] float _appearTime;
+    [SerializeField] float _disappearTime;
+
+    bool _isAppearing;
+    bool _isDisappearing;
+
+    float _time;
+
     public void Appear()
     {
+        _isAppearing = true;
+        _isDisappearing = false;
+        transform.localScale = Vector3.zero;
         gameObject.SetActive(true);
+
+        _time = 0f;
     }
 
     public void SetPosition(Vector3 pos)
@@ -13,8 +26,44 @@ public class FishingFloat : MonoBehaviour
         transform.position = pos;
     }
 
-    public void Stop()
+    public void Disappear()
     {
-        gameObject.SetActive(false);
+        _isAppearing = false;
+        _isDisappearing = true;
+        transform.localScale = Vector3.one;
+
+        _time = 0f;
+    }
+
+    void LateUpdate()
+    {
+        _time += Time.deltaTime;
+
+        if (_isAppearing)
+        {
+            if(_time > _appearTime)
+            {
+                _time = _appearTime;
+                _isAppearing = false;
+            }
+
+            float scale = _time / _appearTime;
+
+            transform.localScale = Vector3.one * scale;
+        }
+
+        else if (_isDisappearing)
+        {
+            if (_time > _disappearTime)
+            {
+                _time = _disappearTime;
+                _isDisappearing = false;
+                gameObject.SetActive(false);
+            }
+
+            float scale = 1 - _time / _disappearTime;
+
+            transform.localScale = Vector3.one * scale;
+        }
     }
 }
