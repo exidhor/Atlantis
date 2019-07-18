@@ -46,20 +46,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ec1f84516bb4049b991d5990fdbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 10
+  _acceleration: 20
+  _accelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.9634717
+      outSlope: -1.9634717
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.030147059
+    - serializedVersion: 3
+      time: 1
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _decceleration: -0.1
   _breakSpeed: -0.3
-  _maxSpeed: 20
+  _maxSpeed: 30
   _angularSpeed: 80
   _speedAffectAngular: 0.15
-  _dampling: 2
+  _dampling: 3
   _slideStrength: 12
   _swingStrength: 0
   _speedText: {fileID: 0}
-  _shipModel: {fileID: 76124168438568059}
+  _shipModel: {fileID: 5027850862280469951}
   _body: {fileID: 0}
   _rb: {fileID: 0}
   _speed: 0
+  _currentAcceleration: 2.0920503
   _angular: 0
 --- !u!1001 &958096174235229163
 PrefabInstance:
@@ -133,12 +158,6 @@ PrefabInstance:
 --- !u!4 &5027850862280469951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5227928048869701204, guid: 64726c9e8f471415f98cc3d01b942ab6,
-    type: 3}
-  m_PrefabInstance: {fileID: 958096174235229163}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &76124168438568059 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 884295299704147856, guid: 64726c9e8f471415f98cc3d01b942ab6,
     type: 3}
   m_PrefabInstance: {fileID: 958096174235229163}
   m_PrefabAsset: {fileID: 0}

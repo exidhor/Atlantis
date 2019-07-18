@@ -17,14 +17,18 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
     [Header("Speed Movement")]
     [SerializeField] float _acceleration;
+    [SerializeField] AnimationCurve _accelerationCurve;
     [SerializeField] float _decceleration;
     [SerializeField] float _breakSpeed;
     [SerializeField] float _maxSpeed;
 
     [Header("Rotation Y")]
+    [SerializeField] float _minAngularSpeed;
     [SerializeField] float _angularSpeed;
+    [SerializeField] float _maxAngularSpeed;
     [SerializeField] float _speedAffectAngular = 0.8f;
-    [SerializeField] float _dampling;
+    [SerializeField] bool _disableAngularAcceleration;
+    [SerializeField] float _angularVariation;
 
     [Header("Effects")]
     [SerializeField] float _slideStrength;
@@ -38,6 +42,7 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
     [Header("Infos")]
     [SerializeField, UnityReadOnly] float _speed;
+    [SerializeField, UnityReadOnly] float _currentAcceleration;
     [SerializeField, UnityReadOnly] float _angular;
 
     float _previousAngular;
@@ -46,6 +51,16 @@ public class PlayerShip : MonoSingleton<PlayerShip>
     Vector3 _targetMove;
 
     float _disableInputsTime;
+
+    float GetAcceleration(float speed)
+    {
+        float time = speed / _maxSpeed;
+
+        if (time > 1)
+            time = 1;
+
+        return _accelerationCurve.Evaluate(time) * _acceleration;
+    }
 
     public void DisableInputs(float time)
     {
@@ -102,18 +117,21 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
     void UpdateRotation(float dt)
     {
-        _angular = Mathf.Lerp(_previousAngular, _angular, _dampling * dt);
+        _angular += _body.angular;
+
+        if(!_disableAngularAcceleration)
+        {
+            _angular = Mathf.Lerp(_previousAngular, _angular, _angularVariation * dt);
+        }
 
         float orientationY = 0f;
         float orientationZ = transform.eulerAngles.z;
 
-        _angular += _body.angular;
+        //float max = _angularSpeed * _speed * _speedAffectAngular;
 
-        float max = _angularSpeed * _speed * _speedAffectAngular;
-
-        if (Mathf.Abs(_angular) > max)
+        if (Mathf.Abs(_angular) > _maxAngularSpeed)
         {
-            _angular = Mathf.Sign(_angular) * max;
+            _angular = Mathf.Sign(_angular) * _maxAngularSpeed;
         }
 
         float angleY = orientationY + _swingStrength * _angular * dt; 
@@ -168,7 +186,10 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         if (speed > _speed)
         {
-            float maxSpeed = _speed + _acceleration * dt;
+            //float maxSpeed = _speed + _acceleration * dt;
+
+            _currentAcceleration = GetAcceleration(_speed);
+            float maxSpeed = _speed + _currentAcceleration * dt;
 
             if (maxSpeed < speed)
             {
@@ -199,7 +220,9 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         float angle = Vector3.SignedAngle(forward, _targetMove, Vector3.forward);
 
-        float angular = _angularSpeed * _speedAffectAngular * _speed;
+        float angular = _angularSpeed * (1 + _speedAffectAngular * _speed);
+        angular = Mathf.Lerp(_minAngularSpeed * Mathf.Sign(angular), angular, Mathf.Abs(angle) / 180f);
+
         float targetAngular = angular * dt;
 
         if (Mathf.Abs(angle) < targetAngular)

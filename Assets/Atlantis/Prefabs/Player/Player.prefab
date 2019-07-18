@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveScale: 0.5
-  _maxDistance: 100
+  _maxDistance: 150
   _feedback: {fileID: 114020861080097592}
   _ship: {fileID: 114834937207041870}
   _camera: {fileID: 114202363100061032}
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveOffsetScale: 0.5
-  _speedOffset: 3
+  _speedOffset: 0
   _timeScale: 0
   _ship: {fileID: 114834937207041870}
 --- !u!1001 &4638597070805714569
@@ -307,6 +307,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475528201187806228, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _disableInputsTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _acceleration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _accelerationCurve.m_Curve.Array.data[0].inSlope
+      value: -2.5403595
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _accelerationCurve.m_Curve.Array.data[0].outSlope
+      value: -2.5403595
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _accelerationCurve.m_Curve.Array.data[0].outWeight
+      value: 0.0460002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _minAngularSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _maxAngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _angularVariation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _slideStrength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _speed
+      value: 7.5000296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _currentAcceleration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _angular
+      value: 2.9347346
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7083bc0d3da748b49ec99e969d4ef5f, type: 3}
