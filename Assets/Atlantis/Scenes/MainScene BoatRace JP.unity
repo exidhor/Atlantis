@@ -4017,11 +4017,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6915280609858014367, guid: 8dd8aa4be11fc41dd920bdc005eb8e08,
-        type: 3}
-      propertyPath: _curves.Array.data[0].curve._duration
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dd8aa4be11fc41dd920bdc005eb8e08, type: 3}
 --- !u!1001 &1865114197736843735
