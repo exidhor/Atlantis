@@ -514,66 +514,10 @@ PrefabInstance:
       propertyPath: _speedText
       value: 
       objectReference: {fileID: 2019716481}
-    - target: {fileID: 114834937207041870, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: _rb
-      value: 
-      objectReference: {fileID: 968201936}
     - target: {fileID: 42509386, guid: 5ba74af247f33448fae725749855add4, type: 3}
       propertyPath: _fishCountText
       value: 
       objectReference: {fileID: 1578866240}
-    - target: {fileID: 838620156352793245, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: _disableInputsTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 838620156352793245, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: _maxMagnitude
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_AngularDrag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 5dd414000854b4b8bbc8fad971d82c1f, type: 2}
-    - target: {fileID: 1874134765134482114, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 5dd414000854b4b8bbc8fad971d82c1f, type: 2}
-    - target: {fileID: 729088331, guid: 5ba74af247f33448fae725749855add4, type: 3}
-      propertyPath: _minRepulseSpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba74af247f33448fae725749855add4, type: 3}
 --- !u!1 &406126376
@@ -643,12 +587,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4382611498436478, guid: 78f7ce56f4b9cca46802d7c8b857275d,
     type: 3}
   m_PrefabInstance: {fileID: 1367362408}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &968201936 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 670777756, guid: 5ba74af247f33448fae725749855add4,
-    type: 3}
-  m_PrefabInstance: {fileID: 401175275}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &984211691
 PrefabInstance:

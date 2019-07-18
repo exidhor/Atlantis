@@ -91,8 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocityCurveRepulse: repulseSpeed
   _angularCurveRepulse: repulseAngular
-  _disableInputsTime: 0.3
-  _maxMagnitude: 8
+  _disableInputsTime: 0.5
+  _maxMagnitude: 15
   _velocity: {x: 0, y: 0}
   _angular: 0
 --- !u!50 &670777756
@@ -103,18 +103,18 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670777754}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_AngularDrag: 1
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 5dd414000854b4b8bbc8fad971d82c1f, type: 2}
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1186736092178840
 GameObject:
@@ -371,6 +371,7 @@ MonoBehaviour:
   _speedText: {fileID: 0}
   _shipModel: {fileID: 8384576977451222328}
   _body: {fileID: 838620156352793245}
+  _rb: {fileID: 670777756}
   _speed: 0
   _angular: 0
 --- !u!1 &6894494633961056893
@@ -414,7 +415,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 6894494633961056893}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5dd414000854b4b8bbc8fad971d82c1f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -453,7 +454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30da017ad9dca486db0c2e64f69f57ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minRepulseSpeed: 2
+  _minRepulseSpeed: 10
   _correctorCoef: 0
   _angularCoef: 0
 --- !u!1001 &5161354125610277883
