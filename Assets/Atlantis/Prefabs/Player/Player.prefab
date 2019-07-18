@@ -306,6 +306,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
+      propertyPath: _landAnimation.duration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _landAnimation._distEndSpeedCurveName
+      value: xyFinishingLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _landAnimation._zEndSpeedCurveName
+      value: zFishingLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _landAnimation._amplitudeCurveName
+      value: zAmplitudeFishingLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _landAnimation._amplitudeSpeedCurveName
+      value: xyAmplitudeFishingLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
       propertyPath: _pointCount
       value: 30
       objectReference: {fileID: 0}
