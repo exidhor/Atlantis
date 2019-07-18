@@ -116,6 +116,8 @@ public class Fisherman : Crew
 
     void StartFishing()
     {
+        if (_fishingLine.isStopping) return;
+
         _isFishing = true;
         _currentFishTime = 0f;
 
@@ -149,6 +151,11 @@ public class Fisherman : Crew
 
     void StopFishing()
     {
+        if(_fishingLine.isLanding)
+        {
+            return;
+        }
+
         _isFishing = false;
         _fishZone = null;
         _fishingLine.StopFishing();

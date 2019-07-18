@@ -224,36 +224,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation.duration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._distEndSpeedCurveName
-      value: xyFinishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._zEndSpeedCurveName
-      value: zFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeCurveName
-      value: zAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeSpeedCurveName
-      value: xyAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _pointCount
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: m_Layer
@@ -353,36 +323,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation.duration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._distEndSpeedCurveName
-      value: xyFinishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._zEndSpeedCurveName
-      value: zFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeCurveName
-      value: zAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeSpeedCurveName
-      value: xyAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _pointCount
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: m_Layer
@@ -481,36 +421,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation.duration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._distEndSpeedCurveName
-      value: xyFinishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._zEndSpeedCurveName
-      value: zFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeCurveName
-      value: zAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeSpeedCurveName
-      value: xyAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161354125444000022, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: _pointCount
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
@@ -700,36 +610,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _minLineLength
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: _landAnimation.duration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: _landAnimation._distEndSpeedCurveName
-      value: xyFinishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: _landAnimation._zEndSpeedCurveName
-      value: zFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeCurveName
-      value: zAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: _landAnimation._amplitudeSpeedCurveName
-      value: xyAmplitudeFishingLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597071021257828, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: _pointCount
-      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3734943845749287684, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}

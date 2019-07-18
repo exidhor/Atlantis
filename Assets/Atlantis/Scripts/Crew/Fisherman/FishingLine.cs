@@ -33,13 +33,7 @@ public class FishingLine : MonoBehaviour
 
     [Header("Animation")]
     [SerializeField] Animation _landAnimation;
-
-    //[SerializeField] float _landDuration;
-    //[SerializeField] string _distEndSpeedCurveName;
-    //[SerializeField] string _zEndSpeedCurveName;
-
-    //[SerializeField] string _amplitudeCurveName;
-    //[SerializeField] string _amplitudeSpeedCurveName;
+    [SerializeField] Animation _stopAnimation;
 
     [Header("Line Settings")]
     [SerializeField] int _pointCount;
@@ -61,6 +55,17 @@ public class FishingLine : MonoBehaviour
         }
     }
 
+    public bool isStopping
+    {
+        get { return _isStopping; }
+    }
+
+    public bool isLanding
+    {
+        get { return _isLanding; }
+    }
+
+    Animation _currentAnimation;
 
     LineRenderer _renderer;
 
@@ -85,6 +90,7 @@ public class FishingLine : MonoBehaviour
     float _time;
     bool _isLanding;
     bool _isLanded;
+    bool _isStopping;
 
     void Awake()
     {
@@ -104,13 +110,7 @@ public class FishingLine : MonoBehaviour
 
         _landAnimation.Init();
 
-        //if (_distEndSpeedCurve == null)
-        //{
-        //    _distEndSpeedCurve = EvaluationCurveManager.instance.GetCurve(_distEndSpeedCurveName);
-        //    _zEndSpeedCurve = EvaluationCurveManager.instance.GetCurve(_zEndSpeedCurveName);
-        //    _amplitudeCurve = EvaluationCurveManager.instance.GetCurve(_amplitudeCurveName);
-        //    _amplitudeSpeedCurve = EvaluationCurveManager.instance.GetCurve(_amplitudeSpeedCurveName);
-        //}
+        _currentAnimation = _landAnimation;
 
         _p0 = from;
 
@@ -122,11 +122,21 @@ public class FishingLine : MonoBehaviour
 
     public void StopFishing()
     {
+        if(_isLanding || _isLanded)
+        {
+            _isStopping = true;
+            _stopAnimation.Init();
+            _currentAnimation = _stopAnimation;
+        }
+        else
+        {
+            renderer.enabled = false;
+            _fishingFloat.Stop();
+        }
+
+        _time = 0f;
         _isLanding = false;
         _isLanded = false;
-        renderer.enabled = false;
-
-        _fishingFloat.Stop();
     }
 
     void LateUpdate()
@@ -135,10 +145,23 @@ public class FishingLine : MonoBehaviour
 
         if(_isLanding)
         {
-            if(_time > _landAnimation.duration)
+            if(_time > _currentAnimation.duration)
             {
                 _isLanding = false;
-                _time = _landAnimation.duration;
+                _time = _currentAnimation.duration;
+            }
+
+            RefreshControlPoints(_time);
+            RefreshLinePoints();
+        }
+        else if(_isStopping)
+        {
+            if (_time > _currentAnimation.duration)
+            {
+                _isStopping = false;
+                _fishingFloat.Stop();
+                renderer.enabled = false;
+                _time = _currentAnimation.duration;
             }
 
             RefreshControlPoints(_time);
@@ -146,7 +169,7 @@ public class FishingLine : MonoBehaviour
         }
         else if(_isLanded)
         {
-            RefreshControlPoints(_landAnimation.duration);
+            RefreshControlPoints(_currentAnimation.duration);
             RefreshLinePoints();
         }
     }
@@ -155,18 +178,18 @@ public class FishingLine : MonoBehaviour
     {
         _p0 = from;
 
-        float distance01 = _landAnimation.distEndSpeedCurve.Evaluate(time);
+        float distance01 = _currentAnimation.distEndSpeedCurve.Evaluate(time);
         Vector2 pos2D = (_to - from) * distance01 + from;
 
-        float z01 = _landAnimation.zEndSpeedCurve.Evaluate(time);
+        float z01 = _currentAnimation.zEndSpeedCurve.Evaluate(time);
         float z = (_to.z - from.z) * z01 + from.z;
 
         _p2 = new Vector3(pos2D.x, pos2D.y, z);
 
-        distance01 = _landAnimation.amplitudeSpeedCurve.Evaluate(time);
+        distance01 = _currentAnimation.amplitudeSpeedCurve.Evaluate(time);
         pos2D = (_p2 - from) * distance01 + from;
 
-        z01 = _landAnimation.amplitudeCurve.Evaluate(time);
+        z01 = _currentAnimation.amplitudeCurve.Evaluate(time);
         z = (_p2.z - from.z) * z01 + from.z;
 
         _p1 = new Vector3(pos2D.x, pos2D.y, z);

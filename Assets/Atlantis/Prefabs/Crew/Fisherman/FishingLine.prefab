@@ -44,12 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 666f31f141a4e451da08e4c0af7a19b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _duration: 2
-  _distEndSpeedCurveName: xyFinishingLine
-  _zEndSpeedCurveName: zFishingLine
-  _amplitudeCurveName: zAmplitudeFishingLine
-  _amplitudeSpeedCurveName: xyAmplitudeFishingLine
-  _pointCount: 20
+  _landAnimation:
+    duration: 1.5
+    _distEndSpeedCurveName: xyFinishingLine
+    _zEndSpeedCurveName: zFishingLine
+    _amplitudeCurveName: zAmplitudeFishingLine
+    _amplitudeSpeedCurveName: xyAmplitudeFishingLine
+  _stopAnimation:
+    duration: 0.4
+    _distEndSpeedCurveName: inverseLinear
+    _zEndSpeedCurveName: inverseAmplitude
+    _amplitudeCurveName: inverseAmplitudeCurve
+    _amplitudeSpeedCurveName: inverseLinear
+  _pointCount: 30
   _fisherman: {fileID: 0}
   _fishingFloat: {fileID: 0}
 --- !u!120 &8956847913392546346
