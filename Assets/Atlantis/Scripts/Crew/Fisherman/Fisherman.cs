@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Tools;
 
 public class Fisherman : Crew
 {
     [Header("Logic")]
     [SerializeField] float _maxSpeedToFish;
     [SerializeField] float _fishTime;
+    [SerializeField] float _extendCoef = 1.5f;
 
     [Header("Linking")]
     [SerializeField] FishingLine _fishingLine;
@@ -20,9 +22,21 @@ public class Fisherman : Crew
     bool canFish
     {
         get 
-        { 
-            return (PlayerShip.instance.velocity.magnitude < _maxSpeedToFish)
-                    && !PlayerShip.instance.disableInputs; 
+        {
+            bool speedOK = (PlayerShip.instance.velocity.magnitude < _maxSpeedToFish);
+            bool inputOK = !PlayerShip.instance.disableInputs;
+
+            if(!speedOK)
+            {
+                Debug.Log("Speed not ok to fish (velocity : " + PlayerShip.instance.velocity + ")");
+            }
+
+            if (!inputOK)
+            {
+                Debug.Log("Input not ok to fish");
+            }
+
+            return speedOK && inputOK;
         }
     }
 
@@ -36,7 +50,7 @@ public class Fisherman : Crew
         _fishingLine.StopFishing();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerType.instance.layerFish)
         {
@@ -75,14 +89,16 @@ public class Fisherman : Crew
         {
             if(!canFish)
             {
+                Debug.Log("There is not anymore the condition to fish -- STOP --");
                 StopFishing();
                 return;
             }
 
             float lineDistance = Vector2.Distance(_floatPosition, transform.position);
 
-            if (_collider.radius > lineDistance)
+            if (_collider.radius * _extendCoef < lineDistance)
             {
+                Debug.Log("Not at range to fish -- STOP --");
                 StopFishing();
                 return;
             }
@@ -101,13 +117,19 @@ public class Fisherman : Crew
     {
         _isFishing = true;
         _currentFishTime = 0f;
-        _floatPosition = _fishZone.transform.position;
+
+        Vector3 target = _fishZone.transform.position;
+        Vector2 from = transform.position;
+        Vector2 point = MathHelper.ShootPoint(from, target, _collider.radius);
+
+        _floatPosition = new Vector3(point.x, point.y, target.z);
         _fishingLine.Land(_floatPosition);
     }
 
     void StopFishing()
     {
         _isFishing = false;
+        _fishZone = null;
         _fishingLine.StopFishing();
     }
 }
