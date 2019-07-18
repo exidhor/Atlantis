@@ -212,7 +212,12 @@ PrefabInstance:
     - target: {fileID: 5475528201187806228, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: _disableInputsTime
-      value: 0.4
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475528201187806228, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _maxMagnitude
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
@@ -283,6 +288,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _angular
       value: 2.9347346
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597070427506626, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _minRepulseSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597070427506626, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _angularCoef
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7083bc0d3da748b49ec99e969d4ef5f, type: 3}
