@@ -34,6 +34,7 @@ public class PlayerShip : MonoSingleton<PlayerShip>
     [SerializeField] Text _speedText;
     [SerializeField] Transform _shipModel;
     [SerializeField] PlayerShipBody _body;
+    [SerializeField] Rigidbody2D _rb;
 
     [Header("Infos")]
     [SerializeField, UnityReadOnly] float _speed;
@@ -58,6 +59,15 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
     public void Move(bool isBreaking, Vector2 inputMove, float dt)
     {
+        //float strength = inputMove.magnitude;
+
+        //float angle = Vector2.SignedAngle(_rb.velocity, inputMove);
+
+        //_rb.AddForce(_rb.transform.up * strength);
+        //_rb.AddTorque(angle);
+
+        // ---------------------------------------------------------
+
         _body.Refresh(dt);
 
         if (_disableInputsTime > 0)
@@ -108,8 +118,10 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         float angleY = orientationY + _swingStrength * _angular * dt; 
         float angleZ = orientationZ + _angular * dt;
-        transform.localRotation = Quaternion.Euler(0, 0, angleZ);
-        _shipModel.localRotation = Quaternion.Euler(0, angleY, 0f);
+        //transform.localRotation = Quaternion.Euler(0, 0, angleZ);
+        //_shipModel.localRotation = Quaternion.Euler(0, angleY, 0f);
+
+        _rb.angularVelocity = _angular;
 
         _previousAngular = _angular;
     }
@@ -134,7 +146,9 @@ public class PlayerShip : MonoSingleton<PlayerShip>
         move.x = move2d.x;
         move.y = move2d.y;
 
-        transform.localPosition += move;
+        //transform.localPosition += move;
+
+        _rb.velocity = move2d / dt;
     }
 
     void HandleBreak(float dt)
