@@ -237,22 +237,32 @@ PrefabInstance:
     - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: _minAngularSpeed
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _angularSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: _maxAngularSpeed
-      value: 120
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: _speedAffectAngular
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: _angularVariation
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: _slideStrength
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
