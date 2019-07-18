@@ -8,6 +8,7 @@ public class Fisherman : Crew
     [SerializeField] float _maxSpeedToFish;
     [SerializeField] float _fishTime;
     [SerializeField] float _extendCoef = 1.5f;
+    [SerializeField] float _minLineLength = 2f;
 
     [Header("Linking")]
     [SerializeField] FishingLine _fishingLine;
@@ -120,7 +121,27 @@ public class Fisherman : Crew
 
         Vector3 target = _fishZone.transform.position;
         Vector2 from = transform.position;
-        Vector2 point = MathHelper.ShootPoint(from, target, _collider.radius);
+        Vector2 point;
+
+        float distToTarget = ((Vector2)target - from).sqrMagnitude;
+        float distToPoint = _collider.radius;
+
+        if (distToTarget < distToPoint)
+        {
+            if (distToTarget < _minLineLength * _minLineLength)
+            {
+                point = MathHelper.ShootPoint(from, target, _minLineLength);
+            }
+            else
+            {
+                point = target;
+            }
+        }
+        else
+        {
+            float dist = Random.Range(_minLineLength, _collider.radius / 2f);
+            point = MathHelper.ShootPoint(from, target, dist);
+        }
 
         _floatPosition = new Vector3(point.x, point.y, target.z);
         _fishingLine.Land(_floatPosition);
