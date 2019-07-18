@@ -363,6 +363,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5400195777594910921, guid: 2c44ca6528e8842e29490ae758be0b66,
         type: 3}
+      propertyPath: _speedOffset
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400195777594910921, guid: 2c44ca6528e8842e29490ae758be0b66,
+        type: 3}
+      propertyPath: _timeScale
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400195777594910921, guid: 2c44ca6528e8842e29490ae758be0b66,
+        type: 3}
       propertyPath: _ship
       value: 
       objectReference: {fileID: 114834937207041870}
