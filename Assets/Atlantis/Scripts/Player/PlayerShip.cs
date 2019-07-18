@@ -137,7 +137,7 @@ public class PlayerShip : MonoSingleton<PlayerShip>
         float angleY = orientationY + _swingStrength * _angular * dt; 
         float angleZ = orientationZ + _angular * dt;
         //transform.localRotation = Quaternion.Euler(0, 0, angleZ);
-        //_shipModel.localRotation = Quaternion.Euler(0, angleY, 0f);
+        _shipModel.localRotation = Quaternion.Euler(0, angleY, 0f);
 
         _rb.angularVelocity = _angular;
 

@@ -355,6 +355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
+      propertyPath: _swingStrength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740147124410083783, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
       propertyPath: _speed
       value: 7.5000296
       objectReference: {fileID: 0}
