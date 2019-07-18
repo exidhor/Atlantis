@@ -80,6 +80,7 @@ public class FishingLine : MonoBehaviour
     Vector3 _p1;
     Vector3 _p2;
 
+    Vector3 _end;
     Vector3 _to;
 
     Vector3 from
@@ -115,7 +116,7 @@ public class FishingLine : MonoBehaviour
         _p0 = from;
 
         RefreshControlPoints(0f);
-        RefreshLinePoints();
+        RefreshLinePoints(true, false);
         _fishingFloat.Appear();
         renderer.enabled = true;
     }
@@ -154,7 +155,7 @@ public class FishingLine : MonoBehaviour
             }
 
             RefreshControlPoints(_time);
-            RefreshLinePoints();
+            RefreshLinePoints(true, true);
         }
         else if(_isStopping)
         {
@@ -167,12 +168,14 @@ public class FishingLine : MonoBehaviour
             }
 
             RefreshControlPoints(_time);
-            RefreshLinePoints();
+            RefreshLinePoints(true, false);
         }
         else if(_isLanded)
         {
+            _to = _fishingFloat.floatPosition;
+
             RefreshControlPoints(_currentAnimation.duration);
-            RefreshLinePoints();
+            RefreshLinePoints(false, false);
         }
     }
 
@@ -197,7 +200,7 @@ public class FishingLine : MonoBehaviour
         _p1 = new Vector3(pos2D.x, pos2D.y, z);
     }
 
-    void RefreshLinePoints()
+    void RefreshLinePoints(bool refreshFloatPosition, bool bufferEnd)
     {
         for (int i = 0; i < _pointCount; i++)
         {
@@ -205,7 +208,18 @@ public class FishingLine : MonoBehaviour
         }
 
         renderer.SetPositions(_points);
-        _fishingFloat.SetPosition(_points[_pointCount - 1]);
+
+        if(refreshFloatPosition)
+        {
+            _fishingFloat.SetPosition(_points[_pointCount - 1]);
+        }
+        else
+        {
+            _fishingFloat.SetPosition(_end);
+        }
+
+        if (bufferEnd)
+            _end = _points[_pointCount - 1];
     }
 
     Vector3 GetPoint(float t)

@@ -3,8 +3,14 @@ using System.Collections;
 
 public class FishingFloat : MonoBehaviour
 {
+    public Vector3 floatPosition
+    {
+        get { return _model.position; }
+    }
+
     [SerializeField] float _appearTime;
     [SerializeField] float _disappearTime;
+    [SerializeField] Transform _model;
 
     bool _isAppearing;
     bool _isDisappearing;
