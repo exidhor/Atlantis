@@ -50,6 +50,7 @@ MonoBehaviour:
   _amplitudeCurveName: zAmplitudeFishingLine
   _amplitudeSpeedCurveName: xyAmplitudeFishingLine
   _pointCount: 20
+  _fisherman: {fileID: 0}
   _fishingFloat: {fileID: 0}
 --- !u!120 &8956847913392546346
 LineRenderer:

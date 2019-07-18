@@ -16,6 +16,7 @@ public class FishingLine : MonoBehaviour
     [SerializeField] int _pointCount;
 
     [Header("Linking")]
+    [SerializeField] Transform _fisherman;
     [SerializeField] FishingFloat _fishingFloat;
 
     LineRenderer _renderer;
@@ -30,11 +31,16 @@ public class FishingLine : MonoBehaviour
     Vector3 _p1;
     Vector3 _p2;
 
-    Vector3 _from;
     Vector3 _to;
+
+    Vector3 from
+    {
+        get { return _fisherman.position; }
+    }
 
     float _time;
     bool _isLanding;
+    bool _isLanded;
 
     void Awake()
     {
@@ -46,15 +52,15 @@ public class FishingLine : MonoBehaviour
         _renderer.SetPositions(_points);
     }
 
-    public void Land(Vector3 from, Vector3 to)
+    public void Land(Vector3 to)
     {
         _isLanding = true;
+        _isLanded = true;
 
-        _from = from;
         _to = to;
         _time = 0f;
 
-        if(_distEndSpeedCurve == null)
+        if (_distEndSpeedCurve == null)
         {
             _distEndSpeedCurve = EvaluationCurveManager.instance.GetCurve(_distEndSpeedCurveName);
             _zEndSpeedCurve = EvaluationCurveManager.instance.GetCurve(_zEndSpeedCurveName);
@@ -62,9 +68,9 @@ public class FishingLine : MonoBehaviour
             _amplitudeSpeedCurve = EvaluationCurveManager.instance.GetCurve(_amplitudeSpeedCurveName);
         }
 
-        _p0 = _from;
+        _p0 = from;
 
-        RefreshControlPoints();
+        RefreshControlPoints(0f);
         RefreshLinePoints();
         _fishingFloat.Appear();
         _renderer.enabled = true;
@@ -73,6 +79,7 @@ public class FishingLine : MonoBehaviour
     public void StopFishing()
     {
         _isLanding = false;
+        _isLanded = false;
         _renderer.enabled = false;
 
         _fishingFloat.Stop();
@@ -90,26 +97,31 @@ public class FishingLine : MonoBehaviour
                 _time = _duration;
             }
 
-            RefreshControlPoints();
+            RefreshControlPoints(_time);
+            RefreshLinePoints();
+        }
+        else if(_isLanded)
+        {
+            RefreshControlPoints(_duration);
             RefreshLinePoints();
         }
     }
 
-    void RefreshControlPoints()
+    void RefreshControlPoints(float time)
     {
-        float distance01 = _distEndSpeedCurve.Evaluate(_time);
-        Vector2 pos2D = (_to - _from) * distance01 + _from;
+        float distance01 = _distEndSpeedCurve.Evaluate(time);
+        Vector2 pos2D = (_to - from) * distance01 + from;
 
-        float z01 = _zEndSpeedCurve.Evaluate(_time);
-        float z = (_to.z - _from.z) * z01 + _from.z;
+        float z01 = _zEndSpeedCurve.Evaluate(time);
+        float z = (_to.z - from.z) * z01 + from.z;
 
         _p2 = new Vector3(pos2D.x, pos2D.y, z);
 
-        distance01 = _amplitudeSpeedCurve.Evaluate(_time);
-        pos2D = (_p2 - _from) * distance01 + _from;
+        distance01 = _amplitudeSpeedCurve.Evaluate(time);
+        pos2D = (_p2 - from) * distance01 + from;
 
-        z01 = _amplitudeCurve.Evaluate(_time);
-        z = (_p2.z - _from.z) * z01 + _from.z;
+        z01 = _amplitudeCurve.Evaluate(time);
+        z = (_p2.z - from.z) * z01 + from.z;
 
         _p1 = new Vector3(pos2D.x, pos2D.y, z);
     }

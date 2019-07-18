@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2716728559390348404}
   - component: {fileID: 2716728559390348407}
-  - component: {fileID: 2716728559390348405}
   - component: {fileID: 5897154182583083953}
+  - component: {fileID: 7391259691263575615}
   m_Layer: 9
   m_Name: FishZone
   m_TagString: Untagged
@@ -81,19 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!135 &2716728559390348405
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2716728559390348406}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5000005
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5897154182583083953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,3 +93,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812a3d0eb3d3c422d835d6610b890d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &7391259691263575615
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716728559390348406}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5

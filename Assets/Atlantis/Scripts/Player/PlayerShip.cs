@@ -10,7 +10,12 @@ public class PlayerShip : MonoSingleton<PlayerShip>
         get { return _direction; }
     }
 
-    public float speed
+    public bool disableInputs
+    {
+        get { return _disableInputsTime > 0f; }
+    }
+
+    public float engineSpeed
     {
         get { return _speed; }
     }
@@ -85,12 +90,12 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         _body.Refresh(dt);
 
-        if (_disableInputsTime > 0)
+        if (disableInputs)
         {
             _disableInputsTime -= dt;
         }
 
-        if (_disableInputsTime > 0)
+        if (disableInputs)
         {
             _angular = 0f;
             _speed = 0f;

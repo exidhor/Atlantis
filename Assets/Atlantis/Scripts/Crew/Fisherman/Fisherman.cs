@@ -10,13 +10,25 @@ public class Fisherman : Crew
     [Header("Linking")]
     [SerializeField] FishingLine _fishingLine;
 
+    CircleCollider2D _collider;
     FishZone _fishZone;
     bool _isFishing;
     float _currentFishTime;
 
+    Vector3 _floatPosition;
+
     bool canFish
     {
-        get { return (PlayerShip.instance.speed < _maxSpeedToFish); }
+        get 
+        { 
+            return (PlayerShip.instance.velocity.magnitude < _maxSpeedToFish)
+                    && !PlayerShip.instance.disableInputs; 
+        }
+    }
+
+    void Awake()
+    {
+        _collider = GetComponent<CircleCollider2D>();
     }
 
     void OnEnable()
@@ -24,7 +36,7 @@ public class Fisherman : Crew
         _fishingLine.StopFishing();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider other)
     {
         if (other.gameObject.layer == LayerType.instance.layerFish)
         {
@@ -32,7 +44,7 @@ public class Fisherman : Crew
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider other)
     {
         if (_fishZone != null
             && _fishZone.gameObject == other.gameObject)
@@ -64,16 +76,23 @@ public class Fisherman : Crew
             if(!canFish)
             {
                 StopFishing();
+                return;
             }
-            else
-            {
-                _currentFishTime += dt;
 
-                if (_currentFishTime > _fishTime)
-                {
-                    _currentFishTime -= _fishTime;
-                    Cargo.instance.AddFish(1);
-                }
+            float lineDistance = Vector2.Distance(_floatPosition, transform.position);
+
+            if (_collider.radius > lineDistance)
+            {
+                StopFishing();
+                return;
+            }
+
+            _currentFishTime += dt;
+
+            if (_currentFishTime > _fishTime)
+            {
+                _currentFishTime -= _fishTime;
+                Cargo.instance.AddFish(1);
             }
         }
     }
@@ -82,7 +101,8 @@ public class Fisherman : Crew
     {
         _isFishing = true;
         _currentFishTime = 0f;
-        _fishingLine.Land(transform.position, _fishZone.transform.position);
+        _floatPosition = _fishZone.transform.position;
+        _fishingLine.Land(_floatPosition);
     }
 
     void StopFishing()
