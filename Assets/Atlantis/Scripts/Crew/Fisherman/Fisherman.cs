@@ -36,7 +36,7 @@ public class Fisherman : Crew
         _fishingLine.StopFishing();
     }
 
-    void OnTriggerEnter2D(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerType.instance.layerFish)
         {
@@ -44,7 +44,7 @@ public class Fisherman : Crew
         }
     }
 
-    void OnTriggerExit2D(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if (_fishZone != null
             && _fishZone.gameObject == other.gameObject)

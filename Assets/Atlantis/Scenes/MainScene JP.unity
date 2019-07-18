@@ -522,11 +522,6 @@ PrefabInstance:
       propertyPath: _fishCountText
       value: 
       objectReference: {fileID: 1578866240}
-    - target: {fileID: 2556503485182239347, guid: 5ba74af247f33448fae725749855add4,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba74af247f33448fae725749855add4, type: 3}
 --- !u!1 &406126376
@@ -1078,11 +1073,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7391259691263575615, guid: 93d460a083fb64e0bb4ddbafe287eacd,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93d460a083fb64e0bb4ddbafe287eacd, type: 3}

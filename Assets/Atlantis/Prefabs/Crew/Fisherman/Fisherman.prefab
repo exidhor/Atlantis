@@ -22,8 +22,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5161354125149482097}
   - component: {fileID: 5161354125149482103}
-  - component: {fileID: 5095037646349099709}
   - component: {fileID: 7267215939528735112}
+  - component: {fileID: 5095037646349099709}
   m_Layer: 10
   m_Name: Fisherman
   m_TagString: Untagged
@@ -62,22 +62,6 @@ MonoBehaviour:
   _maxSpeedToFish: 3
   _fishTime: 1
   _fishingLine: {fileID: 5161354125444000022}
---- !u!58 &5095037646349099709
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5161354125149482098}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &7267215939528735112
 Rigidbody2D:
   serializedVersion: 4
@@ -99,6 +83,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5095037646349099709
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5161354125149482098}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &2191929172262992629
 PrefabInstance:
   m_ObjectHideFlags: 0

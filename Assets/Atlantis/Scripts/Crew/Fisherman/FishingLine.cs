@@ -109,6 +109,8 @@ public class FishingLine : MonoBehaviour
 
     void RefreshControlPoints(float time)
     {
+        _p0 = from;
+
         float distance01 = _distEndSpeedCurve.Evaluate(time);
         Vector2 pos2D = (_to - from) * distance01 + from;
 
