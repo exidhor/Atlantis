@@ -48,7 +48,22 @@ public class FishingLine : MonoBehaviour
     [SerializeField] Transform _fisherman;
     [SerializeField] FishingFloat _fishingFloat;
 
+    LineRenderer renderer
+    {
+        get
+        {
+            if(_renderer == null)
+            {
+                _renderer = GetComponent<LineRenderer>();
+            }
+
+            return _renderer;
+        }
+    }
+
+
     LineRenderer _renderer;
+
     Vector3[] _points;
 
     EvaluationCurve _distEndSpeedCurve;
@@ -73,12 +88,10 @@ public class FishingLine : MonoBehaviour
 
     void Awake()
     {
-        _renderer = GetComponent<LineRenderer>();
-
         _points = new Vector3[_pointCount];
 
-        _renderer.positionCount = _pointCount;
-        _renderer.SetPositions(_points);
+        renderer.positionCount = _pointCount;
+        renderer.SetPositions(_points);
     }
 
     public void Land(Vector3 to)
@@ -104,14 +117,14 @@ public class FishingLine : MonoBehaviour
         RefreshControlPoints(0f);
         RefreshLinePoints();
         _fishingFloat.Appear();
-        _renderer.enabled = true;
+        renderer.enabled = true;
     }
 
     public void StopFishing()
     {
         _isLanding = false;
         _isLanded = false;
-        _renderer.enabled = false;
+        renderer.enabled = false;
 
         _fishingFloat.Stop();
     }
@@ -166,7 +179,7 @@ public class FishingLine : MonoBehaviour
             _points[i] = GetPoint(i / (float)_pointCount);
         }
 
-        _renderer.SetPositions(_points);
+        renderer.SetPositions(_points);
         _fishingFloat.SetPosition(_points[_pointCount - 1]);
     }
 
