@@ -244,6 +244,6 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
     void LateUpdate()
     {
-        _speedText.text = "Speed : " + _speed;
+        _speedText.text = _speed + " MpS";
     }
 }

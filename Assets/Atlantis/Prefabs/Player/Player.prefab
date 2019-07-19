@@ -43,7 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6e3cdc830314571be92744020b4fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fishCountText: {fileID: 0}
+  _littleFish:
+    _countText: {fileID: 0}
+    _spriteEnable: {fileID: 0}
+    _image: {fileID: 0}
+  _bigFish:
+    _countText: {fileID: 0}
+    _spriteEnable: {fileID: 0}
+    _image: {fileID: 0}
+  _octopus:
+    _countText: {fileID: 0}
+    _spriteEnable: {fileID: 0}
+    _image: {fileID: 0}
 --- !u!1 &1186736092178840
 GameObject:
   m_ObjectHideFlags: 0
