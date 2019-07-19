@@ -154,6 +154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fisherman (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5161354125149482098, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482097, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -209,6 +214,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3758927808208795254, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_Radius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: _maxSpeedToFish
@@ -219,25 +234,15 @@ PrefabInstance:
       propertyPath: _minLineLength
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3758927808208795254, guid: 67b83f7d1db714357b9ea09e71f3c773,
+    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_Radius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b83f7d1db714357b9ea09e71f3c773, type: 3}
@@ -252,6 +257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fisherman (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161354125149482098, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482097, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
@@ -308,6 +318,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3758927808208795254, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_Radius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: _maxSpeedToFish
@@ -318,25 +338,15 @@ PrefabInstance:
       propertyPath: _minLineLength
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3758927808208795254, guid: 67b83f7d1db714357b9ea09e71f3c773,
+    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_Radius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b83f7d1db714357b9ea09e71f3c773, type: 3}
@@ -351,6 +361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fisherman (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161354125149482098, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482097, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
@@ -407,6 +422,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3758927808208795254, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
+        type: 3}
+      propertyPath: m_Radius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: _maxSpeedToFish
@@ -417,25 +442,15 @@ PrefabInstance:
       propertyPath: _minLineLength
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3758927808208795254, guid: 67b83f7d1db714357b9ea09e71f3c773,
+    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: m_Layer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_Radius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b83f7d1db714357b9ea09e71f3c773, type: 3}
@@ -505,6 +520,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597070192488707, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4638597070192488707, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.31
       objectReference: {fileID: 0}
     - target: {fileID: 5475528201187806228, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
@@ -586,21 +611,6 @@ PrefabInstance:
       propertyPath: _angular
       value: 2.9347346
       objectReference: {fileID: 0}
-    - target: {fileID: 4638597070427506626, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: _minRepulseSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597070192488707, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638597070192488707, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.31
-      objectReference: {fileID: 0}
     - target: {fileID: 4638597070192488709, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: _maxSpeedToFish
@@ -611,15 +621,10 @@ PrefabInstance:
       propertyPath: _minLineLength
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 3734943845749287684, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+    - target: {fileID: 4638597070427506626, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3734943845749287686, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
+      propertyPath: _minRepulseSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4704712330914889679, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
@@ -630,6 +635,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseFullKinematicContacts
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734943845749287684, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734943845749287686, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7083bc0d3da748b49ec99e969d4ef5f, type: 3}
@@ -769,3 +784,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448598cd220a34d51a41cb6354cfc6d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &7979152665320302538
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4345230169796760}
+    m_Modifications:
+    - target: {fileID: 3062311351733644225, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637254010097221699, guid: 2588f5eff051845638f6aa163d89b8e0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2588f5eff051845638f6aa163d89b8e0, type: 3}
