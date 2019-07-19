@@ -1,16 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tools;
 
-public class MainManager : MonoBehaviour {
+public class MainManager : MonoSingleton<MainManager> 
+{
+    public bool started
+    {
+        get { return _started; }
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] GameObject _startPanel;
+    [SerializeField] GameObject _gameOverPanel;
+
+    float _time;
+
+    bool _started;
+
+	public void StartGame()
+    {
+        _started = true;
+
+        _startPanel.gameObject.SetActive(false);
+    }
+
+    public void Retry()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    void Update()
+    {
+        _time += Time.deltaTime;
+    }
 }
