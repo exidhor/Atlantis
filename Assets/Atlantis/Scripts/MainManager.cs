@@ -24,6 +24,13 @@ public class MainManager : MonoSingleton<MainManager>
         _startPanel.gameObject.SetActive(false);
     }
 
+    public void EndGame()
+    {
+        _started = false;
+
+        _gameOverPanel.SetActive(true);
+    }
+
     public void Retry()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);

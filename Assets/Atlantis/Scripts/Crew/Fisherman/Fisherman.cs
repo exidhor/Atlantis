@@ -109,7 +109,7 @@ public class Fisherman : Crew
             if (_currentFishTime > _fishTime)
             {
                 _currentFishTime -= _fishTime;
-                Cargo.instance.AddFish(1);
+                Cargo.instance.AddFish(1, _fishZone.fishType);
             }
         }
     }
