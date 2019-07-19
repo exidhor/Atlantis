@@ -7,7 +7,10 @@ namespace Tools
     {
         public static float NextBinomialFloat(float min, float max)
         {
-            return Random.Range(min, max) - Random.Range(min, max);
+            float d = (max - min) / 2;
+            float a = Random.Range(0, d) - Random.Range(0, d);
+
+            return a + d + min;
         }
 
         public static Vector2 PointInCircle(Vector2 center, float radius)
@@ -25,7 +28,7 @@ namespace Tools
                                                               float radiusB,
                                                               CircleCircleIntersection intersection)
         {
-            bool shootOnA = Random.Range(0f, radiusA + radiusB) < radiusA;
+            bool shootOnA = Random.Range(0f, radiusA + radiusB) > radiusA;
 
             Vector2 center;
             float radius;
@@ -41,7 +44,7 @@ namespace Tools
                 radius = radiusB;
             }
 
-            Vector2 o = NextBinomialPointOnSegment(circleA, circleB);
+            Vector2 o = NextBinomialPointOnSegment(intersection.left, intersection.right);
             Vector2 ov = o - center;
 
             float angle = MathHelper.Angle(ov);
@@ -67,7 +70,7 @@ namespace Tools
 
         static Vector2 PointOnSegment(Vector2 a, Vector2 b, float p)
         {
-            Vector2 point = a + (a - b) * p;
+            Vector2 point = a + (b - a) * p;
 
             return point;
         }
