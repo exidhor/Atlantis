@@ -1407,6 +1407,21 @@ PrefabInstance:
       propertyPath: _fishCountText
       value: 
       objectReference: {fileID: 1578866240}
+    - target: {fileID: 5161354124999571989, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161354125369809224, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161354126217738921, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ba74af247f33448fae725749855add4, type: 3}
 --- !u!1001 &419111005
