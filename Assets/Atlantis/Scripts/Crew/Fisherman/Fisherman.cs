@@ -59,15 +59,15 @@ public class Fisherman : Crew
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (_fishZone != null
-            && _fishZone.gameObject == other.gameObject)
-        {
-            _fishZone = null;
-            StopFishing();
-        }
-    }
+    //void OnTriggerExit2D(Collider2D other)
+    //{
+    //    if (_fishZone != null
+    //        && _fishZone.gameObject == other.gameObject)
+    //    {
+    //        _fishZone = null;
+    //        StopFishing();
+    //    }
+    //}
 
     void Update()
     {
@@ -172,13 +172,13 @@ public class Fisherman : Crew
 
             if (radiusA > radiusB)
             {
-                center = centerA;
-                radius = radiusA;
+                center = centerB;
+                radius = radiusB;
             }
             else
             {
-                center = centerB;
-                radius = radiusB;
+                center = centerA;
+                radius = radiusA;
             }
 
             return RandomHelper.PointInCircle(center, radius);
