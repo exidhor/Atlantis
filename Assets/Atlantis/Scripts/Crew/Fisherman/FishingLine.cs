@@ -204,8 +204,10 @@ public class FishingLine : MonoBehaviour
     {
         for (int i = 0; i < _pointCount; i++)
         {
-            _points[i] = GetPoint(i / (float)_pointCount);
+            _points[i] = GetPoint(i / (float)(_pointCount - 1));
         }
+
+        //_points[_pointCount - 1] = _end; 
 
         renderer.SetPositions(_points);
 
