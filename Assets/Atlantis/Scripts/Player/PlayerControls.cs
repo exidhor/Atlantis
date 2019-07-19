@@ -19,6 +19,8 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
+        if (!MainManager.instance.started) return;
+
         if(!_shipInput
             && Input.GetMouseButtonDown(0))
         {
