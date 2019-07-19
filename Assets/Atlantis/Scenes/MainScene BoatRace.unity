@@ -3448,7 +3448,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 87f67b872f6736b4fa71b98ec4b33ac9, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1109378324824983698, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: m_MaxParticleSize
@@ -3477,7 +3477,7 @@ PrefabInstance:
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: ColorModule.enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
@@ -3502,12 +3502,12 @@ PrefabInstance:
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
@@ -3617,7 +3617,7 @@ PrefabInstance:
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
-      value: 0
+      value: 0.06349182
       objectReference: {fileID: 0}
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
@@ -3662,7 +3662,7 @@ PrefabInstance:
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.a
-      value: 0.05882353
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
@@ -3687,11 +3687,26 @@ PrefabInstance:
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
         type: 3}
       propertyPath: ShapeModule.radius.mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.3726415
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.690011
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720534221689865569, guid: 5ba74af247f33448fae725749855add4,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
