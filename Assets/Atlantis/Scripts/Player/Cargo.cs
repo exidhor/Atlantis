@@ -21,7 +21,7 @@ public class Cargo : MonoSingleton<Cargo>
         public void Add(int count)
         {
             _fishCount += count;
-            _countText.text = _fishCount.ToString();
+            _countText.text = _fishCount.ToString() + "/1";
 
             _image.sprite = _spriteEnable;
         }

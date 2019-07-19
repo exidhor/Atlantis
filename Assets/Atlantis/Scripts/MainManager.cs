@@ -14,6 +14,7 @@ public class MainManager : MonoSingleton<MainManager>
     [SerializeField] GameObject _startPanel;
     [SerializeField] GameObject _gameOverPanel;
     [SerializeField] Text _timer;
+    [SerializeField] Text _questTimer;
 
     float _time;
 
@@ -30,6 +31,10 @@ public class MainManager : MonoSingleton<MainManager>
     {
         _started = false;
 
+        int minutes = (int)_time / 60;
+        int secondes = (int)(_time - minutes * 60);
+
+        _questTimer.text = "You achieved the quest in " + minutes + ":" + secondes + ", well done !";
         _gameOverPanel.SetActive(true);
     }
 
