@@ -8,7 +8,7 @@ public class FishZone : MonoBehaviour
     {
         get
         {
-            return collider.radius;
+            return collider.radius * Mathf.Max(transform.lossyScale.x, transform.lossyScale.y);
         }
     }
 
