@@ -6,19 +6,17 @@ namespace Tools
     [Serializable]
     public struct CircleCircleIntersection
     {
-        public static CircleCircleIntersection invalid = new CircleCircleIntersection(false, Vector2.zero, Vector2.zero, Vector2.zero);
+        public static CircleCircleIntersection invalid = new CircleCircleIntersection(false, Vector2.zero, Vector2.zero);
 
         public bool isValid;
         public Vector2 left;
         public Vector2 right;
-        public Vector2 middle;
 
-        public CircleCircleIntersection(bool isValid, Vector2 left, Vector2 right, Vector2 middle)
+        public CircleCircleIntersection(bool isValid, Vector2 left, Vector2 right)
         {
             this.isValid = isValid;
             this.left = left;
             this.right = right;
-            this.middle = middle; 
         }
     }
 
@@ -100,7 +98,7 @@ namespace Tools
         }
 
         /// <summary>
-        /// Return an angle between -90 and 90 degrees representing the smallest difference between the two vector
+        /// Return an angle in radiant
         /// </summary>
         /// <param name="from"></param>
         /// <param name="to"></param>
@@ -108,7 +106,7 @@ namespace Tools
         /// <source>http://answers.unity3d.com/questions/24983/how-to-calculate-the-angle-between-two-vectors.html</source>
         public static float Angle(Vector2 vector2)
         {
-            return Mathf.Atan2(vector2.y, vector2.x) * Mathf.Rad2Deg;
+            return Mathf.Atan2(vector2.y, vector2.x);
         }
 
         /// <summary>
@@ -319,8 +317,7 @@ namespace Tools
 
             return new CircleCircleIntersection(true,
                                                 new Vector2(xLeft, yLeft),
-                                                new Vector2(xRight, yRight),
-                                                middle);
+                                                new Vector2(xRight, yRight));
         }
     }
 }

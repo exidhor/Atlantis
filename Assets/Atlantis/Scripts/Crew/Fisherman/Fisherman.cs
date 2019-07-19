@@ -121,32 +121,74 @@ public class Fisherman : Crew
         _isFishing = true;
         _currentFishTime = 0f;
 
+        Vector2 shootPoint = ShootLine();
+
         Vector3 target = _fishZone.transform.position;
-        Vector2 from = transform.position;
-        Vector2 point;
+        //Vector2 from = transform.position;
+        //Vector2 point;
 
-        float distToTarget = ((Vector2)target - from).sqrMagnitude;
-        float distToPoint = _collider.radius;
+        //float distToTarget = ((Vector2)target - from).sqrMagnitude;
+        //float distToPoint = _collider.radius;
 
-        if (distToTarget < distToPoint)
+        //if (distToTarget < distToPoint)
+        //{
+        //    if (distToTarget < _minLineLength * _minLineLength)
+        //    {
+        //        point = MathHelper.ShootPoint(from, target, _minLineLength);
+        //    }
+        //    else
+        //    {
+        //        point = target;
+        //    }
+        //}
+        //else
+        //{
+        //    float dist = Random.Range(_minLineLength, _collider.radius / 2f);
+        //    point = MathHelper.ShootPoint(from, target, dist);
+        //}
+
+        //_floatPosition = new Vector3(point.x, point.y, target.z);
+        _floatPosition = new Vector3(shootPoint.x, shootPoint.y, target.z);
+        _fishingLine.Land(_floatPosition);
+    }
+
+    Vector2 ShootLine()
+    {
+        Vector2 centerA = _fishZone.transform.position;
+        float radiusA = _fishZone.radius;
+
+        Vector2 centerB = transform.position;
+        float radiusB = _collider.radius;
+
+        CircleCircleIntersection intersect = MathHelper.CircleCircleIntersects(centerA,
+                                                                               radiusA,
+                                                                               centerB,
+                                                                               radiusB);
+
+        if (!intersect.isValid)
         {
-            if (distToTarget < _minLineLength * _minLineLength)
+            Vector2 center;
+            float radius;
+
+            if (radiusA > radiusB)
             {
-                point = MathHelper.ShootPoint(from, target, _minLineLength);
+                center = centerA;
+                radius = radiusA;
             }
             else
             {
-                point = target;
+                center = centerB;
+                radius = radiusB;
             }
-        }
-        else
-        {
-            float dist = Random.Range(_minLineLength, _collider.radius / 2f);
-            point = MathHelper.ShootPoint(from, target, dist);
+
+            return RandomHelper.PointInCircle(center, radius);
         }
 
-        _floatPosition = new Vector3(point.x, point.y, target.z);
-        _fishingLine.Land(_floatPosition);
+        return RandomHelper.PointInCircleCircleIntersection(centerA,
+                                                            radiusA,
+                                                            centerB,
+                                                            radiusB,
+                                                            intersect);
     }
 
     void StopFishing()

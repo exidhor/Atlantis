@@ -31,8 +31,8 @@ public class TestCircleCircleIntersects : MonoBehaviour
             Gizmos.color = Color.cyan;
             Gizmos.DrawSphere(inter.left, 0.1f);
 
-            Gizmos.color = Color.black;
-            Gizmos.DrawSphere(inter.middle, 0.1f);
+            //Gizmos.color = Color.black;
+            //Gizmos.DrawSphere(inter.middle, 0.1f);
 
             Gizmos.color = Color.green;
             Gizmos.DrawSphere(inter.right, 0.1f);
