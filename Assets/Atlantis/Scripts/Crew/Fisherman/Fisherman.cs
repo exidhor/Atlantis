@@ -9,6 +9,7 @@ public class Fisherman : Crew
     [SerializeField] float _fishTime;
     [SerializeField] float _extendCoef = 1.5f;
     [SerializeField] float _minLineLength = 2f;
+    [SerializeField] bool _restartAfterCatching;
 
     [Header("Linking")]
     [SerializeField] FishingLine _fishingLine;
@@ -52,7 +53,7 @@ public class Fisherman : Crew
     }
 
     // todo : opti this
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerType.instance.layerFish)
         {
@@ -76,14 +77,20 @@ public class Fisherman : Crew
         {
             Fish(Time.deltaTime);
         }
+        else if(_isFishing)
+        {
+            StopFishing();
+        }
     }
 
     void Fish(float dt)
     {
         if(_fishZone != null
-            && _fishZone.radius + _collider.radius < Vector2.Distance(transform.position, _fishZone.transform.position))
+            && _fishZone.radius + (_collider.radius * _extendCoef) < Vector2.Distance(transform.position, _fishZone.transform.position))
         {
-            StopFishing();
+            float d = Vector2.Distance(transform.position, _fishZone.transform.position);
+
+            _fishZone = null;
         }
         else if (!_isFishing)
         {
@@ -101,14 +108,14 @@ public class Fisherman : Crew
                 return;
             }
 
-            float lineDistance = Vector2.Distance(_floatPosition, transform.position);
+            //float lineDistance = Vector2.Distance(_floatPosition, transform.position);
 
-            if (_collider.radius * _extendCoef < lineDistance)
-            {
-                Debug.Log("Not at range to fish -- STOP --");
-                StopFishing();
-                return;
-            }
+            //if (_collider.radius * _extendCoef < lineDistance)
+            //{
+            //    Debug.Log("Not at range to fish -- STOP --");
+            //    StopFishing();
+            //    return;
+            //}
 
             _currentFishTime += dt;
 
@@ -116,6 +123,8 @@ public class Fisherman : Crew
             {
                 _currentFishTime -= _fishTime;
                 Cargo.instance.AddFish(1, _fishZone.fishType);
+
+                StopFishing();
             }
         }
     }
@@ -205,7 +214,7 @@ public class Fisherman : Crew
         }
 
         _isFishing = false;
-        _fishZone = null;
+        //_fishZone = null;
         _fishingLine.StopFishing();
     }
 }
