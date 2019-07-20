@@ -29,12 +29,12 @@ public class Fisherman : Crew
 
             if(!speedOK)
             {
-                Debug.Log("Speed not ok to fish (velocity : " + PlayerShip.instance.velocity + ")");
+                //Debug.Log("Speed not ok to fish (velocity : " + PlayerShip.instance.velocity + ")");
             }
 
             if (!inputOK)
             {
-                Debug.Log("Input not ok to fish");
+                //Debug.Log("Input not ok to fish");
             }
 
             return speedOK && inputOK;
@@ -51,6 +51,7 @@ public class Fisherman : Crew
         _fishingLine.StopFishing();
     }
 
+    // todo : opti this
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerType.instance.layerFish)
@@ -79,7 +80,12 @@ public class Fisherman : Crew
 
     void Fish(float dt)
     {
-        if(!_isFishing)
+        if(_fishZone != null
+            && _fishZone.radius + _collider.radius < Vector2.Distance(transform.position, _fishZone.transform.position))
+        {
+            StopFishing();
+        }
+        else if (!_isFishing)
         {
             if(canFish)
             {
