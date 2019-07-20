@@ -51,7 +51,7 @@ MonoBehaviour:
   _fishTime: 1
   _extendCoef: 1.2
   _minLineLength: 2
-  _restartAfterCatching: 1
+  _restartAfterCatching: 0
   _fishingLine: {fileID: 5161354125444000022}
 --- !u!50 &7267215939528735112
 Rigidbody2D:
