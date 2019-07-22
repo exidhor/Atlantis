@@ -1,0 +1,204 @@
+fileFormatVersion: 2
+guid: 7d147a1d4f1411c429cf9d2cd365e664
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: flag_01_cc
+    100004: flag_01_link
+    100006: flag_01_off
+    100008: flag_01_root
+    100010: flag_02_cc
+    100012: flag_02_link
+    100014: flag_02_off
+    100016: flag_02_root
+    100018: flag_03_cc
+    100020: flag_03_link
+    100022: flag_03_off
+    100024: flag_03_root
+    100026: flag_04_cc
+    100028: flag_04_link
+    100030: flag_04_off
+    100032: flag_04_root
+    100034: flag_05_cc
+    100036: flag_05_link
+    100038: flag_05_off
+    100040: flag_05_root
+    100042: flag_06_cc
+    100044: flag_06_link
+    100046: flag_06_off
+    100048: flag_06_root
+    100050: flag_07_cc
+    100052: flag_07_link
+    100054: flag_07_off
+    100056: flag_07_root
+    100058: flag_flag_01
+    100060: flag_joint_01
+    100062: flag_joint_02
+    100064: flag_joint_03
+    100066: flag_joint_04
+    100068: flag_joint_05
+    100070: flag_joint_06
+    100072: flag_joint_07
+    100074: flag_pole_01
+    400000: //RootNode
+    400002: flag_01_cc
+    400004: flag_01_link
+    400006: flag_01_off
+    400008: flag_01_root
+    400010: flag_02_cc
+    400012: flag_02_link
+    400014: flag_02_off
+    400016: flag_02_root
+    400018: flag_03_cc
+    400020: flag_03_link
+    400022: flag_03_off
+    400024: flag_03_root
+    400026: flag_04_cc
+    400028: flag_04_link
+    400030: flag_04_off
+    400032: flag_04_root
+    400034: flag_05_cc
+    400036: flag_05_link
+    400038: flag_05_off
+    400040: flag_05_root
+    400042: flag_06_cc
+    400044: flag_06_link
+    400046: flag_06_off
+    400048: flag_06_root
+    400050: flag_07_cc
+    400052: flag_07_link
+    400054: flag_07_off
+    400056: flag_07_root
+    400058: flag_flag_01
+    400060: flag_joint_01
+    400062: flag_joint_02
+    400064: flag_joint_03
+    400066: flag_joint_04
+    400068: flag_joint_05
+    400070: flag_joint_06
+    400072: flag_joint_07
+    400074: flag_pole_01
+    2100000: lambert1
+    2300000: flag_pole_01
+    3300000: flag_pole_01
+    4300000: flag_pole_01
+    4300002: flag_flag_01
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: flag_flag_01
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
