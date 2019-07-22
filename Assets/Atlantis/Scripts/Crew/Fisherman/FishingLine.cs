@@ -142,9 +142,9 @@ public class FishingLine : MonoBehaviour
         _isLanded = false;
     }
 
-    void LateUpdate()
+    public void Actualize(float dt)
     {
-        _time += Time.deltaTime;
+        _time += dt;
 
         if(_isLanding)
         {
@@ -183,21 +183,56 @@ public class FishingLine : MonoBehaviour
     {
         _p0 = from;
 
-        float distance01 = _currentAnimation.distEndSpeedCurve.Evaluate(time);
-        Vector2 pos2D = (_to - from) * distance01 + from;
+        if (_time >= _currentAnimation.duration)
+        {
+            Debug.Log("auto correction");
+            _p2 = _to;
+        }
+        else
+        {
+            //float p2_distance01 = _currentAnimation.distEndSpeedCurve.Evaluate(time);
+            //Vector2 p2_pos2D = (_to - from) * p2_distance01 + from;
 
-        float z01 = _currentAnimation.zEndSpeedCurve.Evaluate(time);
-        float z = (_to.z - from.z) * z01 + from.z;
+            //float p2_z01 = _currentAnimation.zEndSpeedCurve.Evaluate(time);
+            //float p2_z = (_to.z - from.z) * z01 + from.z;
 
-        _p2 = new Vector3(pos2D.x, pos2D.y, z);
+            //_p2 = new Vector3(pos2D.x, pos2D.y, z);
 
-        distance01 = _currentAnimation.amplitudeSpeedCurve.Evaluate(time);
-        pos2D = (_p2 - from) * distance01 + from;
+            _p2 = ComputeControlPoint(_currentAnimation.distEndSpeedCurve,
+                                      _currentAnimation.zEndSpeedCurve,
+                                      time,
+                                      from,
+                                      _to);
+        }
 
-        z01 = _currentAnimation.amplitudeCurve.Evaluate(time);
-        z = (_p2.z - from.z) * z01 + from.z;
+        //float p1_distance01 = _currentAnimation.amplitudeSpeedCurve.Evaluate(time);
+        //pos2D = (_p2 - from) * distance01 + from;
 
-        _p1 = new Vector3(pos2D.x, pos2D.y, z);
+        //z01 = _currentAnimation.amplitudeCurve.Evaluate(time);
+        //z = (_p2.z - from.z) * z01 + from.z;
+
+        //_p1 = new Vector3(pos2D.x, pos2D.y, z);
+
+        _p1 = ComputeControlPoint(_currentAnimation.amplitudeSpeedCurve,
+                                  _currentAnimation.amplitudeCurve,
+                                  time,
+                                  from,
+                                  _p2);
+    }
+
+    Vector3 ComputeControlPoint(EvaluationCurve posCurve,
+                                EvaluationCurve zCurve, 
+                                float time,
+                                Vector3 from,
+                                Vector3 to)
+    {
+        float distance01 = posCurve.Evaluate(time);
+        Vector2 pos2D = (to - from) * distance01 + from;
+
+        float z01 = zCurve.Evaluate(time);
+        float z = (to.z - from.z) * z01 + from.z;
+
+        return new Vector3(pos2D.x, pos2D.y, z);
     }
 
     void RefreshLinePoints(bool refreshFloatPosition, bool bufferEnd)

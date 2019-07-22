@@ -83,6 +83,13 @@ public class Fisherman : Crew
         }
     }
 
+    void LateUpdate()
+    {
+        transform.rotation = Quaternion.identity;
+
+        _fishingLine.Actualize(Time.deltaTime);
+    }
+
     void Fish(float dt)
     {
         if(_fishZone != null
