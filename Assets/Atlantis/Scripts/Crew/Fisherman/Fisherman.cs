@@ -124,7 +124,8 @@ public class Fisherman : Crew
                 _currentFishTime -= _fishTime;
                 Cargo.instance.AddFish(1, _fishZone.fishType);
 
-                StopFishing();
+                if(_restartAfterCatching)
+                    StopFishing();
             }
         }
     }
