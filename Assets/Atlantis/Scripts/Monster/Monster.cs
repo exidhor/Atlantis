@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 using System.Collections;
 
 public class Monster : MonoBehaviour
 {
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    [SerializeField] NavMeshAgent _agent;
 
     // Update is called once per frame
     void Update()
     {
-
+        _agent.destination = PlayerShip.instance.transform.position;
     }
 }
