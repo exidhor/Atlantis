@@ -33317,6 +33317,16 @@ PrefabInstance:
       propertyPath: _speedText
       value: 
       objectReference: {fileID: 2019716481}
+    - target: {fileID: 4969616455157367909, guid: 95d1c3b9e8ad34218968ce1636d62708,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 240748990987258181, guid: 95d1c3b9e8ad34218968ce1636d62708,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4801905319027417392, guid: 95d1c3b9e8ad34218968ce1636d62708,
         type: 3}
       propertyPath: m_CollisionDetection
