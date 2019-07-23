@@ -43,7 +43,7 @@ public class PlayerShip : MonoSingleton<PlayerShip>
     [SerializeField] Text _speedText;
     [SerializeField] Transform _shipModel;
     [SerializeField] PlayerShipBody _body;
-    [SerializeField] Rigidbody2D _rb;
+    [SerializeField] Rigidbody _rb;
 
     [Header("Infos")]
     [SerializeField, UnityReadOnly] float _speed;
@@ -109,7 +109,7 @@ public class PlayerShip : MonoSingleton<PlayerShip>
             }
             else
             {
-                _targetMove = new Vector3(inputMove.x, inputMove.y, 0f);
+                _targetMove = new Vector3(inputMove.x, 0f, inputMove.y);
 
                 HandleSpeed(dt);
                 HandleRotation(dt);
@@ -129,8 +129,8 @@ public class PlayerShip : MonoSingleton<PlayerShip>
             _angular = Mathf.Lerp(_previousAngular, _angular, _angularVariation * dt);
         }
 
-        float orientationY = 0f;
-        float orientationZ = transform.eulerAngles.z;
+        float orientationX = 90f;
+        float orientationY = transform.eulerAngles.y;
 
         //float max = _angularSpeed * _speed * _speedAffectAngular;
 
@@ -139,21 +139,21 @@ public class PlayerShip : MonoSingleton<PlayerShip>
             _angular = Mathf.Sign(_angular) * _maxAngularSpeed;
         }
 
-        float angleY = orientationY + _swingStrength * _angular * dt; 
-        float angleZ = orientationZ + _angular * dt;
-        //transform.localRotation = Quaternion.Euler(0, 0, angleZ);
-        _shipModel.localRotation = Quaternion.Euler(0, angleY, 0f);
+        float angleY = orientationY + _angular * dt;
+        float angleX = orientationX + _swingStrength * _angular * dt;
+        _shipModel.localRotation = Quaternion.Euler(angleX, -90f, -90f);
 
-        _rb.angularVelocity = _angular;
+        _rb.MoveRotation(Quaternion.Euler(0f, angleY, 0f));
+        //_rb.angularVelocity = new Vector3(0f, _angular * Mathf.Deg2Rad, 0f);
 
         _previousAngular = _angular;
     }
 
     void UpdateMovement(float dt)
     {
-        _direction = transform.up * _speed;
+        _direction = transform.forward * _speed;
         _direction.x += _body.velocity.x;
-        _direction.y += _body.velocity.y;
+        _direction.z += _body.velocity.y;
 
         if(_direction.magnitude > _maxSpeed)
         {
@@ -163,15 +163,17 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         Vector3 move = _direction * dt;
 
-        Vector2 move2d = new Vector2(move.x, move.y);
+        Vector2 move2d = new Vector2(move.x, move.z);
         float angle = -_angular * dt * _slideStrength * (_speed / _maxSpeed);
         move2d = MathHelper.RotateVector(move2d, angle * Mathf.Deg2Rad);
         move.x = move2d.x;
-        move.y = move2d.y;
+        move.z = move2d.y;
 
         //transform.localPosition += move;
 
-        _rb.velocity = move2d / dt;
+        //_rb.velocity = move2d / dt;
+
+        _rb.MovePosition(_rb.position + move);
     }
 
     void HandleBreak(float dt)
@@ -187,12 +189,9 @@ public class PlayerShip : MonoSingleton<PlayerShip>
         Vector3 move = _targetMove;
 
         float speed = move.magnitude;
-        move.Normalize();
 
         if (speed > _speed)
         {
-            //float maxSpeed = _speed + _acceleration * dt;
-
             _currentAcceleration = GetAcceleration(_speed);
             float maxSpeed = _speed + _currentAcceleration * dt;
 
@@ -221,9 +220,9 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
     void HandleRotation(float dt)
     {
-        Vector3 forward = transform.up;
+        Vector3 forward = transform.forward;
 
-        float angle = Vector3.SignedAngle(forward, _targetMove, Vector3.forward);
+        float angle = Vector3.SignedAngle(forward, _targetMove, Vector3.up);
 
         float angular = _angularSpeed * (1 + _speedAffectAngular * _speed);
         angular = Mathf.Lerp(_minAngularSpeed * Mathf.Sign(angular), angular, Mathf.Abs(angle) / 180f);

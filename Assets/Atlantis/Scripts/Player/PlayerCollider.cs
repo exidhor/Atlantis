@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using Tools;
 
-[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Collider))]
 public class PlayerCollider : MonoBehaviour
 {
     [SerializeField] float _minRepulseSpeed = 3f;
@@ -13,7 +13,7 @@ public class PlayerCollider : MonoBehaviour
 
     ContactPoint2D[] _buffer = new ContactPoint2D[50];
 
-    Collider2D _collider;
+    Collider _collider;
     List<Collider2D> _contacts;
 
     public class Comparer : IComparer<ContactPoint2D>
@@ -28,25 +28,30 @@ public class PlayerCollider : MonoBehaviour
 
     void Awake()
     {
-        _collider = GetComponent<Collider2D>();
+        _collider = GetComponent<Collider>();
     }
 
-    void FixedUpdate()
-    {
-        int count = _collider.GetContacts(_buffer);
+    //void OnCollisionStay(Collision collision)
+    //{
 
-        Array.Sort(_buffer, 0, count, _comparer);
+    //}
 
-        for (int i = 0; i < count; i++)
-        {
-            GameObject go = _buffer[i].collider.gameObject;
+    //void FixedUpdate()
+    //{
+    //    int count = _collider.Get GetContacts(_buffer);
 
-            if(go.layer == LayerType.instance.decors)
-            {
-                Repulse(_buffer[i]);
-            }
-        }
-    }
+    //    Array.Sort(_buffer, 0, count, _comparer);
+
+    //    for (int i = 0; i < count; i++)
+    //    {
+    //        GameObject go = _buffer[i].collider.gameObject;
+
+    //        if(go.layer == LayerType.instance.decors)
+    //        {
+    //            Repulse(_buffer[i]);
+    //        }
+    //    }
+    //}
 
     void Repulse(ContactPoint2D point)
     {
