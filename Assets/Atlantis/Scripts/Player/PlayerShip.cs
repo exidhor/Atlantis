@@ -90,6 +90,8 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         _body.Refresh(dt);
 
+        _speed = _rb.velocity.magnitude;
+
         if (disableInputs)
         {
             _disableInputsTime -= dt;
@@ -145,7 +147,6 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         _rb.MoveRotation(Quaternion.Euler(0f, angleY, 0f));
         //_rb.angularVelocity = new Vector3(0f, _angular * Mathf.Deg2Rad, 0f);
-
         _previousAngular = _angular;
     }
 
@@ -171,9 +172,9 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         //transform.localPosition += move;
 
-        //_rb.velocity = move2d / dt;
+        _rb.velocity = move / dt;
 
-        _rb.MovePosition(_rb.position + move);
+        //_rb.MovePosition(_rb.position + move);
     }
 
     void HandleBreak(float dt)
