@@ -184,7 +184,7 @@ public class FishingLine : MonoBehaviour
 
         if (_time >= _currentAnimation.duration)
         {
-            Debug.Log("auto correction");
+            //Debug.Log("auto correction");
             _p2 = _to;
         }
         else
