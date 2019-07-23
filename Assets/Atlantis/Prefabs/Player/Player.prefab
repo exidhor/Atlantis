@@ -394,16 +394,6 @@ PrefabInstance:
       propertyPath: _minRepulseSpeed
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 4704712330914889679, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7144148451475793146, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3734943845749287684, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: m_Layer
@@ -472,12 +462,12 @@ PrefabInstance:
     - target: {fileID: 5437216291890883501, guid: 2c44ca6528e8842e29490ae758be0b66,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42
+      value: 68.6
       objectReference: {fileID: 0}
     - target: {fileID: 5437216291890883501, guid: 2c44ca6528e8842e29490ae758be0b66,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.9
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 5437216291890883501, guid: 2c44ca6528e8842e29490ae758be0b66,
         type: 3}
@@ -539,6 +529,26 @@ PrefabInstance:
       propertyPath: _ship
       value: 
       objectReference: {fileID: 4999107811912162466}
+    - target: {fileID: 5417195307834442155, guid: 2c44ca6528e8842e29490ae758be0b66,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417195307834442155, guid: 2c44ca6528e8842e29490ae758be0b66,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.495283
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417195307834442155, guid: 2c44ca6528e8842e29490ae758be0b66,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.69914913
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417195307834442155, guid: 2c44ca6528e8842e29490ae758be0b66,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5417195307834442155, guid: 2c44ca6528e8842e29490ae758be0b66,
         type: 3}
       propertyPath: far clip plane
@@ -890,11 +900,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_Radius
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: _maxSpeedToFish
@@ -904,11 +909,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _minLineLength
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
@@ -994,11 +994,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_Radius
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: _maxSpeedToFish
@@ -1008,11 +1003,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _minLineLength
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
@@ -1098,11 +1088,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5095037646349099709, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_Radius
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
       propertyPath: _maxSpeedToFish
@@ -1112,11 +1097,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _minLineLength
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267215939528735112, guid: 67b83f7d1db714357b9ea09e71f3c773,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3758927808208795252, guid: 67b83f7d1db714357b9ea09e71f3c773,
         type: 3}
