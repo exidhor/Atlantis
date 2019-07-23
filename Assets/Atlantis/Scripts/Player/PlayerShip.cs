@@ -111,7 +111,8 @@ public class PlayerShip : MonoSingleton<PlayerShip>
             }
             else
             {
-                _targetMove = new Vector3(inputMove.x, 0f, inputMove.y);
+                //_targetMove = new Vector3(inputMove.x, 0f, inputMove.y);
+                _targetMove = WorldConversion.ToVector3(inputMove);
 
                 HandleSpeed(dt);
                 HandleRotation(dt);
@@ -153,8 +154,9 @@ public class PlayerShip : MonoSingleton<PlayerShip>
     void UpdateMovement(float dt)
     {
         _direction = transform.forward * _speed;
-        _direction.x += _body.velocity.x;
-        _direction.z += _body.velocity.y;
+        _direction += WorldConversion.ToVector3(_body.velocity);
+        //_direction.x += _body.velocity.x;
+        //_direction.z += _body.velocity.y;
 
         if(_direction.magnitude > _maxSpeed)
         {
@@ -164,11 +166,13 @@ public class PlayerShip : MonoSingleton<PlayerShip>
 
         Vector3 move = _direction * dt;
 
-        Vector2 move2d = new Vector2(move.x, move.z);
+        //Vector2 move2d = new Vector2(move.x, move.z);
+        Vector2 move2D = WorldConversion.ToVector2(move);
         float angle = -_angular * dt * _slideStrength * (_speed / _maxSpeed);
-        move2d = MathHelper.RotateVector(move2d, angle * Mathf.Deg2Rad);
-        move.x = move2d.x;
-        move.z = move2d.y;
+        move2D = MathHelper.RotateVector(move2D, angle * Mathf.Deg2Rad);
+        move = WorldConversion.ToVector3(move2D);
+        //move.x = move2D.x;
+        //move.z = move2D.y;
 
         //transform.localPosition += move;
 

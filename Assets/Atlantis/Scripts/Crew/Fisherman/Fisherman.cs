@@ -14,7 +14,7 @@ public class Fisherman : Crew
     [Header("Linking")]
     [SerializeField] FishingLine _fishingLine;
 
-    CircleCollider2D _collider;
+    SphereCollider _collider;
     FishZone _fishZone;
     bool _isFishing;
     float _currentFishTime;
@@ -44,7 +44,7 @@ public class Fisherman : Crew
 
     void Awake()
     {
-        _collider = GetComponent<CircleCollider2D>();
+        _collider = GetComponent<SphereCollider>();
     }
 
     void OnEnable()
@@ -53,7 +53,7 @@ public class Fisherman : Crew
     }
 
     // todo : opti this
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerType.instance.layerFish)
         {
@@ -93,10 +93,10 @@ public class Fisherman : Crew
     void Fish(float dt)
     {
         if(_fishZone != null
-            && _fishZone.radius + (_collider.radius * _extendCoef) < Vector2.Distance(transform.position, _fishZone.transform.position))
+            && _fishZone.radius + (_collider.radius * _extendCoef) 
+                < Vector2.Distance(WorldConversion.ToVector2(transform.position), 
+                                   WorldConversion.ToVector2(_fishZone.transform.position)))
         {
-            float d = Vector2.Distance(transform.position, _fishZone.transform.position);
-
             _fishZone = null;
         }
         else if (!_isFishing)
@@ -114,15 +114,6 @@ public class Fisherman : Crew
                 StopFishing();
                 return;
             }
-
-            //float lineDistance = Vector2.Distance(_floatPosition, transform.position);
-
-            //if (_collider.radius * _extendCoef < lineDistance)
-            //{
-            //    Debug.Log("Not at range to fish -- STOP --");
-            //    StopFishing();
-            //    return;
-            //}
 
             _currentFishTime += dt;
 
@@ -144,43 +135,20 @@ public class Fisherman : Crew
         _isFishing = true;
         _currentFishTime = 0f;
 
-        Vector2 shootPoint = ShootLine();
+        Vector3 shootPoint = WorldConversion.ToVector3(ShootLine());
 
         Vector3 target = _fishZone.transform.position;
-        //Vector2 from = transform.position;
-        //Vector2 point;
 
-        //float distToTarget = ((Vector2)target - from).sqrMagnitude;
-        //float distToPoint = _collider.radius;
-
-        //if (distToTarget < distToPoint)
-        //{
-        //    if (distToTarget < _minLineLength * _minLineLength)
-        //    {
-        //        point = MathHelper.ShootPoint(from, target, _minLineLength);
-        //    }
-        //    else
-        //    {
-        //        point = target;
-        //    }
-        //}
-        //else
-        //{
-        //    float dist = Random.Range(_minLineLength, _collider.radius / 2f);
-        //    point = MathHelper.ShootPoint(from, target, dist);
-        //}
-
-        //_floatPosition = new Vector3(point.x, point.y, target.z);
-        _floatPosition = new Vector3(shootPoint.x, shootPoint.y, target.z);
+        _floatPosition = new Vector3(shootPoint.x, target.y, shootPoint.z);
         _fishingLine.Land(_floatPosition);
     }
 
     Vector2 ShootLine()
     {
-        Vector2 centerA = _fishZone.transform.position;
+        Vector2 centerA = WorldConversion.ToVector2(_fishZone.transform.position);
         float radiusA = _fishZone.radius;
 
-        Vector2 centerB = transform.position;
+        Vector2 centerB = WorldConversion.ToVector2(transform.position);
         float radiusB = _collider.radius;
 
         CircleCircleIntersection intersect = MathHelper.CircleCircleIntersects(centerA,

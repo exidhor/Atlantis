@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(SphereCollider))]
 public class FishZone : MonoBehaviour
 {
     public float radius
@@ -12,13 +12,13 @@ public class FishZone : MonoBehaviour
         }
     }
 
-    CircleCollider2D collider
+    SphereCollider collider
     {
         get
         {
             if(_collider == null)
             {
-                _collider = GetComponent<CircleCollider2D>();
+                _collider = GetComponent<SphereCollider>();
             }
 
             return _collider;
@@ -32,5 +32,5 @@ public class FishZone : MonoBehaviour
 
     [SerializeField] FishType _fishType;
 
-    CircleCollider2D _collider;
+    SphereCollider _collider;
 }

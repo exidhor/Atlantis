@@ -34,7 +34,7 @@ public class FishingFloat : MonoBehaviour
 
     public void SetPosition2D(Vector2 pos)
     {
-        transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+        transform.position = new Vector3(pos.x, transform.position.y, pos.y);
     }
 
     public void Disappear()

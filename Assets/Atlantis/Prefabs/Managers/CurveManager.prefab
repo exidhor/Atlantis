@@ -120,7 +120,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-  - name: xyFinishingLine
+  - name: xzLine
     curve:
       _startValue: 0
       _endValue: 1
@@ -158,7 +158,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-  - name: zFishingLine
+  - name: yLine
     curve:
       _startValue: 0
       _endValue: 1
@@ -196,7 +196,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-  - name: zAmplitudeFishingLine
+  - name: xzCurve
     curve:
       _startValue: 0
       _endValue: 5
@@ -252,7 +252,7 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
-  - name: xyAmplitudeFishingLine
+  - name: yCurve
     curve:
       _startValue: 0
       _endValue: 0.5

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using Tools;
 
 [RequireComponent(typeof(LineRenderer))]
 public class FishingLine : MonoBehaviour
@@ -8,25 +9,25 @@ public class FishingLine : MonoBehaviour
     class Animation
     {
         public float duration;
-        [SerializeField] string _distEndSpeedCurveName;
-        [SerializeField] string _zEndSpeedCurveName;
+        [SerializeField] string _xzLineName;
+        [SerializeField] string _zLineName;
 
-        [SerializeField] string _amplitudeCurveName;
-        [SerializeField] string _amplitudeSpeedCurveName;
+        [SerializeField] string _xzCurveName;
+        [SerializeField] string _yCurveName;
 
-        [NonSerialized] public EvaluationCurve distEndSpeedCurve;
-        [NonSerialized] public EvaluationCurve zEndSpeedCurve;
-        [NonSerialized] public EvaluationCurve amplitudeCurve;
-        [NonSerialized] public EvaluationCurve amplitudeSpeedCurve;
+        [NonSerialized] public EvaluationCurve xzLine;
+        [NonSerialized] public EvaluationCurve yLine;
+        [NonSerialized] public EvaluationCurve xzCurve;
+        [NonSerialized] public EvaluationCurve yCurve;
 
         public void Init()
         {
-            if (distEndSpeedCurve == null)
+            if (xzLine == null)
             {
-                distEndSpeedCurve = EvaluationCurveManager.instance.GetCurve(_distEndSpeedCurveName);
-                zEndSpeedCurve = EvaluationCurveManager.instance.GetCurve(_zEndSpeedCurveName);
-                amplitudeCurve = EvaluationCurveManager.instance.GetCurve(_amplitudeCurveName);
-                amplitudeSpeedCurve = EvaluationCurveManager.instance.GetCurve(_amplitudeSpeedCurveName);
+                xzLine = EvaluationCurveManager.instance.GetCurve(_xzLineName);
+                yLine = EvaluationCurveManager.instance.GetCurve(_zLineName);
+                xzCurve = EvaluationCurveManager.instance.GetCurve(_xzCurveName);
+                yCurve = EvaluationCurveManager.instance.GetCurve(_yCurveName);
             }
         }
     }
@@ -71,10 +72,10 @@ public class FishingLine : MonoBehaviour
 
     Vector3[] _points;
 
-    EvaluationCurve _distEndSpeedCurve;
-    EvaluationCurve _zEndSpeedCurve;
-    EvaluationCurve _amplitudeCurve;
-    EvaluationCurve _amplitudeSpeedCurve;
+    //EvaluationCurve _distEndSpeedCurve;
+    //EvaluationCurve _zEndSpeedCurve;
+    //EvaluationCurve _amplitudeCurve;
+    //EvaluationCurve _amplitudeSpeedCurve;
 
     Vector3 _p0;
     Vector3 _p1;
@@ -134,7 +135,6 @@ public class FishingLine : MonoBehaviour
         {
             renderer.enabled = false;
             _fishingFloat.gameObject.SetActive(false);
-            //_fishingFloat.Disappear();
         }
 
         _time = 0f;
@@ -162,7 +162,6 @@ public class FishingLine : MonoBehaviour
             if (_time > _currentAnimation.duration)
             {
                 _isStopping = false;
-                //_fishingFloat.Disappear();
                 renderer.enabled = false;
                 _time = _currentAnimation.duration;
             }
@@ -198,8 +197,8 @@ public class FishingLine : MonoBehaviour
 
             //_p2 = new Vector3(pos2D.x, pos2D.y, z);
 
-            _p2 = ComputeControlPoint(_currentAnimation.distEndSpeedCurve,
-                                      _currentAnimation.zEndSpeedCurve,
+            _p2 = ComputeControlPoint(_currentAnimation.xzLine,
+                                      _currentAnimation.yLine,
                                       time,
                                       from,
                                       _to);
@@ -213,26 +212,29 @@ public class FishingLine : MonoBehaviour
 
         //_p1 = new Vector3(pos2D.x, pos2D.y, z);
 
-        _p1 = ComputeControlPoint(_currentAnimation.amplitudeSpeedCurve,
-                                  _currentAnimation.amplitudeCurve,
+        _p1 = ComputeControlPoint(_currentAnimation.yCurve,
+                                  _currentAnimation.xzCurve,
                                   time,
                                   from,
                                   _p2);
     }
 
-    Vector3 ComputeControlPoint(EvaluationCurve posCurve,
-                                EvaluationCurve zCurve, 
+    Vector3 ComputeControlPoint(EvaluationCurve xyCurve,
+                                EvaluationCurve yCurve, 
                                 float time,
                                 Vector3 from,
                                 Vector3 to)
     {
-        float distance01 = posCurve.Evaluate(time);
-        Vector2 pos2D = (to - from) * distance01 + from;
+        Vector2 from2D = WorldConversion.ToVector2(from);
+        Vector2 to2D = WorldConversion.ToVector2(to);
 
-        float z01 = zCurve.Evaluate(time);
-        float z = (to.z - from.z) * z01 + from.z;
+        float distance01 = xyCurve.Evaluate(time);
+        Vector2 pos2D = (to2D - from2D) * distance01 + from2D;
 
-        return new Vector3(pos2D.x, pos2D.y, z);
+        float y01 = yCurve.Evaluate(time);
+        float y = (to.y - from.y) * y01 + from.y;
+
+        return new Vector3(pos2D.x, y, pos2D.y);
     }
 
     void RefreshLinePoints(bool refreshFloatPosition, bool bufferEnd)

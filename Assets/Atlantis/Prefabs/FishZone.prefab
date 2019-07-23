@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2716728559390348404}
   - component: {fileID: 5897154182583083953}
-  - component: {fileID: 7391259691263575615}
+  - component: {fileID: 5205997454939627400}
   m_Layer: 9
   m_Name: FishZone
   m_TagString: Untagged
@@ -158,22 +158,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fishType: 0
---- !u!58 &7391259691263575615
-CircleCollider2D:
+--- !u!135 &5205997454939627400
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2716728559390348406}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.14}
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!111 &1204800785
 Animation:
   m_ObjectHideFlags: 0
