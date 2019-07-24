@@ -11,6 +11,7 @@ namespace Tools
             get { return _edit; }
         }
 
+        [Header("Circle Collider")]
         [SerializeField] bool _edit;
 #endif
 

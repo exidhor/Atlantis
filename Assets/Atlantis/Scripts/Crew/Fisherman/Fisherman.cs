@@ -28,15 +28,15 @@ public class Fisherman : Crew
             bool speedOK = (PlayerShip.instance.velocity.magnitude < _maxSpeedToFish);
             bool inputOK = !PlayerShip.instance.disableInputs;
 
-            if(!speedOK)
-            {
-                //Debug.Log("Speed not ok to fish (velocity : " + PlayerShip.instance.velocity + ")");
-            }
+            //if(!speedOK)
+            //{
+            //    Debug.Log("Speed not ok to fish (velocity : " + PlayerShip.instance.velocity + ")");
+            //}
 
-            if (!inputOK)
-            {
-                //Debug.Log("Input not ok to fish");
-            }
+            //if (!inputOK)
+            //{
+            //    Debug.Log("Input not ok to fish");
+            //}
 
             return speedOK && inputOK;
         }
@@ -85,7 +85,7 @@ public class Fisherman : Crew
         {
             List<QTCircleCollider> found = QuadTreeCircleManager.instance.Retrieve(_collider);
 
-            GameObject best = null;
+            QTCircleCollider best = null;
             float bestDistance = float.MaxValue;
             for(int i = 0; i < found.Count; i++)
             {
@@ -93,14 +93,14 @@ public class Fisherman : Crew
 
                 if(distance < bestDistance)
                 {
-                    best = found[i].gameObject;
+                    best = found[i];
                     bestDistance = distance;
                 }
             }
 
             if(best != null)
             {
-                _fishZone = best.GetComponent<FishZone>();
+                _fishZone = (FishZone)best;
             }
         }
     }

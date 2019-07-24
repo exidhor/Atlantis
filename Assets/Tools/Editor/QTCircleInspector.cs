@@ -10,18 +10,17 @@ namespace ToolsEditor
 
         Tool LastTool = Tool.None;
 
-        void OnEnable()
+        protected void OnEnable()
         {
             LastTool = UnityEditor.Tools.current;
         }
 
-        void OnDisable()
+        protected void OnDisable()
         {
             UnityEditor.Tools.current = LastTool;
         }
 
-
-        private void OnSceneGUI()
+        protected void OnSceneGUI()
         {
             Tools.QTCircleCollider circle = target as Tools.QTCircleCollider;
 
