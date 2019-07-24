@@ -66,19 +66,6 @@ namespace Tools
                 _root.RetrieveNonAlloc(toFill, rect);
             }
         }
-
-        //public void OnBeforeSerialize()
-        //{
-        //    // todo : from BehaviourWithTree example (see below)
-        //    // convert QuadTreeNode in serializable struct
-        //    // and fill the two list
-        //}
-
-        //public void OnAfterDeserialize()
-        //{
-        //    // todo : from BehaviourWithTree example (see below)
-        //    // Construct the tree from the two list
-        //}
     }
 }
 

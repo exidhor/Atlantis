@@ -4,120 +4,87 @@ using System;
 
 namespace Tools
 {
-    [Serializable]
-    public class QuadTreeCircle : QuadTree<QTCircleCollider>
-    {
-        #region Serialization
-
-#if UNITY_EDITOR
-        [Serializable]
-        public class SerializableQuadTreeNode
-        {
-            public string name = "Node NULL";
-            public bool isNotNull = false;
-            public int depthLevel;
-            public SerializableQuadTreeNode parent;
-            public Rect bounds;
-
-            public SerializableQuadTreeNode[] children = new SerializableQuadTreeNode[0];
-            public List<QTCircleCollider> objects = new List<QTCircleCollider>();
-
-            public SerializableQuadTreeNode(QuadTreeNode<QTCircleCollider> node, 
-                                            SerializableQuadTreeNode parent)
-            {
-                children = new SerializableQuadTreeNode[4];
-
-                isNotNull = true;
-                this.parent = parent;
-
-                depthLevel = node.level;
-                bounds = node.bounds;
-                
-                for(int i = 0; i < node.objects.Count; i++)
-                {
-                    objects.Add(node.objects[i].obj);
-                }
-
-                int childCount = 0;
-
-                for(int i = 0; i < node.nodes.Length; i++)
-                {
-                    if(node.nodes[i] != null)
-                    {
-                        children[i] = new SerializableQuadTreeNode(node.nodes[i], this);
-                        childCount++;
-                    }
-                    else
-                    {
-                        children[i] = null;
-                    }
-                }
-
-                name = "Node (child=" + childCount + ") (objects=" + node.objects.Count + ")";
-            }
-        }
-#endif
-
-        [SerializeField] SerializableQuadTreeNode _rootNode;
-
-        public void Serialize()
-        {
-            if(_root != null)
-            {
-                _rootNode = new SerializableQuadTreeNode(_root, null);
-            }
-        }
-
-        #endregion
-
-        public QuadTreeCircle(Rect bounds) : base(bounds)
-        { }
-
-        public void OnDrawGizmos()
-        {
-            DrawGizmosNode(_root);
-        }
-
-        void DrawGizmosNode(QuadTreeNode<QTCircleCollider> node)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireCube(WorldConversion.ToVector3(node.bounds.center),
-                                WorldConversion.ToVector3(node.bounds.size));
-
-            Gizmos.color = Color.red;
-            for(int i = 0; i < node.objects.Count; i++)
-            {
-                Rect rect = node.objects[i].rect;
-
-                Gizmos.DrawWireCube(WorldConversion.ToVector3(rect.center),
-                                    WorldConversion.ToVector3(rect.size));
-            }
-
-            for (int i = 0; i < node.nodes.Length; i++)
-            {
-                if(node.nodes[i] != null)
-                {
-                    DrawGizmosNode(node.nodes[i]);
-                }
-            }
-
-            Gizmos.color = Color.white;
-        }
-    }
-
     public class QuadTreeCircleManager : MonoSingleton<QuadTreeCircleManager>
 #if UNITY_EDITOR
                                          ,ISerializationCallbackReceiver
 #endif
     {
+        #region QuadTrees
+
+        [Serializable]
+        public class QuadTrees
+        {
+            public QuadTreeCircle dynamicQT;
+            public QuadTreeCircle staticQT;
+
+            public QuadTrees(Rect bounds)
+            {
+                dynamicQT = new QuadTreeCircle(bounds);
+                staticQT = new QuadTreeCircle(bounds);
+            }
+
+            public void Insert(QTCircleCollider collider)
+            {
+                QuadTree<QTCircleCollider> quadTree = collider.persistent ? dynamicQT : staticQT;
+
+                quadTree.Insert(collider, collider.GetGlobalBounds());
+            }
+
+            public List<QTCircleCollider> Retrieve(Rect rect)
+            {
+                List<QTCircleCollider> found = dynamicQT.Retrieve(rect);
+                found.AddRange(staticQT.Retrieve(rect));
+
+                return found;
+            }
+
+            public void RetrieveNonAlloc(List<QTCircleCollider> toFill, QTCircleCollider collider)
+            {
+                Rect bounds = collider.GetGlobalBounds();
+
+                dynamicQT.RetrieveNonAlloc(toFill, bounds);
+                staticQT.RetrieveNonAlloc(toFill, bounds);
+            }
+
+            public void Clear(bool clearStatic = false)
+            {
+                dynamicQT.Clear(true);
+
+                if(clearStatic)
+                    staticQT.Clear(true);
+            }
+
+            public void OnDrawGizmos(float heightStatic, float heightDynamic)
+            {
+                if (dynamicQT != null)
+                    dynamicQT.OnDrawGizmos(Color.red, Color.magenta, heightDynamic);
+
+                if (staticQT != null)
+                    staticQT.OnDrawGizmos(Color.green, Color.blue, heightStatic);
+            }
+
+            public void Serialize()
+            {
+                if (dynamicQT != null)
+                    dynamicQT.Serialize();
+
+                if (staticQT != null)
+                    staticQT.Serialize();
+            }
+        }
+
+        #endregion
+
         [SerializeField] bool _drawGizmos;
         [SerializeField] int _debugThisLayerIndex;
+        [SerializeField] float _heightGizmosStatic = 50f;
+        [SerializeField] float _heightGizmosDynamic = 0f;
 
         [SerializeField] int _layerCount;
         [SerializeField] Rect _worldBounds;
 
         [SerializeField, UnityReadOnly]
-        List<QuadTreeCircle> _quadTrees = new List<QuadTreeCircle> ();
+        List<QuadTrees> _quadTrees = new List<QuadTrees> ();
 
         List<QTCircleCollider> _buffer = new List<QTCircleCollider>(100); 
 
@@ -125,27 +92,26 @@ namespace Tools
         {
             for(int i = 0; i < _layerCount; i++)
             {
-                _quadTrees.Add(new QuadTreeCircle(_worldBounds));
+                _quadTrees.Add(new QuadTrees(_worldBounds));
             }
         }
 
         public void Register(QTCircleCollider collider)
         {
-            QuadTreeCircle qt = _quadTrees[collider.layer];
-            qt.Insert(collider, collider.GetGlobalBounds());
+            QuadTrees qt = _quadTrees[collider.layer];
+            qt.Insert(collider);
         }
 
         public void Update()
         {
-            Debug.Log("Clear qt at " + Time.time);
-            Clear(false);
+            Clear();
         }
 
-        public void Clear(bool force)
+        public void Clear()
         {
             for (int i = 0; i < _quadTrees.Count; i++)
             {
-                _quadTrees[i].Clear(force);
+                _quadTrees[i].Clear();
             }
         }
 
@@ -153,8 +119,8 @@ namespace Tools
         {
             _buffer.Clear();
 
-            QuadTreeCircle qt = _quadTrees[collider.layer];
-            qt.RetrieveNonAlloc(_buffer, collider.GetGlobalBounds());
+            QuadTrees qt = _quadTrees[collider.layer];
+            qt.RetrieveNonAlloc(_buffer, collider);
 
             FilterListWithCircleCircleCollision(_buffer, collider);
 
@@ -216,7 +182,8 @@ namespace Tools
 
             if(_debugThisLayerIndex >= 0 && _debugThisLayerIndex < _quadTrees.Count)
             {
-                _quadTrees[_debugThisLayerIndex].OnDrawGizmos();
+                _quadTrees[_debugThisLayerIndex].OnDrawGizmos(_heightGizmosStatic,
+                                                              _heightGizmosDynamic);
             }
         }
 

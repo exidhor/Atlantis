@@ -35451,8 +35451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ea6cd7afe5e4aea818ed5b4925e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _drawGizmos: 0
+  _drawGizmos: 1
   _debugThisLayerIndex: 0
+  _heightGizmosStatic: 50
+  _heightGizmosDynamic: 0
   _layerCount: 1
   _worldBounds:
     serializedVersion: 2

@@ -79,7 +79,6 @@ namespace Tools
         public void Update()
         {
             QuadTreeCircleManager.instance.Register(this);
-            Debug.Log("Add collider at " + Time.time);
         }
 
         void OnEnable()
