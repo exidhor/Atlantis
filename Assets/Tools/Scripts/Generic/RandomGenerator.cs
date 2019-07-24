@@ -2,163 +2,83 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace Tools
 {
-    // we use the Random Built-in Unity module to generate randomness
-    using Random = UnityEngine.Random;
-
-    /// <summary>
-    /// Handle and centralize number generation to be able to
-    /// regenerate the same situation with a recorded seed.
-    /// </summary>
-    public class RandomGenerator : MonoSingleton<RandomGenerator>
+    public class RandomGenerator : System.Random
     {
-        public int Seed;
-        public bool UseRandomSeed = true;
+        public RandomGenerator(int seed)
+            : base(seed)
+        { }
 
-        private static readonly int MIN_INT = int.MinValue + 1;
-        private static readonly int MAX_INT = int.MaxValue;
-
-        void Start()
-        {
-            Restart();
-        }
-
-        /// <summary>
-        /// Regenerate the seed if needed
-        /// and restart the number sequence
-        /// </summary>
-        public void Restart()
-        {
-            if (UseRandomSeed)
-            {
-                Seed = GenerateRandomSeed();
-            }
-
-            Random.InitState(Seed);
-        }
-
-        /// <summary>
-        /// Generate a random seed from the current hased time value
-        /// </summary>
-        /// <returns>The new seed</returns>
-        public int GenerateRandomSeed()
-        {
-            DateTime currentTime = DateTime.Now;
-            Seed = currentTime.Ticks.ToString().GetHashCode();
-            Random.InitState(Seed);
-
-            return Seed;
-        }
-
-        /// <summary>
-        /// Return a random int from int.MinValue [exclusive]
-        /// to int.MaxValue [exclusive] 
-        /// </summary>
-        /// <returns></returns>
-        public int NextInt()
-        {
-            return NextInt(MIN_INT, MAX_INT);
-        }
-
-        /// <summary>
-        /// Return a random int from 0 [inclusive] 
-        /// to maxValue [exclusive]
-        /// </summary>
-        /// <param name="maxValue">The max value [exclusive]</param>
-        /// <returns></returns>
-        public int NextInt(int maxValue)
-        {
-            return NextInt(0, maxValue);
-        }
-
-        /// <summary>
-        /// Return a random int from minValue [inclusive] 
-        /// to maxValue [exclusive]
-        /// </summary>
-        /// <param name="minValue">minValue [inclusive]</param>
-        /// <param name="maxValue">maxValue [exclusive]</param>
-        /// <returns></returns>
-        public int NextInt(int minValue, int maxValue)
-        {
-            return Random.Range(minValue, maxValue);
-        }
-
-        /// <summary>
-        /// return a random float from 0 [inclusive]
-        /// to 1 [inclusive]
-        /// </summary>
-        /// <returns></returns>
-        public float NextFloat()
-        {
-            return Random.value;
-        }
-
-        /// <summary>
-        /// return a random float from 0 [inclusive]
-        /// to maxValue [inclusive]
-        /// </summary>
-        /// <param name="maxValue">maxValue [inclusive]</param>
-        /// <returns></returns>
-        public float NextFloat(float maxValue)
-        {
-            return NextFloat(0, maxValue);
-        }
-
-        /// <summary>
-        /// return a random float from minValue [inclusive]
-        /// to maxValue [inclusive]
-        /// </summary>
-        /// <param name="minValue">minValue [inclusive]</param>
-        /// <param name="maxValue">maxValue [inclusive]</param>
-        /// <returns></returns>
-        public float NextFloat(float minValue, float maxValue)
-        {
-            return Random.Range(minValue, maxValue);
-        }
-
-        /// <summary>
-        /// return a random float into the Vector2 bounds
-        /// (x as minValue [inclusive],
-        /// y as maxValue [inclusive])
-        /// </summary>
-        /// <param name="interval">(x as minValue [inclusive], y as maxValue [inclusive])</param>
-        /// <returns></returns>
-        public float NextFloat(Vector2 interval)
-        {
-            return NextFloat(interval.x, interval.y);
-        }
-
-        /// <summary>
-        /// return a random float from -max [inclusive]
-        /// to +max [inclusive] by binomial distribution.
-        /// Binomial distribution return more often value 
-        /// close to the center (here 0).
-        /// </summary>
-        /// <param name="max">The max [inclusive]</param>
-        /// <returns></returns>
-        public float NextBinomialFloat(float max)
-        {
-            return NextFloat(max) - NextFloat(max);
-        }
-
-        /// <summary>
-        /// return a random boolean value
-        /// </summary>
-        /// <returns></returns>
         public bool NextBool()
         {
-            int randomValue = NextInt(2);
-
-            return randomValue == 0;
+            return NextDouble() > 0.5f;
         }
 
-        public T GetRandomElement<T>(List<T> list)
+        /// <summary>
+        /// return an int between min [inclusive] and max [inclusive] 
+        /// with the AnimationCurve as distribution
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <param name="curve"></param>
+        /// <returns></returns>
+        public int NextDistributedInt(int min, int max, AnimationCurve curve)
         {
-            int randomIndex = NextInt(list.Count);
+            float t = (float)NextDouble();
+            float e = curve.Evaluate(t);
+            e = Mathf.Clamp01(e);
+            return min + (int)(e * (max - min));
+        }
 
-            return list[randomIndex];
+        /// <summary>
+        /// return an int between 0 [inclusive] and max [inclusive] 
+        /// with the AnimationCurve as distribution
+        /// </summary>
+        public int NextDistributedInt(int max, AnimationCurve curve)
+        {
+            return NextDistributedInt(0, max, curve);
+        }
+
+        /// <summary>
+        /// return a float between min [inclusive] and max [inclusive] 
+        /// with the AnimationCurve as distribution
+        /// </summary>
+        public float NextDistributedFloat(float min, float max, AnimationCurve curve)
+        {
+            float t = (float)NextDouble();
+            float e = curve.Evaluate(t);
+            e = Mathf.Clamp01(e);
+            return min + (e * (max - min));
+        }
+
+        public float NextFloat(float min, float max)
+        {
+            float t = (float)NextDouble();
+            return min + (t * (max - min));
+        }
+
+        public float NextFloat(Vector2 range)
+        {
+            return NextFloat(range.x, range.y);
+        }
+
+        public int Next(Vector2i range)
+        {
+            return Next(range.x, range.y);
+        }
+
+        public static int GetConstantRandom(int seed, int count, int precision = 10000000)
+        {
+            if (seed <= 0)
+                seed = int.MaxValue;
+
+            float a = Mathf.Sqrt(seed) / precision;
+            float b = Mathf.Sin(1 / a);
+            int c = (int)(Mathf.Floor(b * 1000) % count);
+
+            return Mathf.Abs(c);
         }
     }
 }
+

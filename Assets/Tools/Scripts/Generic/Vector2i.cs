@@ -1,8 +1,6 @@
 ﻿using System;
 using UnityEngine;
 
-#pragma warning disable 219 // to hide the warning "x, y values never used [...]"
-
 namespace Tools
 {
     [Serializable]
@@ -17,6 +15,13 @@ namespace Tools
             this.y = y;
         }
 
+        public static Vector2i zero = new Vector2i(0, 0);
+        public static Vector2i one = new Vector2i(1, 1);
+        public static Vector2i left = new Vector2i(-1, 0);
+        public static Vector2i right = new Vector2i(1, 0);
+        public static Vector2i bottom = new Vector2i(0, -1);
+        public static Vector2i top = new Vector2i(0, 1);
+
         public static Vector2i operator +(Vector2i c1, Vector2i c2)
         {
             return new Vector2i(c1.x + c2.x, c1.y + c2.y);
@@ -27,6 +32,16 @@ namespace Tools
             return new Vector2i(c1.x - c2.x, c1.y - c2.y);
         }
 
+        public static Vector2i operator -(Vector2i c1)
+        {
+            return new Vector2i(-c1.x, -c1.y);
+        }
+        
+        public static Vector2i operator *(Vector2i c, int i)
+        {
+            return new Vector2i(c.x * i, c.y * i);
+        }
+
         public static Vector2 operator *(Vector2i c, float f)
         {
             return new Vector2(c.x * f, c.y * f);
@@ -35,6 +50,16 @@ namespace Tools
         public static Vector2 operator *(float f, Vector2i c)
         {
             return new Vector2(c.x * f, c.y * f);
+        }
+
+        public static Vector2 operator /(Vector2i c, int i)
+        {
+            return new Vector2(c.x, c.y) / i;
+        }
+
+        public static Vector2 operator /(Vector2i c, float f)
+        {
+            return new Vector2(c.x, c.y) / f;
         }
 
         public static bool operator ==(Vector2i c1, Vector2i c2)
@@ -55,7 +80,31 @@ namespace Tools
 
         public static explicit operator Vector2i(Vector2 c)
         {
-            return new Vector2i((int) c.x, (int) c.y);
+            return new Vector2i((int)c.x, (int)c.y);
+        }
+
+        public static int ManhattanDistance(Vector2i a, Vector2i b)
+        {
+            Vector2i d = a - b;
+            return Mathf.Abs(d.x) + Mathf.Abs(d.x);
+        }
+
+        public override bool Equals(object obj)
+        {
+            var item = obj as Vector2i?;
+
+            if(item.HasValue)
+            {
+                return x == item.Value.x 
+                    && y == item.Value.y;
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return x.GetHashCode() + y.GetHashCode();
         }
 
         public override string ToString()
@@ -63,27 +112,17 @@ namespace Tools
             return "Vector2i(" + x + ", " + y + ")";
         }
 
-        public bool Equals(Vector2i other)
+        public static int SizeOf()
         {
-            return x == other.x && y == other.y;
+            return sizeof(int) * 2;
         }
 
-        public override bool Equals(object obj)
+        public int CompareTo(Vector2i v2i)
         {
-            if (ReferenceEquals(null, obj))
-                return false;
+            int dx = x - v2i.x;
+            if (dx != 0) return dx;
 
-            return obj is Vector2i && Equals((Vector2i)obj);
-        }
-
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                return (x * 397) ^ y;
-            }
+            return y - v2i.y;
         }
     }
 }
-
-#pragma warning restore 219
