@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ToolsEditor
 {
-    [CustomEditor(typeof(Tools.QTCircle)), CanEditMultipleObjects]
+    [CustomEditor(typeof(Tools.QTCircleCollider)), CanEditMultipleObjects]
     public class QTCircleInspector : Editor
     {
         readonly float offsetY = 0f;
@@ -23,17 +23,7 @@ namespace ToolsEditor
 
         private void OnSceneGUI()
         {
-            Tools.QTCircle circle = target as Tools.QTCircle;
-
-            //Transform handleTransform = circle.transform;
-            //Quaternion handleRotation = handleTransform.rotation;
-            //Vector3 p0 = handleTransform.TransformPoint(circle.p0);
-            //Vector3 p1 = handleTransform.TransformPoint(circle.p1);
-
-            //Handles.color = Color.white;
-            //Handles.DrawLine(p0, p1);
-            //Handles. DoPositionHandle(p0, handleRotation);
-            //Handles.DoPositionHandle(p1, handleRotation);
+            Tools.QTCircleCollider circle = target as Tools.QTCircleCollider;
 
             Handles.color = Color.green;
 

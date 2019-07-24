@@ -10,25 +10,10 @@ namespace Tools
      * \brief   A class which provide a first traitment
      *          to accelerate collision computing in 2D.
      */
+     [Serializable]
     public class QuadTree<T> where T : IQTClearable
     {
-        public int MAX_OBJECTS = 30;
-        public int MAX_LEVELS = 5;
-
-        private QuadTreeNode<T> _root;
-
-        [Serializable]
-        public struct SerializableQuadTreeNode
-        {
-            public int ChildIndex;
-            public int ChildCount;
-
-            public int ObjectIndex;
-            public int ObjectCount;
-        }
-
-        [SerializeField] private List<SerializableQuadTreeNode> _serializableQuadTreeNodeList = new List<SerializableQuadTreeNode>();
-        [SerializeField] private List<T> _serializableObjectList = new List<T>();
+        protected QuadTreeNode<T> _root;
 
         public QuadTree(Rect bounds)
         {
@@ -39,11 +24,11 @@ namespace Tools
          * \brief   clears the quadtree by recursively 
          *          clearing all objects from all nodes.
         */
-        public void Clear()
+        public void Clear(bool clearAll)
         {
             if (_root != null)
             {
-                _root.Clear(true);
+                _root.Clear(clearAll);
             }
         }
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Tools
 {
-    public class QTCircle : MonoBehaviour, IQTClearable
+    public class QTCircleCollider : MonoBehaviour, IQTClearable
     {
 #if UNITY_EDITOR
         public bool edit
@@ -14,9 +14,17 @@ namespace Tools
         [SerializeField] bool _edit;
 #endif
 
+        [SerializeField] int _layer;
         [SerializeField] Vector2 _offset;
         [SerializeField] float _radius;
         [SerializeField] bool _persistent;
+
+        bool _isRegistered;
+
+        public int layer
+        {
+            get { return _layer; }
+        }
 
         public bool isEnable
         {
@@ -50,14 +58,6 @@ namespace Tools
 
         void OnDrawGizmosSelected()
         {
-            //Gizmos.color = Color.green;
-
-            //Vector3 center = transform.position 
-            //                 + WorldConversion.ToVector3(_offset);
-            //center.y = 0;
-
-            //Gizmos.DrawWireSphere(center, _radius);
-
             Gizmos.color = Color.red;
 
             Rect rect = GetGlobalBounds();
@@ -74,6 +74,21 @@ namespace Tools
         public void SetOffset(Vector2 offset)
         {
             _offset = offset;
+        }
+
+        public void Update()
+        {
+            QuadTreeCircleManager.instance.Register(this);
+            Debug.Log("Add collider at " + Time.time);
+        }
+
+        void OnEnable()
+        {
+            if(!_isRegistered)
+            {
+                _isRegistered = true;
+                QuadTreeCircleManager.instance.Register(this);
+            }
         }
     }
 }

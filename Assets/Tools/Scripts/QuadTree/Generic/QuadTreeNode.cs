@@ -8,13 +8,33 @@ namespace Tools
 {
     public class QuadTreeNode<T> where T : IQTClearable
     {
-        public int MAX_OBJECTS = 30;
-        public int MAX_LEVELS = 5;
+       [NonSerialized] public int MAX_OBJECTS = 5;
+       [NonSerialized] public int MAX_LEVELS = 5;
 
-        [SerializeField] private int _level;
-        [SerializeField] private List<QTObject<T>> _objects;
-        [SerializeField] private Rect _bounds;
-        [SerializeField] private QuadTreeNode<T>[] _nodes;
+        public int level
+        {
+            get { return _level; }
+        }
+
+        public Rect bounds
+        {
+            get { return _bounds; }
+        }
+
+        public List<QTObject<T>> objects
+        {
+            get { return _objects; }
+        }
+
+        public QuadTreeNode<T>[] nodes
+        {
+            get { return _nodes; }
+        }
+
+        private int _level;
+        private List<QTObject<T>> _objects;
+        private Rect _bounds;
+        private QuadTreeNode<T>[] _nodes;
 
         //[SerializeField]
         //private List<T> _serializableObjectList;
@@ -41,7 +61,7 @@ namespace Tools
             }
             else
             {
-                ClearObjects(_objects, false);
+                ClearObjects(_objects, false, true);
             }
             
             for (int i = 0; i < _nodes.Length; i++)
@@ -49,7 +69,6 @@ namespace Tools
                 if (_nodes[i] != null)
                 {
                     _nodes[i].Clear(clearAll);
-                    //_nodes[i] = null;
                 }
             }
         }
@@ -57,7 +76,9 @@ namespace Tools
         // ------------------------------------------------
         // This algo remove old objects in O(n)
         // ------------------------------------------------
-        void ClearObjects(List<QTObject<T>> objects, bool isEnable)
+        void ClearObjects(List<QTObject<T>> objects, 
+                          bool removeDisable, 
+                          bool ignorePersistent)
         {
             int removeIndex = -1;
             int removeCount = 0;
@@ -66,7 +87,8 @@ namespace Tools
             {
                 QTObject<T> t = _objects[i];
 
-                if (!t.obj.isEnable && isEnable)
+                if ((!t.obj.isEnable && removeDisable)
+                    || (!t.obj.persistent && ignorePersistent))
                 {
                     removeCount++;
 
@@ -236,7 +258,7 @@ namespace Tools
             
             returnObjects.AddRange(_objects);
 
-            ClearObjects(returnObjects, true);
+            ClearObjects(returnObjects, true, false);
 
             return returnObjects;
         }

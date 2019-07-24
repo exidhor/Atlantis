@@ -26,13 +26,13 @@ namespace Tools
                     // we first try to find if there is already an GameObject in the scene 
                     _instance = GameObject.FindObjectOfType<T>();
 
-                    if(_instance == null)
-                    {
-                        // if not, we create one
-                        GameObject go = new GameObject();
-                        _instance = go.AddComponent<T>();
-                        _instance.name = typeof(T).Name;
-                    }
+                    //if(_instance == null)
+                    //{
+                    //    // if not, we create one
+                    //    GameObject go = new GameObject();
+                    //    _instance = go.AddComponent<T>();
+                    //    _instance.name = typeof(T).Name;
+                    //}
                 }
 
                 return _instance;
