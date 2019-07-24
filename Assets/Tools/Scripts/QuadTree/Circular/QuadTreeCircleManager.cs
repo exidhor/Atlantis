@@ -25,7 +25,7 @@ namespace Tools
 
             public void Insert(QTCircleCollider collider)
             {
-                QuadTree<QTCircleCollider> quadTree = collider.persistent ? dynamicQT : staticQT;
+                QuadTree<QTCircleCollider> quadTree = collider.@static ? staticQT : dynamicQT;
 
                 quadTree.Insert(collider, collider.GetGlobalBounds());
             }

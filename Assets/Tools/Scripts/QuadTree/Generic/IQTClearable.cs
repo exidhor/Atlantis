@@ -8,6 +8,6 @@ namespace Tools
     public interface IQTClearable
     {
         bool isEnable { get; }
-        bool persistent { get; }
+        bool @static { get; }
     }
 }

@@ -1,24 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Tools;
 
-[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(QTCircleCollider))]
 public class FishZone : MonoBehaviour
 {
     public float radius
     {
         get
         {
-            return collider.radius * Mathf.Max(transform.lossyScale.x, transform.lossyScale.y);
+            return collider.radius;
         }
     }
 
-    SphereCollider collider
+    QTCircleCollider collider
     {
         get
         {
             if(_collider == null)
             {
-                _collider = GetComponent<SphereCollider>();
+                _collider = GetComponent<QTCircleCollider>();
             }
 
             return _collider;
@@ -32,5 +33,5 @@ public class FishZone : MonoBehaviour
 
     [SerializeField] FishType _fishType;
 
-    SphereCollider _collider;
+    QTCircleCollider _collider;
 }

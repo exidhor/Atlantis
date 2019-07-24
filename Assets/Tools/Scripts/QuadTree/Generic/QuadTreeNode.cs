@@ -88,7 +88,7 @@ namespace Tools
                 QTObject<T> t = _objects[i];
 
                 if ((!t.obj.isEnable && removeDisable)
-                    || (!t.obj.persistent && ignorePersistent))
+                    || (!t.obj.@static && ignorePersistent))
                 {
                     removeCount++;
 

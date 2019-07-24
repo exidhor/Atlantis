@@ -16,8 +16,10 @@ namespace Tools
 
         [SerializeField] int _layer;
         [SerializeField] Vector2 _offset;
-        [SerializeField] float _radius;
-        [SerializeField] bool _persistent;
+        [SerializeField] float _radius = 5f;
+        [SerializeField] bool _static;
+        [SerializeField] bool _enable = true;
+        [SerializeField] bool _manual;
 
         bool _isRegistered;
 
@@ -28,12 +30,12 @@ namespace Tools
 
         public bool isEnable
         {
-            get { return enabled; }
+            get { return _enable; }
         }
 
-        public bool persistent
+        public bool @static
         {
-            get { return _persistent; }
+            get { return _static; }
         }
 
         public Vector2 center
@@ -78,12 +80,18 @@ namespace Tools
 
         public void Update()
         {
-            QuadTreeCircleManager.instance.Register(this);
+            if(_enable)
+            {
+                if (!_static && !_manual)
+                {
+                    QuadTreeCircleManager.instance.Register(this);
+                }
+            }
         }
 
         void OnEnable()
         {
-            if(!_isRegistered)
+            if(!_isRegistered && !_manual)
             {
                 _isRegistered = true;
                 QuadTreeCircleManager.instance.Register(this);

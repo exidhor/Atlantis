@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using Tools;
 
 public class Fisherman : Crew
@@ -14,7 +14,7 @@ public class Fisherman : Crew
     [Header("Linking")]
     [SerializeField] FishingLine _fishingLine;
 
-    SphereCollider _collider;
+    QTCircleCollider _collider;
     FishZone _fishZone;
     bool _isFishing;
     float _currentFishTime;
@@ -44,7 +44,7 @@ public class Fisherman : Crew
 
     void Awake()
     {
-        _collider = GetComponent<SphereCollider>();
+        _collider = GetComponent<QTCircleCollider>();
     }
 
     void OnEnable()
@@ -53,13 +53,13 @@ public class Fisherman : Crew
     }
 
     // todo : opti this
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.layer == LayerType.instance.layerFish)
-        {
-            _fishZone = other.gameObject.GetComponent<FishZone>();
-        }
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.layer == LayerType.instance.layerFish)
+    //    {
+    //        _fishZone = other.gameObject.GetComponent<FishZone>();
+    //    }
+    //}
 
     //void OnTriggerExit2D(Collider2D other)
     //{
@@ -80,6 +80,28 @@ public class Fisherman : Crew
         else if(_isFishing)
         {
             StopFishing();
+        }
+        else
+        {
+            List<QTCircleCollider> found = QuadTreeCircleManager.instance.Retrieve(_collider);
+
+            GameObject best = null;
+            float bestDistance = float.MaxValue;
+            for(int i = 0; i < found.Count; i++)
+            {
+                float distance = Vector2.Distance(found[i].center, _collider.center);
+
+                if(distance < bestDistance)
+                {
+                    best = found[i].gameObject;
+                    bestDistance = distance;
+                }
+            }
+
+            if(best != null)
+            {
+                _fishZone = best.GetComponent<FishZone>();
+            }
         }
     }
 
