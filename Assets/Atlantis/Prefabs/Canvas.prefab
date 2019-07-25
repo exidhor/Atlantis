@@ -52,9 +52,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inCurveName: harborWindowIn
   _outCurveName: harborWindowOut
-  _sprite0: {fileID: 0}
-  _sprite1: {fileID: 0}
-  _spaceImage: {fileID: 0}
+  _fishIcon: {fileID: 1688540850}
+  _fishCount: {fileID: 999395078}
+  _fishPrice: {fileID: 6173382403628748716}
 --- !u!1 &345559473
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 999395079}
   - component: {fileID: 999395078}
   m_Layer: 5
-  m_Name: FishCount
+  m_Name: FishCountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,7 +1231,7 @@ GameObject:
   - component: {fileID: 1688540851}
   - component: {fileID: 1688540850}
   m_Layer: 5
-  m_Name: Fish
+  m_Name: FishIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1493,7 +1493,7 @@ GameObject:
   - component: {fileID: 1978841882}
   - component: {fileID: 1978841881}
   m_Layer: 5
-  m_Name: Fish (1)
+  m_Name: FishCount Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1918,7 +1918,7 @@ GameObject:
   - component: {fileID: 4379832098614534052}
   - component: {fileID: 6173382403628748716}
   m_Layer: 5
-  m_Name: FishCount (1)
+  m_Name: CoinsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2307,7 +2307,7 @@ GameObject:
   - component: {fileID: 4152523988725089087}
   - component: {fileID: 8427020431195576867}
   m_Layer: 5
-  m_Name: Fish (2)
+  m_Name: CoinsIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

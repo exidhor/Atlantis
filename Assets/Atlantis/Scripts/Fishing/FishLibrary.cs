@@ -16,4 +16,11 @@ public class FishLibrary : MonoSingleton<FishLibrary>
     {
         return _fishes[(int)type];
     }
+
+    public FishInfo GetRandomFish()
+    {
+        int index = UnityEngine.Random.Range(0, _fishes.Count);
+
+        return _fishes[index];
+    }
 }

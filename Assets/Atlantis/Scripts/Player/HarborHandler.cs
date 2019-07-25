@@ -51,6 +51,7 @@ public class HarborHandler : MonoBehaviour
             else if(!_isAtRange && maxDistance > distance)
             {
                 _isAtRange = true;
+                _harbor.SetHarborWindow(_window);
                 _harbor.SetIndicatorState(true);
                 _window.Appear();
             }

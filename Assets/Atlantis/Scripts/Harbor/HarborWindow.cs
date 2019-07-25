@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class HarborWindow : MonoBehaviour
 {
@@ -8,10 +9,10 @@ public class HarborWindow : MonoBehaviour
     [SerializeField] string _inCurveName;
     [SerializeField] string _outCurveName;
 
-    [Header("Space Anim")]
-    [SerializeField] Sprite _sprite0;
-    [SerializeField] Sprite _sprite1;
-    [SerializeField] Image _spaceImage;
+    [Header("Settings")]
+    [SerializeField] Image _fishIcon;
+    [SerializeField] TextMeshProUGUI _fishCount;
+    [SerializeField] TextMeshProUGUI _fishPrice;
 
     EvaluationCurve _inCurve;
     EvaluationCurve _outCurve;
@@ -43,6 +44,13 @@ public class HarborWindow : MonoBehaviour
         _outCurve = EvaluationCurveManager.instance.GetCurve(_outCurveName);
 
         _isInit = true;
+    }
+
+    public void Set(Sprite icon, int fishCount, int fishPrice)
+    {
+        _fishIcon.sprite = icon;
+        _fishCount.text = "-" + fishCount;
+        _fishPrice.text = "+" + fishPrice;
     }
 
     public void SetVisible(bool visible)
