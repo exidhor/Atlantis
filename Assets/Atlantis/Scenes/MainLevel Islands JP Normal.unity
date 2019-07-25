@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -521,22 +521,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1436944214}
-    - target: {fileID: 922666067, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.30010986
-      objectReference: {fileID: 0}
-    - target: {fileID: 1725462448, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.40170288
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123858451, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.40170288
-      objectReference: {fileID: 0}
-    - target: {fileID: 1097723268, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.40170288
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
 --- !u!114 &400676851 stripped

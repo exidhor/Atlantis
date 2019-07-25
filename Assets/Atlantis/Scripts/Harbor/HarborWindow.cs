@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class HarborWindow : MonoBehaviour
 {
+    [Header("Panel Anims")]
     [SerializeField] string _inCurveName;
     [SerializeField] string _outCurveName;
+
+    [Header("Space Anim")]
+    [SerializeField] Sprite _sprite0;
+    [SerializeField] Sprite _sprite1;
+    [SerializeField] Image _spaceImage;
 
     EvaluationCurve _inCurve;
     EvaluationCurve _outCurve;
