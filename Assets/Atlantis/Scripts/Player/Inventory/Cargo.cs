@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 using Tools;
 
 public class Cargo : MonoSingleton<Cargo>
@@ -30,6 +31,8 @@ public class Cargo : MonoSingleton<Cargo>
     [SerializeField] FishCounter _littleFish;
     [SerializeField] FishCounter _bigFish;
     [SerializeField] FishCounter _octopus;
+
+    [SerializeField] List<ShipHold> _holds = new List<ShipHold>();
 
     public void AddFish(int count, FishType type)
     {
