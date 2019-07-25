@@ -18,6 +18,9 @@ public class HarborHandler : MonoBehaviour
         }
     }
 
+    [Header("Harbor Handler")] 
+    [SerializeField] HarborWindow _window;
+
     QTCircleCollider _collider;
     Harbor _harbor;
 
@@ -43,11 +46,13 @@ public class HarborHandler : MonoBehaviour
             {
                 _isAtRange = false;
                 _harbor.SetIndicatorState(false);
+                _window.Disappear();
             }
             else if(!_isAtRange && maxDistance > distance)
             {
                 _isAtRange = true;
                 _harbor.SetIndicatorState(true);
+                _window.Appear();
             }
         }
     }
