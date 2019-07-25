@@ -2258,26 +2258,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bdde0180143214943b7d31e0a83393c4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3776b56235510e24881c3c58cc431025, type: 3}
---- !u!1 &108349149 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 108349149, guid: 2e237f7c691d44576b8208b629b443ad,
+--- !u!114 &108349150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3836385534962479260, guid: 2e237f7c691d44576b8208b629b443ad,
     type: 3}
   m_PrefabInstance: {fileID: 400676850}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &108349150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108349149}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aad1124588e7544d69d065f7b5f050a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inCurveName: harborWindowIn
-  _outCurveName: harborWindowOut
 --- !u!1001 &118592311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5793,18 +5785,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1436944214}
-    - target: {fileID: 108349149, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1249606144, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 1249606144, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -135
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
 --- !u!114 &400676851 stripped

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 108349150}
+  - component: {fileID: 3836385534962479260}
   m_Layer: 5
   m_Name: HarborPanel
   m_TagString: Untagged
@@ -36,6 +37,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3836385534962479260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108349149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad1124588e7544d69d065f7b5f050a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inCurveName: harborWindowIn
+  _outCurveName: harborWindowOut
 --- !u!1 &345559473
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -158.2, y: 85.02}
+  m_AnchoredPosition: {x: -135, y: 27}
   m_SizeDelta: {x: 211.6, y: 335.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1249606146
