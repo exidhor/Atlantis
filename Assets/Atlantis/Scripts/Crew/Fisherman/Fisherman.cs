@@ -167,10 +167,10 @@ public class Fisherman : Crew
 
     Vector2 ShootLine()
     {
-        Vector2 centerA = WorldConversion.ToVector2(_fishZone.transform.position);
+        Vector2 centerA = _fishZone.center;
         float radiusA = _fishZone.radius;
 
-        Vector2 centerB = WorldConversion.ToVector2(transform.position);
+        Vector2 centerB = _collider.center;
         float radiusB = _collider.radius;
 
         CircleCircleIntersection intersect = MathHelper.CircleCircleIntersects(centerA,
