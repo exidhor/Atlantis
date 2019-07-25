@@ -1,58 +1,31 @@
 fileFormatVersion: 2
-guid: 52eb56d83e9ddc64180f52adb9538d53
+guid: 4b203fe48edb012438633fff5e5f1495
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: dcr_fishing_shack_01 1
-    100004: pCube144
-    100006: pCube145
-    100008: pCube146
-    100010: pCube147
-    100012: pCube148
-    100014: pCube149
-    100016: pCube150
-    100018: pCube151
-    400000: //RootNode
-    400002: dcr_fishing_shack_01 1
-    400004: pCube144
-    400006: pCube145
-    400008: pCube146
-    400010: pCube147
-    400012: pCube148
-    400014: pCube149
-    400016: pCube150
-    400018: pCube151
+    100000: dcr_fishing_crate_01
+    100002: dcr_fishing_crate_02
+    100004: dcr_fishing_crate_03
+    100006: dcr_fishing_crate_04
+    100008: //RootNode
+    400000: dcr_fishing_crate_01
+    400002: dcr_fishing_crate_02
+    400004: dcr_fishing_crate_03
+    400006: dcr_fishing_crate_04
+    400008: //RootNode
     2100000: lambert1
-    2300000: //RootNode
-    2300002: dcr_fishing_shack_01 1
-    2300004: pCube144
-    2300006: pCube145
-    2300008: pCube146
-    2300010: pCube147
-    2300012: pCube148
-    2300014: pCube149
-    2300016: pCube150
-    2300018: pCube151
-    3300000: //RootNode
-    3300002: dcr_fishing_shack_01 1
-    3300004: pCube144
-    3300006: pCube145
-    3300008: pCube146
-    3300010: pCube147
-    3300012: pCube148
-    3300014: pCube149
-    3300016: pCube150
-    3300018: pCube151
-    4300000: dcr_fishing_shack_01
-    4300002: pCube146
-    4300004: pCube147
-    4300006: pCube148
-    4300008: pCube144
-    4300010: pCube145
-    4300012: pCube149
-    4300014: pCube150
-    4300016: pCube151
+    2300000: dcr_fishing_crate_01
+    2300002: dcr_fishing_crate_02
+    2300004: dcr_fishing_crate_03
+    2300006: dcr_fishing_crate_04
+    3300000: dcr_fishing_crate_01
+    3300002: dcr_fishing_crate_02
+    3300004: dcr_fishing_crate_03
+    3300006: dcr_fishing_crate_04
+    4300000: dcr_fishing_crate_04
+    4300002: dcr_fishing_crate_01
+    4300004: dcr_fishing_crate_03
+    4300006: dcr_fishing_crate_02
   externalObjects: {}
   materials:
     importMaterials: 1
