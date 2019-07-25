@@ -75,14 +75,18 @@ namespace Tools
 
         #endregion
 
+        [Header("Debug")]
+        [SerializeField] bool serialize;
         [SerializeField] bool _drawGizmos;
         [SerializeField] int _debugThisLayerIndex;
         [SerializeField] float _heightGizmosStatic = 50f;
         [SerializeField] float _heightGizmosDynamic = 0f;
 
+        [Header("Infos")]
         [SerializeField] int _layerCount;
         [SerializeField] Rect _worldBounds;
 
+        [Header("Serialization")]
         [SerializeField, UnityReadOnly]
         List<QuadTrees> _quadTrees = new List<QuadTrees> ();
 
@@ -190,6 +194,8 @@ namespace Tools
 #if UNITY_EDITOR
         public void OnBeforeSerialize()
         {
+            if (!serialize) return;
+
             for(int i = 0; i < _quadTrees.Count; i++)
             {
                 _quadTrees[i].Serialize();
