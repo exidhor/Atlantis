@@ -44,9 +44,18 @@ public class HarborWindow : MonoBehaviour
         enabled = false;
     }
 
-    public void Actualize(float dt)
+    public void ActualizeCloseState(float amountTimeLeft)
     {
+        _reloadSlider.value = amountTimeLeft;
+    }
 
+    /// <summary>
+    /// Return true if it needed a refresh, false otherwise
+    /// </summary>
+    /// <returns><c>true</c>, if open state was checked, <c>false</c> otherwise.</returns>
+    public bool CheckOpenState()
+    {
+        return !_isOpen;
     }
 
     public void SetIsOpen(bool isOpen)
@@ -139,7 +148,7 @@ public class HarborWindow : MonoBehaviour
     {
         _time += Time.deltaTime;
 
-        if(_time < _current.duration)
+        if (_time < _current.duration)
         {
             float ct = _current.Evaluate(_time);
             transform.position = Vector3.Lerp(_from, _to, ct);
