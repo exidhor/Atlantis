@@ -15,6 +15,7 @@ public class Harbor : QTCircleCollider
     }
 
     [Header("Harbor")]
+    [SerializeField] float _closeDuration = 30;
     [SerializeField] Gradient _colorOutside;
     [SerializeField] Gradient _colorInside;
     [SerializeField] CircleIndicator _indicator;
@@ -24,9 +25,25 @@ public class Harbor : QTCircleCollider
     int _fishPrice;
     int _fishCount;
 
+    bool _isClosed;
+    float _closedTime;
+
     void Awake()
     {
         Refresh();
+    }
+
+    void Update()
+    {
+        if(_isClosed)
+        {
+            _closedTime += Time.deltaTime;
+
+            if(_closedTime > _closeDuration)
+            {
+                Open();
+            }
+        }
     }
 
     void Refresh()
@@ -52,5 +69,31 @@ public class Harbor : QTCircleCollider
     public void SetIndicatorState(bool playerNear)
     {
         _indicator.SetColor(playerNear ? _colorInside : _colorOutside);
+    }
+
+    public bool AskForDeal()
+    {
+        if(Cargo.instance.CanPay(_fishType, _fishCount))
+        {
+            Cargo.instance.Pay(_fishType, _fishCount);
+            return true;
+        }
+
+        return false;
+    }
+
+    public void Close()
+    {
+        _isClosed = true;
+        _closedTime = 0f;
+        _enable = false;
+    }
+
+    public void Open()
+    {
+        _isClosed = false;
+        _enable = true;
+
+        Refresh();
     }
 }

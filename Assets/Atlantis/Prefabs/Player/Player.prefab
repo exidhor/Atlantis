@@ -269,6 +269,7 @@ MonoBehaviour:
   _feedback: {fileID: 4999710868813504724}
   _ship: {fileID: 4999107811912162466}
   _camera: {fileID: 4999599924383772292}
+  _harborHandler: {fileID: 1043913862}
 --- !u!54 &4801905319027417392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1180,11 +1181,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _poolHolds.Array.size
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8762960196016194645, guid: dc7b9363f227540d19b68fec3687d6ae,
-        type: 3}
-      propertyPath: _holds.Array.size
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8762960196016194645, guid: dc7b9363f227540d19b68fec3687d6ae,
         type: 3}
