@@ -1612,7 +1612,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f011c54bb185542dd8dd8ec5e0596a4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc57e09ed8a64e24c996b87340ceb84b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3097,7 +3097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9182499418477147393}
-  - component: {fileID: 400676854}
+  - component: {fileID: 8524939788055840011}
   m_Layer: 5
   m_Name: DEBUG INFOS
   m_TagString: Untagged
@@ -3127,7 +3127,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!223 &400676854
+--- !u!223 &8524939788055840011
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

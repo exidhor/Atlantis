@@ -9,6 +9,23 @@ public class ShipHoldUI : MonoBehaviour
     [SerializeField] Image _filled;
     [SerializeField] TextMeshProUGUI _fishCount;
     [SerializeField] Image _fishIcon;
+    [SerializeField] Image _closeOuterCircle;
+    [SerializeField] Image _closeInnerCircle;
+    [SerializeField] Image _closeIcon;
+
+    void Awake()
+    {
+        SetCloseState(false);
+    }
+
+    void SetCloseState(bool state)
+    {
+        _closeOuterCircle.enabled = state;
+        _closeInnerCircle.enabled = state;
+        _closeIcon.enabled = state;
+
+        _fishCount.enabled = !state;
+    }
 
     public void Refresh(ShipHold hold)
     {
