@@ -75,7 +75,7 @@ public class HarborWindow : MonoBehaviour
         SetIsOpen(true);
 
         _fishIcon.sprite = icon;
-        _fishCount.text = "-" + fishCount;
+        _fishCount.text = fishCount.ToString();
         _fishPrice.text = "+" + fishPrice;
     }
 
