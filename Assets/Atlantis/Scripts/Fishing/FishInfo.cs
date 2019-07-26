@@ -15,10 +15,25 @@ public class FishInfo
         get { return _icon; }
     }
 
+    public Color holdFrontColor
+    {
+        get { return _holdFrontColor; }
+    }
+
+    public Color holdBackgroundColor
+    {
+        get { return _holdBackgroundColor; }
+    }
+
+    [Header("Game Design Values")]
     [SerializeField] FishType _type;
-    [SerializeField] Sprite _icon;
     [SerializeField] Vector2i _questRange;
     [SerializeField] Vector2i _oneFishPriceRange;
+
+    [Header("UIs")]
+    [SerializeField] Sprite _icon;
+    [SerializeField] Color _holdFrontColor;
+    [SerializeField] Color _holdBackgroundColor;
 
     public int GetRandomCount()
     {

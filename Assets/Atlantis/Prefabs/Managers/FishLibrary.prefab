@@ -45,26 +45,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fishes:
   - _type: 0
-    _icon: {fileID: 21300000, guid: 7dfd9b3576a00984babd39f4f3a2acc5, type: 3}
     _questRange:
       x: 3
       y: 10
     _oneFishPriceRange:
       x: 4
       y: 6
+    _icon: {fileID: 21300000, guid: 7dfd9b3576a00984babd39f4f3a2acc5, type: 3}
+    _holdFrontColor: {r: 1, g: 0.57096726, b: 0, a: 0.5882353}
+    _holdBackgroundColor: {r: 0.4528302, g: 0.32157284, b: 0.16447133, a: 1}
   - _type: 1
-    _icon: {fileID: 21300000, guid: bc57e09ed8a64e24c996b87340ceb84b, type: 3}
     _questRange:
       x: 3
       y: 10
     _oneFishPriceRange:
       x: 10
       y: 15
+    _icon: {fileID: 21300000, guid: bc57e09ed8a64e24c996b87340ceb84b, type: 3}
+    _holdFrontColor: {r: 0, g: 0.8215718, b: 1, a: 0.5882353}
+    _holdBackgroundColor: {r: 0, g: 0.103946924, b: 1, a: 1}
   - _type: 2
-    _icon: {fileID: 21300000, guid: ca5da2bf71ecb80409c623f0024b2958, type: 3}
     _questRange:
       x: 1
       y: 20
     _oneFishPriceRange:
       x: 4
       y: 10
+    _icon: {fileID: 21300000, guid: ca5da2bf71ecb80409c623f0024b2958, type: 3}
+    _holdFrontColor: {r: 1, g: 0.5424528, b: 0.9447789, a: 0.5882353}
+    _holdBackgroundColor: {r: 0.5377358, g: 0, b: 0.50016475, a: 1}

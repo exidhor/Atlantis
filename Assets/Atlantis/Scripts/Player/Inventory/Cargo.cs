@@ -32,26 +32,94 @@ public class Cargo : MonoSingleton<Cargo>
     [SerializeField] FishCounter _bigFish;
     [SerializeField] FishCounter _octopus;
 
-    [SerializeField] List<ShipHold> _holds = new List<ShipHold>();
+    [SerializeField] int _holdCount = 4;
 
-    public void AddFish(int count, FishType type)
+    [SerializeField]
+    List<ShipHold> _poolHolds = new List<ShipHold>();
+
+    [SerializeField, UnityReadOnly]
+    List<ShipHold> _holds = new List<ShipHold>();
+
+    void Awake()
     {
-        switch(type)
+        for(int i = 0; i < _poolHolds.Count; i++)
         {
-            case FishType.bigFish:
-                _bigFish.Add(count);
-                break;
+            if(i < _holdCount)
+            {
+                _holds.Add(_poolHolds[i]);
+                _poolHolds[i].gameObject.SetActive(true);
+                _poolHolds[i].Init(i);
+            }
+            else
+            {
+                _poolHolds[i].gameObject.SetActive(false);
+            }
+        }
+    }
 
-            case FishType.littleFish:
-                _littleFish.Add(count);
-                break;
+    public void AddFish(FishType type, int count)
+    {
+        ShipHold found = FindHold(type);
 
-            case FishType.octopus:
-                _octopus.Add(count);
-                break;
+        if(found == null)
+        {
+            found = GetFirstEmpty();
+
+            if(found == null)
+            {
+                Debug.Log("Everything is full !!!");
+            }
         }
 
-        CheckForWin();
+        if(found != null)
+        {
+            found.Fill(type, count);
+        }
+
+        //switch(type)
+        //{
+        //    case FishType.bigFish:
+        //        _bigFish.Add(count);
+        //        break;
+
+        //    case FishType.littleFish:
+        //        _littleFish.Add(count);
+        //        break;
+
+        //    case FishType.octopus:
+        //        _octopus.Add(count);
+        //        break;
+        //}
+
+        //CheckForWin();
+    }
+
+    ShipHold FindHold(FishType type)
+    {
+        for(int i = 0; i < _holds.Count; i++)
+        {
+            if(!_holds[i].isEmpty 
+                && _holds[i].fishType == type
+                && !_holds[i].isFull)
+            {
+                return _holds[i];
+            }
+        }
+
+        return null;
+    }
+
+    ShipHold GetFirstEmpty()
+    {
+        for(int i = 0; i < _holds.Count; i++)
+        {
+            if(_holds[i].isEmpty)
+            {
+                return _holds[i];
+            }
+        }
+
+        return null;
     }
 
     void CheckForWin()

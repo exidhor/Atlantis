@@ -9327,7 +9327,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4785580307677480980}
   - component: {fileID: 4785580307677480983}
-  - component: {fileID: 4785580307677480982}
   m_Layer: 9
   m_Name: FishZone Little Fish
   m_TagString: Untagged
@@ -9362,20 +9361,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 812a3d0eb3d3c422d835d6610b890d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _edit: 0
+  _layer: 0
+  _offset: {x: 0, y: 0}
+  _radius: 5
+  _static: 0
+  _enable: 1
+  _manual: 0
   _fishType: 0
---- !u!135 &4785580307677480982
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4785580307677480985}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4785580307678363629
 GameObject:
   m_ObjectHideFlags: 0
