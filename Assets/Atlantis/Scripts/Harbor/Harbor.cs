@@ -76,6 +76,7 @@ public class Harbor : QTCircleCollider
         if(Cargo.instance.CanPay(_fishType, _fishCount))
         {
             Cargo.instance.Pay(_fishType, _fishCount);
+            Cargo.instance.ReceiveCoins(_fishPrice * _fishCount);
             return true;
         }
 

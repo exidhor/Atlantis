@@ -136,4 +136,11 @@ public class Cargo : MonoSingleton<Cargo>
             }
         }
     }
+
+    public void ReceiveCoins(int count)
+    {
+        _coinCount += count;
+
+        CargoUI.instance.RefreshCoins(_coinCount);
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using Tools;
+using TMPro;
 
 public class CargoUI : MonoSingleton<CargoUI>
 {
@@ -9,8 +10,11 @@ public class CargoUI : MonoSingleton<CargoUI>
         get { return _emptyHoldColor; }
     }
 
+    [Header("Values")]
     [SerializeField] Color _emptyHoldColor;
 
+    [Header("Linking")]
+    [SerializeField] TextMeshProUGUI _coinsText;
     [SerializeField] List<ShipHoldUI> _orderedHolds = new List<ShipHoldUI>();
 
     void Awake()
@@ -27,5 +31,10 @@ public class CargoUI : MonoSingleton<CargoUI>
         holdUI.Show();
 
         return holdUI;
+    }
+
+    public void RefreshCoins(int value)
+    {
+        _coinsText.text = value.ToString();
     }
 }
