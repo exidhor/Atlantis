@@ -103,6 +103,8 @@ public class HarborHandler : MonoBehaviour
         if(done)
         {
             _window.Disappear();
+            _harbor.Close();
+            _harbor = null;
         }
     }
 }
