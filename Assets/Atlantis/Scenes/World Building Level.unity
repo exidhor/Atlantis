@@ -9517,36 +9517,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4557132729514811390, guid: fee5bc0538d89455cbf7568fe9440ae4,
-        type: 3}
-      propertyPath: _fishes.Array.data[1]._holdFrontColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557132729514811390, guid: fee5bc0538d89455cbf7568fe9440ae4,
-        type: 3}
-      propertyPath: _fishes.Array.data[1]._holdFrontColor.g
-      value: 0.54663897
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557132729514811390, guid: fee5bc0538d89455cbf7568fe9440ae4,
-        type: 3}
-      propertyPath: _fishes.Array.data[1]._holdFrontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557132729514811390, guid: fee5bc0538d89455cbf7568fe9440ae4,
-        type: 3}
-      propertyPath: _fishes.Array.data[1]._holdBackgroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557132729514811390, guid: fee5bc0538d89455cbf7568fe9440ae4,
-        type: 3}
-      propertyPath: _fishes.Array.data[1]._holdBackgroundColor.g
-      value: 0.07759515
-      objectReference: {fileID: 0}
-    - target: {fileID: 4557132729514811390, guid: fee5bc0538d89455cbf7568fe9440ae4,
-        type: 3}
-      propertyPath: _fishes.Array.data[1]._holdBackgroundColor.b
-      value: 0.43529412
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee5bc0538d89455cbf7568fe9440ae4, type: 3}
 --- !u!4 &893537117 stripped
