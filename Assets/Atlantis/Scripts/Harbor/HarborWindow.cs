@@ -9,8 +9,16 @@ public class HarborWindow : MonoBehaviour
     [SerializeField] string _inCurveName;
     [SerializeField] string _outCurveName;
 
-    [Header("Settings")]
+    [Header("Settings Global")]
     [SerializeField] Image _fishIcon;
+    [SerializeField] Canvas _harborWindowCanvas;
+
+    [Header("Settings Close")]
+    [SerializeField] Canvas _closeCanvas;
+    [SerializeField] Slider _reloadSlider;
+
+    [Header("Settings Open")]
+    [SerializeField] Canvas _openCanvas;
     [SerializeField] TextMeshProUGUI _fishCount;
     [SerializeField] TextMeshProUGUI _fishPrice;
 
@@ -25,12 +33,28 @@ public class HarborWindow : MonoBehaviour
     Vector3 _to;
     float _time;
 
+    bool _isOpen;
+
     bool _isInit;
 
     void Awake()
     {
         Init();
+        _harborWindowCanvas.enabled = false;
         enabled = false;
+    }
+
+    public void Actualize(float dt)
+    {
+
+    }
+
+    public void SetIsOpen(bool isOpen)
+    {
+        _isOpen = isOpen;
+
+        _closeCanvas.enabled = !isOpen;
+        _openCanvas.enabled = isOpen;
     }
 
     void Init()
@@ -46,11 +70,20 @@ public class HarborWindow : MonoBehaviour
         _isInit = true;
     }
 
-    public void Set(Sprite icon, int fishCount, int fishPrice)
+    public void SetOpenState(Sprite icon, int fishCount, int fishPrice)
     {
+        SetIsOpen(true);
+
         _fishIcon.sprite = icon;
         _fishCount.text = "-" + fishCount;
         _fishPrice.text = "+" + fishPrice;
+    }
+
+    public void SetCloseState(Sprite icon)
+    {
+        SetIsOpen(false);
+
+        _fishIcon.sprite = icon;
     }
 
     public void SetVisible(bool visible)
@@ -58,11 +91,13 @@ public class HarborWindow : MonoBehaviour
         if(visible)
         {
             transform.position = _posIn;
+            _harborWindowCanvas.enabled = true;
             enabled = true;
         }
         else
         {
             transform.position = _posOut;
+            _harborWindowCanvas.enabled = false;
             enabled = false;
         }
     }
@@ -74,10 +109,12 @@ public class HarborWindow : MonoBehaviour
             Init();
         }
 
+        _harborWindowCanvas.enabled = true;
+        enabled = true;
+
         _time = 0f;
         _current = _inCurve;
         transform.position = _posOut;
-        enabled = true;
 
         _from = _posOut;
         _to = _posIn;

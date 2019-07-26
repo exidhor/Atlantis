@@ -14,6 +14,12 @@ public class Harbor : QTCircleCollider
         get { return WorldConversion.ToVector2(_indicator.transform.position); }
     }
 
+
+    public bool isOpen
+    {
+        get { return _isOpen; }
+    }
+
     [Header("Harbor")]
     [SerializeField] float _closeDuration = 30;
     [SerializeField] Gradient _colorOutside;
@@ -25,7 +31,7 @@ public class Harbor : QTCircleCollider
     int _fishPrice;
     int _fishCount;
 
-    bool _isClosed;
+    bool _isOpen = true;
     float _closedTime;
 
     void Awake()
@@ -33,9 +39,11 @@ public class Harbor : QTCircleCollider
         Refresh();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if(_isClosed)
+        base.Update();
+
+        if(!_isOpen)
         {
             _closedTime += Time.deltaTime;
 
@@ -58,7 +66,14 @@ public class Harbor : QTCircleCollider
 
     public void SetHarborWindow(HarborWindow window)
     {
-        window.Set(_fishIcon, _fishCount, _fishPrice * _fishCount);
+        if(_isOpen)
+        {
+            window.SetOpenState(_fishIcon, _fishCount, _fishPrice * _fishCount);
+        }
+        else
+        {
+            window.SetCloseState(FishLibrary.instance.genericFishIcon);
+        }
     }
 
     public void SetIndicatorVisibility(bool visible)
@@ -85,15 +100,15 @@ public class Harbor : QTCircleCollider
 
     public void Close()
     {
-        _isClosed = true;
+        _isOpen = false;
         _closedTime = 0f;
-        _enable = false;
+        //_enable = false;
     }
 
     public void Open()
     {
-        _isClosed = false;
-        _enable = true;
+        _isOpen = true;
+        //_enable = true;
 
         Refresh();
     }

@@ -521,6 +521,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1436944214}
+    - target: {fileID: 1121360852, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121360852, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
 --- !u!114 &400676851 stripped
@@ -1328,6 +1336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Harbor Fish Full
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326074982336069739, guid: b0cc4fd14ba9f4342a05ea723bb42069,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3326074982336069740, guid: b0cc4fd14ba9f4342a05ea723bb42069,
         type: 3}
@@ -3162,36 +3175,6 @@ PrefabInstance:
       propertyPath: _line
       value: 
       objectReference: {fileID: 1299717242}
-    - target: {fileID: 4969616454499997606, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _littleFish._countText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969616454499997606, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _littleFish._image
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969616454499997606, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _bigFish._countText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969616454499997606, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _bigFish._image
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969616454499997606, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _octopus._countText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969616454499997606, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _octopus._image
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4999107811912162466, guid: 95d1c3b9e8ad34218968ce1636d62708,
         type: 3}
       propertyPath: _speedText

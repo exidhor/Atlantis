@@ -34,6 +34,11 @@ public class HarborHandler : MonoBehaviour
         {
             ActualizeHarborState(distance);
         }
+
+        if(_harbor != null && _isAtRange)
+        {
+            _window.Actualize(Time.deltaTime);
+        }
     }
 
     void ActualizeHarborState(float distance)
@@ -53,6 +58,7 @@ public class HarborHandler : MonoBehaviour
                 _isAtRange = true;
                 _harbor.SetHarborWindow(_window);
                 _harbor.SetIndicatorState(true);
+                _window.SetIsOpen(_harbor.isOpen);
                 _window.Appear();
             }
         }
@@ -102,9 +108,10 @@ public class HarborHandler : MonoBehaviour
 
         if(done)
         {
-            _window.Disappear();
+            //_window.Disappear();
+            _window.SetIsOpen(false);
             _harbor.Close();
-            _harbor = null;
+            //_harbor = null;
         }
     }
 }
