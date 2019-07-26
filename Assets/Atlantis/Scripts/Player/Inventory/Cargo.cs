@@ -131,4 +131,18 @@ public class Cargo : MonoSingleton<Cargo>
             MainManager.instance.EndGame();
         }
     }
+
+    public bool CanStore(FishType type)
+    {
+        for(int i = 0; i < _holds.Count; i++)
+        {
+            if(_holds[i].isEmpty || 
+                (_holds[i].fishType == type && !_holds[i].isFull))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

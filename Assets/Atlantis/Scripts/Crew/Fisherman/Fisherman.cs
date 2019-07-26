@@ -123,16 +123,16 @@ public class Fisherman : Crew
         }
         else if (!_isFishing)
         {
-            if(canFish)
+            if(canFish && Cargo.instance.CanStore(_fishZone.fishType))
             {
                 StartFishing();
             }
         }
         else
         {
-            if(!canFish)
+            if(!canFish || !Cargo.instance.CanStore(_fishZone.fishType))
             {
-                Debug.Log("There is not anymore the condition to fish -- STOP --");
+                // Debug.Log("There is not anymore the condition to fish -- STOP --");
                 StopFishing();
                 return;
             }
@@ -212,7 +212,6 @@ public class Fisherman : Crew
         }
 
         _isFishing = false;
-        //_fishZone = null;
         _fishingLine.StopFishing();
     }
 }
