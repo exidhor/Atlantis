@@ -37,7 +37,19 @@ public class HarborHandler : MonoBehaviour
 
         if(_harbor != null && _isAtRange)
         {
-            _window.Actualize(Time.deltaTime);
+            if(!_harbor.isOpen)
+            {
+                _window.ActualizeCloseState(_harbor.amountTimeLeft01);
+                
+            }
+            else
+            {
+                if(_window.CheckOpenState())
+                {
+                    _harbor.SetHarborWindow(_window);
+                    _window.SetIsOpen(_harbor.isOpen);
+                }
+            }
         }
     }
 
@@ -109,7 +121,7 @@ public class HarborHandler : MonoBehaviour
         if(done)
         {
             //_window.Disappear();
-            _window.SetIsOpen(false);
+            _window.SetCloseState(FishLibrary.instance.genericFishIcon);
             _harbor.Close();
             //_harbor = null;
         }

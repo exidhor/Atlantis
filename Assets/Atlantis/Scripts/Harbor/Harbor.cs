@@ -20,6 +20,11 @@ public class Harbor : QTCircleCollider
         get { return _isOpen; }
     }
 
+    public float amountTimeLeft01
+    {
+        get { return _closedTime / _closeDuration; }
+    }
+
     [Header("Harbor")]
     [SerializeField] float _closeDuration = 30;
     [SerializeField] Gradient _colorOutside;
