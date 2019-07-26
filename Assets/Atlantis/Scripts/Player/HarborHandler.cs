@@ -92,4 +92,19 @@ public class HarborHandler : MonoBehaviour
             return -1;
         }
     }
+
+    public void AskForDeal()
+    {
+        if (_harbor == null || !_isAtRange)
+            return;
+
+        bool done = _harbor.AskForDeal();
+
+        if(done)
+        {
+            _window.Disappear();
+            _harbor.Close();
+            _harbor = null;
+        }
+    }
 }

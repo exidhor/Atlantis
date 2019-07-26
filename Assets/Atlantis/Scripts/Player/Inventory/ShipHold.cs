@@ -48,6 +48,11 @@ public class ShipHold : MonoBehaviour
         RefreshShipHoldView();
     }
 
+    public bool Contains(FishType type)
+    {
+        return !isEmpty && fishType == type;
+    }
+
     public void Remove(int count)
     {
         _fishCount -= count;

@@ -94,10 +94,13 @@ namespace Tools
             Gizmos.color = objectColor;
             for (int i = 0; i < node.objects.Count; i++)
             {
-                Rect rect = node.objects[i].rect;
+                if(node.objects[i].obj.isEnable)
+                {
+                    Rect rect = node.objects[i].rect;
 
-                Gizmos.DrawWireCube(WorldConversion.ToVector3(rect.center) + heightVector,
-                                    WorldConversion.ToVector3(rect.size));
+                    Gizmos.DrawWireCube(WorldConversion.ToVector3(rect.center) + heightVector,
+                                        WorldConversion.ToVector3(rect.size));
+                }
             }
 
             for (int i = 0; i < node.nodes.Length; i++)

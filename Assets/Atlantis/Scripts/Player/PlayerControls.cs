@@ -11,6 +11,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] PlayerInputFeedback _feedback;
     [SerializeField] PlayerShip _ship;
     [SerializeField] PlayerCamera _camera;
+    [SerializeField] HarborHandler _harborHandler;
 
     bool _shipInput;
     Vector2 _originScreenPoint;
@@ -21,7 +22,13 @@ public class PlayerControls : MonoBehaviour
     {
         if (!MainManager.instance.started) return;
 
-        if(!_shipInput
+        HandleMovement();
+        HandleDeal();
+    }
+
+    void HandleMovement()
+    {
+        if (!_shipInput
             && Input.GetMouseButtonDown(0))
         {
             _shipInput = true;
@@ -29,12 +36,12 @@ public class PlayerControls : MonoBehaviour
             _feedback.SetOrigin(_originScreenPoint);
         }
 
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             Vector2 mousePosition = Input.mousePosition;
             _move = mousePosition - _originScreenPoint;
 
-            if(_move.magnitude > _maxDistance)
+            if (_move.magnitude > _maxDistance)
             {
                 _move.Normalize();
                 _move *= _maxDistance;
@@ -49,6 +56,14 @@ public class PlayerControls : MonoBehaviour
         }
 
         _camera.Follow(Time.deltaTime);
+    }
+
+    void HandleDeal()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            _harborHandler.AskForDeal();
+        }
     }
 
     void FixedUpdate()

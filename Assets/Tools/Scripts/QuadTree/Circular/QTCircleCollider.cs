@@ -19,7 +19,7 @@ namespace Tools
         [SerializeField] Vector2 _offset;
         [SerializeField] float _radius = 5f;
         [SerializeField] bool _static;
-        [SerializeField] bool _enable = true;
+        [SerializeField] protected bool _enable = true;
         [SerializeField] bool _manual;
 
         bool _isRegistered;

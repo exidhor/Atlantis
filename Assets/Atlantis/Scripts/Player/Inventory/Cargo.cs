@@ -28,6 +28,11 @@ public class Cargo : MonoSingleton<Cargo>
         }
     }
 
+    public int coinCount
+    {
+        get { return coinCount; }
+    }
+
     [SerializeField] FishCounter _littleFish;
     [SerializeField] FishCounter _bigFish;
     [SerializeField] FishCounter _octopus;
@@ -39,6 +44,8 @@ public class Cargo : MonoSingleton<Cargo>
 
     [SerializeField, UnityReadOnly]
     List<ShipHold> _holds = new List<ShipHold>();
+
+    int _coinCount;
 
     void Awake()
     {
@@ -98,9 +105,7 @@ public class Cargo : MonoSingleton<Cargo>
     {
         for(int i = 0; i < _holds.Count; i++)
         {
-            if(!_holds[i].isEmpty 
-                && _holds[i].fishType == type
-                && !_holds[i].isFull)
+            if(_holds[i].Contains(type) && !_holds[i].isFull)
             {
                 return _holds[i];
             }
@@ -136,13 +141,52 @@ public class Cargo : MonoSingleton<Cargo>
     {
         for(int i = 0; i < _holds.Count; i++)
         {
-            if(_holds[i].isEmpty || 
-                (_holds[i].fishType == type && !_holds[i].isFull))
+            if(_holds[i].isEmpty
+            || (_holds[i].fishType == type && !_holds[i].isFull))
             {
                 return true;
             }
         }
 
         return false;
+    }
+
+    public bool CanPay(FishType type, int count)
+    {
+        int owned = 0;
+
+        for(int i = 0; i < _holds.Count; i++)
+        {
+            if(_holds[i].Contains(type))
+            {
+                owned += _holds[i].fishCount;
+            }
+        }
+
+        return owned >= count;
+    }
+
+    public void Pay(FishType type, int count)
+    {
+        int paid = 0;
+
+        for (int i = _holds.Count - 1; i >= 0; i--)
+        {
+            ShipHold hold = _holds[i];
+
+            if (hold.Contains(type))
+            {
+                if(hold.fishCount + paid >= count)
+                {
+                    hold.Remove(count - paid);
+                    return;
+                }
+                else
+                {
+                    paid += hold.fishCount;
+                    hold.RemoveAll();
+                }
+            }
+        }
     }
 }
