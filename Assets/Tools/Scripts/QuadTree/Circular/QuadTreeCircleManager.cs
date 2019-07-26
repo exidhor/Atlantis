@@ -54,6 +54,7 @@ namespace Tools
                     staticQT.Clear(true);
             }
 
+#if UNITY_EDITOR
             public void OnDrawGizmos(float heightStatic, float heightDynamic)
             {
                 if (dynamicQT != null)
@@ -71,6 +72,7 @@ namespace Tools
                 if (staticQT != null)
                     staticQT.Serialize();
             }
+#endif
         }
 
         #endregion
@@ -175,6 +177,7 @@ namespace Tools
             return Vector2.Distance(a.center, b.center) < a.radius + b.radius;
         }
 
+#if UNITY_EDITOR
         void OnDrawGizmos()
         {
             if (!_drawGizmos) return;
@@ -191,7 +194,6 @@ namespace Tools
             }
         }
 
-#if UNITY_EDITOR
         public void OnBeforeSerialize()
         {
             if (!serialize) return;

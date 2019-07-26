@@ -56,7 +56,6 @@ namespace Tools
                 name = "Node (child=" + childCount + ") (objects=" + node.objects.Count + ")";
             }
         }
-#endif
 
         [SerializeField] SerializableQuadTreeNode _rootNode;
 
@@ -67,6 +66,7 @@ namespace Tools
                 _rootNode = new SerializableQuadTreeNode(_root, null);
             }
         }
+#endif
 
         #endregion
 

@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ea6cd7afe5e4aea818ed5b4925e5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serialize: 0
   _drawGizmos: 1
   _debugThisLayerIndex: 0
   _heightGizmosStatic: 50
@@ -50,8 +51,8 @@ MonoBehaviour:
   _layerCount: 5
   _worldBounds:
     serializedVersion: 2
-    x: -219.8
-    y: -134.3
-    width: 350
-    height: 350
+    x: -1784
+    y: -1643
+    width: 4000
+    height: 4000
   _quadTrees: []
