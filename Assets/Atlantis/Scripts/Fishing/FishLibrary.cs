@@ -5,6 +5,12 @@ using Tools;
 
 public class FishLibrary : MonoSingleton<FishLibrary>
 {
+    public Sprite genericFishIcon
+    {
+        get { return _genericFishIcon; }
+    }
+
+    [SerializeField] Sprite _genericFishIcon;
     [SerializeField] List<FishInfo> _fishes = new List<FishInfo>();
 
     void Awake()

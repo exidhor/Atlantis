@@ -79,7 +79,7 @@ namespace Tools
             _offset = offset;
         }
 
-        public void Update()
+        protected virtual void Update()
         {
             if(_enable)
             {

@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 221c692c430d14b6c89a923bcd5564a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _genericFishIcon: {fileID: 21300000, guid: f011c54bb185542dd8dd8ec5e0596a4e, type: 3}
   _fishes:
   - _type: 0
     _questRange:
