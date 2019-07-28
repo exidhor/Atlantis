@@ -10,12 +10,19 @@ public class CargoUI : MonoSingleton<CargoUI>
         get { return _emptyHoldColor; }
     }
 
+    public bool playerOnShipHold
+    {
+        get { return _playerOnShipHold; }
+    }
+
     [Header("Values")]
     [SerializeField] Color _emptyHoldColor;
 
     [Header("Linking")]
     [SerializeField] TextMeshProUGUI _coinsText;
     [SerializeField] List<ShipHoldUI> _orderedHolds = new List<ShipHoldUI>();
+
+    bool _playerOnShipHold = false;
 
     void Awake()
     {
@@ -31,6 +38,11 @@ public class CargoUI : MonoSingleton<CargoUI>
         holdUI.Show();
 
         return holdUI;
+    }
+
+    public void SetIsOver(bool value)
+    {
+        _playerOnShipHold = value;
     }
 
     public void RefreshCoins(int value)

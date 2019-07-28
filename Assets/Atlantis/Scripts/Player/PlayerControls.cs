@@ -1,8 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Tools;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls : MonoSingleton<PlayerControls>
 {
+    public bool shipInput
+    {
+        get { return _shipInput; }
+    }
+
     [Header("Move")]
     [SerializeField] float _moveScale = 0.5f;
     [SerializeField] float _maxDistance = 3f;
@@ -29,7 +35,8 @@ public class PlayerControls : MonoBehaviour
     void HandleMovement()
     {
         if (!_shipInput
-            && Input.GetMouseButtonDown(0))
+            && Input.GetMouseButtonDown(0)
+            && !CargoUI.instance.playerOnShipHold)
         {
             _shipInput = true;
             _originScreenPoint = Input.mousePosition;

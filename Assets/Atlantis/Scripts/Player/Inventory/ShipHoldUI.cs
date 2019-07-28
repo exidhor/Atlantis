@@ -6,6 +6,11 @@ using UnityEngine.EventSystems;
 
 public class ShipHoldUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public bool isOver
+    {
+        get { return _isOver; }
+    }
+
     [SerializeField] Image _background;
     [SerializeField] Image _filled;
     [SerializeField] TextMeshProUGUI _fishCount;
@@ -13,6 +18,7 @@ public class ShipHoldUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     [SerializeField] Image _closeOuterCircle;
     [SerializeField] Image _closeInnerCircle;
     [SerializeField] Image _closeIcon;
+    [SerializeField] Button _closeButton;
 
     ShipHold _previousView;
     bool _isOver;
@@ -24,6 +30,7 @@ public class ShipHoldUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void SetCloseState(bool state)
     {
+        _closeButton.interactable = state;
         _closeOuterCircle.enabled = state;
         _closeInnerCircle.enabled = state;
         _closeIcon.enabled = state;
@@ -83,22 +90,29 @@ public class ShipHoldUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(_previousView != null && !_previousView.isEmpty)
+        if(_previousView != null && !_previousView.isEmpty 
+            && !PlayerControls.instance.shipInput)
+        {
             SetCloseState(true);
-
-        _isOver = true;
+            _isOver = true;
+            CargoUI.instance.SetIsOver(true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (_previousView != null && !_previousView.isEmpty)
+        if (_isOver)
+        {
             SetCloseState(false);
-
-        _isOver = false;
+            _isOver = false;
+            CargoUI.instance.SetIsOver(false);
+        }
     }
 
     public void OnClick()
     {
-
+        _previousView.RemoveAll();
+        Refresh(_previousView);
+        SetCloseState(false);
     }
 }
