@@ -5318,11 +5318,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5153937305793798759, guid: 2e237f7c691d44576b8208b629b443ad,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e237f7c691d44576b8208b629b443ad, type: 3}
 --- !u!114 &400676851 stripped
