@@ -55,12 +55,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -2.5403595
-      outSlope: -2.5403595
+      inSlope: -2.094321
+      outSlope: -2.094321
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.0460002
+      outWeight: 0.024264706
     - serializedVersion: 3
       time: 1
       value: 0.1
@@ -68,7 +68,7 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -88,9 +88,9 @@ MonoBehaviour:
   _shipModel: {fileID: 5027850862280469951}
   _body: {fileID: 0}
   _rb: {fileID: 0}
-  _speed: 7.5000296
-  _currentAcceleration: 1.5
-  _angular: 2.9347346
+  _speed: 0
+  _currentAcceleration: 0
+  _angular: 0
 --- !u!1001 &958096174235229163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,6 +457,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 310176905630941141, guid: cd4a2da3489a64efaa920c2a98d2fc8b,
+        type: 3}
+      propertyPath: _minRepulseSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 310176905630941141, guid: cd4a2da3489a64efaa920c2a98d2fc8b,
+        type: 3}
+      propertyPath: _correctorCoef
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 310176905630941141, guid: cd4a2da3489a64efaa920c2a98d2fc8b,
+        type: 3}
+      propertyPath: _angularCoef
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd4a2da3489a64efaa920c2a98d2fc8b, type: 3}

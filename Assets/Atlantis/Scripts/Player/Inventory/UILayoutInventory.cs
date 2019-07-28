@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Tools;
 using TMPro;
 
-public class CargoUI : MonoSingleton<CargoUI>
+public class UILayoutInventory : MonoSingleton<UILayoutInventory>
 {
     public Color emptyHoldColor
     {
@@ -21,23 +21,37 @@ public class CargoUI : MonoSingleton<CargoUI>
     [Header("Linking")]
     [SerializeField] TextMeshProUGUI _coinsText;
     [SerializeField] List<ShipHoldUI> _orderedHolds = new List<ShipHoldUI>();
+    [SerializeField] List<CrewViewUI> _orderedCrewViews = new List<CrewViewUI>();
 
     bool _playerOnShipHold = false;
 
     void Awake()
     {
-        for(int i = 0; i < _orderedHolds.Count; i++)
+        for(int i = 0; i < _orderedCrewViews.Count; i++)
         {
             _orderedHolds[i].Hide();
         }
+
+        for (int i = 0; i < _orderedCrewViews.Count; i++)
+        {
+            _orderedCrewViews[i].Hide();
+        }
     }
 
-    public ShipHoldUI GetShipHoldUI(int index)
+    public InventoryCellUI GetShipHoldUI(int index)
     {
-        ShipHoldUI holdUI = _orderedHolds[index];
-        holdUI.Show();
+        InventoryCellUI cell = _orderedHolds[index];
+        cell.Show();
 
-        return holdUI;
+        return cell;
+    }
+
+    public InventoryCellUI GetCrewViewUI(int index)
+    {
+        InventoryCellUI cell = _orderedCrewViews[index];
+        cell.Show();
+
+        return cell;
     }
 
     public void SetIsOver(bool value)

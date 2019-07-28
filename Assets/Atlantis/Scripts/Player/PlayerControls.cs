@@ -15,7 +15,6 @@ public class PlayerControls : MonoSingleton<PlayerControls>
 
     [Header("Linking")]
     [SerializeField] PlayerInputFeedback _feedback;
-    [SerializeField] PlayerShip _ship;
     [SerializeField] PlayerCamera _camera;
     [SerializeField] HarborHandler _harborHandler;
 
@@ -36,7 +35,7 @@ public class PlayerControls : MonoSingleton<PlayerControls>
     {
         if (!_shipInput
             && Input.GetMouseButtonDown(0)
-            && !CargoUI.instance.playerOnShipHold)
+            && !UILayoutInventory.instance.playerOnShipHold)
         {
             _shipInput = true;
             _originScreenPoint = Input.mousePosition;
@@ -77,11 +76,11 @@ public class PlayerControls : MonoSingleton<PlayerControls>
     {
         if(_shipInput)
         {
-            _ship.Move(false, _move * _moveScale, Time.fixedDeltaTime);
+            PlayerShip.instance.Move(false, _move * _moveScale, Time.fixedDeltaTime);
         }
         else
         {
-            _ship.Move(true, Vector2.zero, Time.fixedDeltaTime);
+            PlayerShip.instance.Move(true, Vector2.zero, Time.fixedDeltaTime);
         }
     }
 }

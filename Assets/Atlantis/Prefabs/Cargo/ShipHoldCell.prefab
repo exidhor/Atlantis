@@ -585,12 +585,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _background: {fileID: 7335838932630749547}
   _filled: {fileID: 554679571}
-  _fishCount: {fileID: 1601644984}
-  _fishIcon: {fileID: 535878070}
+  _icon: {fileID: 535878070}
   _closeOuterCircle: {fileID: 3533881747132024691}
   _closeInnerCircle: {fileID: 400676854}
   _closeIcon: {fileID: 5127373217208639868}
   _closeButton: {fileID: 479142600796503331}
+  _fishCount: {fileID: 1601644984}
 --- !u!114 &479142600796503331
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,69 +3,31 @@ using System.Collections.Generic;
 
 public class CrewPositioner : MonoBehaviour
 {
-    class CrewPosition
-    {
-        public bool available
-        {
-            get { return current == null; }
-        }
-
-        public Crew current
-        {
-            get { return _current; }
-        }
-
-        public Transform transform;
-
-        Crew _current = null;
-
-        public CrewPosition(Transform tr)
-        {
-            transform = tr;
-        }
-
-        public void SetCurrent(Crew crew)
-        {
-            _current = crew;
-
-            if(current != null)
-            {
-                current.transform.SetParent(transform, false);
-            }
-        }
-    }
-
     public int freePositions
     {
         get { return _freePositions; }
     }
 
     [SerializeField] 
-    List<Transform> _positions = new List<Transform>();
+    List<CrewLocation> _positions = new List<CrewLocation>();
 
     int _freePositions;
-    List<CrewPosition> _crewPositions = new List<CrewPosition>();
 
     void Awake()
     {
-        for(int i = 0; i < _positions.Count; i++)
-        {
-            _crewPositions.Add(new CrewPosition(_positions[i]));
-        }
-
-        _freePositions = _crewPositions.Count;
+        _freePositions = _positions.Count;
     }
 
     public Transform SetPosition(Crew crew)
     {
-        for(int i = 0; i < _crewPositions.Count; i++)
+        for(int i = 0; i < _positions.Count; i++)
         {
-            if(_crewPositions[i].available)
+            if(_positions[i].available)
             {
                 _freePositions--;
-                _crewPositions[i].SetCurrent(crew);
+                _positions[i].SetCurrent(crew, i);
 
-                return _crewPositions[i].transform;
+                return _positions[i].transform;
             }
         }
 
@@ -74,12 +36,12 @@ public class CrewPositioner : MonoBehaviour
 
     public void ReleasePosition(Crew crew)
     {
-        for(int i = 0; i < _crewPositions.Count; i++)
+        for(int i = 0; i < _positions.Count; i++)
         {
-            if(_crewPositions[i].current == crew)
+            if(_positions[i].current == crew)
             {
                 _freePositions++;
-                _crewPositions[i].SetCurrent(null);
+                _positions[i].SetCurrent(null, i);
                 return;
             }
         }
