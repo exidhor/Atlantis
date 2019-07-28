@@ -4,6 +4,11 @@ using Tools;
 
 public class Fisherman : Crew
 {
+    public override CrewType type 
+    { 
+        get { return CrewType.Fisherman; } 
+    }
+
     [Header("Logic")]
     [SerializeField] float _maxSpeedToFish;
     [SerializeField] float _fishTime;

@@ -46,10 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374fbcba76ced4c2dbf0a92d0aa7d980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeedToFish: 3
+  Pool: {fileID: 0}
+  IndexInPool: 0
+  _maxSpeedToFish: 15
   _fishTime: 1
   _extendCoef: 1.2
-  _minLineLength: 2
+  _minLineLength: 5
   _restartAfterCatching: 0
   _fishingLine: {fileID: 5161354125444000022}
 --- !u!114 &1575134146115846400
@@ -82,6 +84,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fishing_float_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044766590539287683, guid: 5a7142c8e94909e4f887882cd6e9bbbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3044766590539518115, guid: 5a7142c8e94909e4f887882cd6e9bbbf,
         type: 3}
@@ -137,6 +144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044766590539287681, guid: 5a7142c8e94909e4f887882cd6e9bbbf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a7142c8e94909e4f887882cd6e9bbbf, type: 3}
@@ -227,16 +239,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
         type: 3}
-      propertyPath: _fisherman
-      value: 
-      objectReference: {fileID: 5161354125149482097}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _fishingFloat
-      value: 
-      objectReference: {fileID: 5133728976368479669}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
       propertyPath: _landAnimation._xzLineName
       value: xzLine
       objectReference: {fileID: 0}
@@ -275,6 +277,16 @@ PrefabInstance:
       propertyPath: _stopAnimation._yCurveName
       value: inverseLinear
       objectReference: {fileID: 0}
+    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
+        type: 3}
+      propertyPath: _fisherman
+      value: 
+      objectReference: {fileID: 5161354125149482097}
+    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
+        type: 3}
+      propertyPath: _fishingFloat
+      value: 
+      objectReference: {fileID: 5133728976368479669}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a596de65f7e664240b5792500f7b9a21, type: 3}
 --- !u!4 &4738855254719082304 stripped

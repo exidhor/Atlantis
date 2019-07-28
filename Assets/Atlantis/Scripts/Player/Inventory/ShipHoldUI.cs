@@ -71,21 +71,11 @@ public class ShipHoldUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void Hide()
     {
         gameObject.SetActive(false);
-
-        //_background.enabled = false;
-        //_filled.enabled = false;
-        //_fishCount.enabled = false;
-        //_fishIcon.enabled = false;
     }
 
     public void Show()
     {
         gameObject.SetActive(true);
-
-        //_background.enabled = true;
-        //_filled.enabled = false;
-        //_fishCount.enabled = false;
-        //_fishIcon.enabled = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
