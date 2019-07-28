@@ -2,8 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class ShipHoldUI : MonoBehaviour
+public class ShipHoldUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] Image _background;
     [SerializeField] Image _filled;
@@ -12,6 +13,9 @@ public class ShipHoldUI : MonoBehaviour
     [SerializeField] Image _closeOuterCircle;
     [SerializeField] Image _closeInnerCircle;
     [SerializeField] Image _closeIcon;
+
+    ShipHold _previousView;
+    bool _isOver;
 
     void Awake()
     {
@@ -24,12 +28,16 @@ public class ShipHoldUI : MonoBehaviour
         _closeInnerCircle.enabled = state;
         _closeIcon.enabled = state;
 
-        _fishCount.enabled = !state;
+        _fishCount.enabled = !state 
+                            && _previousView != null 
+                            && !_previousView.isEmpty;
     }
 
     public void Refresh(ShipHold hold)
     {
-        if(hold.isEmpty)
+        _previousView = hold;
+
+        if (hold.isEmpty)
         {
             _filled.enabled = false;
             _fishCount.enabled = false;
@@ -40,7 +48,7 @@ public class ShipHoldUI : MonoBehaviour
         else
         {
             _filled.enabled = true;
-            _fishCount.enabled = true;
+            _fishCount.enabled = !_isOver;
             _fishIcon.enabled = true;
 
             FishInfo info = FishLibrary.instance.GetFishInfo(hold.fishType);
@@ -71,5 +79,26 @@ public class ShipHoldUI : MonoBehaviour
         //_filled.enabled = false;
         //_fishCount.enabled = false;
         //_fishIcon.enabled = false;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(_previousView != null && !_previousView.isEmpty)
+            SetCloseState(true);
+
+        _isOver = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (_previousView != null && !_previousView.isEmpty)
+            SetCloseState(false);
+
+        _isOver = false;
+    }
+
+    public void OnClick()
+    {
+
     }
 }
