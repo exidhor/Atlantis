@@ -46,10 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374fbcba76ced4c2dbf0a92d0aa7d980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxSpeedToFish: 3
+  Pool: {fileID: 0}
+  IndexInPool: 0
+  _maxSpeedToFish: 15
   _fishTime: 1
   _extendCoef: 1.2
-  _minLineLength: 2
+  _minLineLength: 5
   _restartAfterCatching: 0
   _fishingLine: {fileID: 5161354125444000022}
 --- !u!114 &1575134146115846400
@@ -170,6 +172,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: FishingLine
       objectReference: {fileID: 0}
+    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
+        type: 3}
+      propertyPath: _fisherman
+      value: 
+      objectReference: {fileID: 5161354125149482097}
+    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
+        type: 3}
+      propertyPath: _fishingFloat
+      value: 
+      objectReference: {fileID: 5133728976368479669}
     - target: {fileID: 8803981179752948862, guid: a596de65f7e664240b5792500f7b9a21,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -183,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 8803981179752948862, guid: a596de65f7e664240b5792500f7b9a21,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8803981179752948862, guid: a596de65f7e664240b5792500f7b9a21,
         type: 3}
@@ -224,56 +236,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _fisherman
-      value: 
-      objectReference: {fileID: 5161354125149482097}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _fishingFloat
-      value: 
-      objectReference: {fileID: 5133728976368479669}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _landAnimation._xzLineName
-      value: xzLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _landAnimation._zLineName
-      value: yLine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _landAnimation._xzCurveName
-      value: xzCurve
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _landAnimation._yCurveName
-      value: yCurve
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _stopAnimation._xzLineName
-      value: inverseLinear
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _stopAnimation._zLineName
-      value: inverseAmplitude
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _stopAnimation._xzCurveName
-      value: inverseAmplitudeCurve
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956847913392546344, guid: a596de65f7e664240b5792500f7b9a21,
-        type: 3}
-      propertyPath: _stopAnimation._yCurveName
-      value: inverseLinear
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a596de65f7e664240b5792500f7b9a21, type: 3}

@@ -6,21 +6,20 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] float _moveOffsetScale;
     [SerializeField] float _speedOffset;
     [SerializeField] float _timeScale;
-    [SerializeField] PlayerShip _ship;
 
     Vector3 _offsetOrigin;
     Vector3 _offset;
 
     void OnEnable()
     {
-        _offsetOrigin = _ship.transform.position - transform.position;
+        _offsetOrigin = PlayerShip.instance.transform.position - transform.position;
     }
 
     public void Follow(float dt)
     {
-        Vector3 pos = _ship.transform.position - _offsetOrigin;
+        Vector3 pos = PlayerShip.instance.transform.position - _offsetOrigin;
 
-        Vector3 target = _ship.velocity * _moveOffsetScale;
+        Vector3 target = PlayerShip.instance.velocity * _moveOffsetScale;
 
         float maxDist = _speedOffset * dt;
         float t = Mathf.Lerp(0f, 1f, (target - _offset).magnitude * _timeScale);

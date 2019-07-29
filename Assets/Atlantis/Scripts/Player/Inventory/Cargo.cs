@@ -141,6 +141,6 @@ public class Cargo : MonoSingleton<Cargo>
     {
         _coinCount += count;
 
-        CargoUI.instance.RefreshCoins(_coinCount);
+        UILayoutInventory.instance.RefreshCoins(_coinCount);
     }
 }

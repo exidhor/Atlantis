@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1714139838900731666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657928599678593186}
+  - component: {fileID: 3007155074008441210}
+  m_Layer: 0
+  m_Name: CrewLibrary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657928599678593186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714139838900731666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3007155074008441210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714139838900731666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75afa0eb5cd104dd3877cc7de926e95e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _poolCapacity: 10
+  _expand: 5
+  _infos:
+  - _model: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
+      type: 3}
+    _icon: {fileID: 21300000, guid: 37e0411ee58f048e187b0c75cba6c6f5, type: 3}
+    _holdFrontColor: {r: 0, g: 0.8431506, b: 1, a: 0.5882353}
+    _holdBackgroundColor: {r: 0, g: 0.11449814, b: 1, a: 1}

@@ -2,74 +2,40 @@
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class ShipHoldUI : MonoBehaviour
+public class ShipHoldUI : InventoryCellUI
 {
-    [SerializeField] Image _background;
-    [SerializeField] Image _filled;
+    [Header("Ship Hold Variables")]
     [SerializeField] TextMeshProUGUI _fishCount;
-    [SerializeField] Image _fishIcon;
-    [SerializeField] Image _closeOuterCircle;
-    [SerializeField] Image _closeInnerCircle;
-    [SerializeField] Image _closeIcon;
 
-    void Awake()
+    ShipHold hold
     {
-        SetCloseState(false);
+        get { return (ShipHold)location; }
     }
 
-    void SetCloseState(bool state)
+    protected override void OnSetEmpty()
     {
-        _closeOuterCircle.enabled = state;
-        _closeInnerCircle.enabled = state;
-        _closeIcon.enabled = state;
-
-        _fishCount.enabled = !state;
+        _fishCount.enabled = false;
     }
 
-    public void Refresh(ShipHold hold)
+    protected override void OnCloseState(bool state)
     {
-        if(hold.isEmpty)
-        {
-            _filled.enabled = false;
-            _fishCount.enabled = false;
-            _fishIcon.enabled = false;
-
-            _background.color = CargoUI.instance.emptyHoldColor;
-        }
-        else
-        {
-            _filled.enabled = true;
-            _fishCount.enabled = true;
-            _fishIcon.enabled = true;
-
-            FishInfo info = FishLibrary.instance.GetFishInfo(hold.fishType);
-
-            _background.color = info.holdBackgroundColor;
-            _filled.color = info.holdFrontColor;
-            _filled.fillAmount = hold.fishCount / (float)hold.capacity;
-            _fishCount.text = hold.fishCount.ToString();
-            _fishIcon.sprite = info.icon;
-        }
+        _fishCount.enabled = !state
+                    && location != null
+                    && !location.isEmpty;
     }
 
-    public void Hide()
+    protected override void SetInformation(IShipLocation location)
     {
-        gameObject.SetActive(false);
+        _fishCount.enabled = !isOver;
 
-        //_background.enabled = false;
-        //_filled.enabled = false;
-        //_fishCount.enabled = false;
-        //_fishIcon.enabled = false;
-    }
+        FishInfo info = FishLibrary.instance.GetFishInfo(hold.fishType);
 
-    public void Show()
-    {
-        gameObject.SetActive(true);
-
-        //_background.enabled = true;
-        //_filled.enabled = false;
-        //_fishCount.enabled = false;
-        //_fishIcon.enabled = false;
+        _background.color = info.holdBackgroundColor;
+        _filled.color = info.holdFrontColor;
+        _filled.fillAmount = hold.fishCount / (float)hold.capacity;
+        _fishCount.text = hold.fishCount.ToString();
+        _icon.sprite = info.icon;
     }
 }

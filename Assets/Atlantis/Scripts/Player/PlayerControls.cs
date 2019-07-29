@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Tools;
 
-public class PlayerControls : MonoBehaviour
+public class PlayerControls : MonoSingleton<PlayerControls>
 {
+    public bool shipInput
+    {
+        get { return _shipInput; }
+    }
+
     [Header("Move")]
     [SerializeField] float _moveScale = 0.5f;
     [SerializeField] float _maxDistance = 3f;
 
     [Header("Linking")]
     [SerializeField] PlayerInputFeedback _feedback;
-    [SerializeField] PlayerShip _ship;
     [SerializeField] PlayerCamera _camera;
     [SerializeField] HarborHandler _harborHandler;
 
@@ -29,7 +34,8 @@ public class PlayerControls : MonoBehaviour
     void HandleMovement()
     {
         if (!_shipInput
-            && Input.GetMouseButtonDown(0))
+            && Input.GetMouseButtonDown(0)
+            && !UILayoutInventory.instance.playerOnShipHold)
         {
             _shipInput = true;
             _originScreenPoint = Input.mousePosition;
@@ -70,11 +76,11 @@ public class PlayerControls : MonoBehaviour
     {
         if(_shipInput)
         {
-            _ship.Move(false, _move * _moveScale, Time.fixedDeltaTime);
+            PlayerShip.instance.Move(false, _move * _moveScale, Time.fixedDeltaTime);
         }
         else
         {
-            _ship.Move(true, Vector2.zero, Time.fixedDeltaTime);
+            PlayerShip.instance.Move(true, Vector2.zero, Time.fixedDeltaTime);
         }
     }
 }

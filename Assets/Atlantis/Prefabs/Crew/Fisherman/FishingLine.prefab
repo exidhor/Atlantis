@@ -46,16 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _landAnimation:
     duration: 1.5
-    _distEndSpeedCurveName: xyFinishingLine
-    _zEndSpeedCurveName: zFishingLine
-    _amplitudeCurveName: zAmplitudeFishingLine
-    _amplitudeSpeedCurveName: xyAmplitudeFishingLine
+    _xzLineName: xzLine
+    _zLineName: yLine
+    _xzCurveName: xzCurve
+    _yCurveName: yCurve
   _stopAnimation:
     duration: 0.4
-    _distEndSpeedCurveName: inverseLinear
-    _zEndSpeedCurveName: inverseAmplitude
-    _amplitudeCurveName: inverseAmplitudeCurve
-    _amplitudeSpeedCurveName: inverseLinear
+    _xzLineName: inverseLinear
+    _zLineName: inverseAmplitude
+    _xzCurveName: inverseAmplitudeCurve
+    _yCurveName: inverseLinear
   _pointCount: 30
   _fisherman: {fileID: 0}
   _fishingFloat: {fileID: 0}

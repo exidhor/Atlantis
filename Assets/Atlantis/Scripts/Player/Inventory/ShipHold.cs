@@ -2,7 +2,7 @@
 using System.Collections;
 using Tools;
 
-public class ShipHold : MonoBehaviour
+public class ShipHold : MonoBehaviour, IShipLocation
 {
     public bool isEmpty
     {
@@ -30,13 +30,13 @@ public class ShipHold : MonoBehaviour
     }
 
     [SerializeField] int _capacity = 50;
-    [SerializeField, UnityReadOnly] ShipHoldUI _view;
+    [SerializeField, UnityReadOnly] InventoryCellUI _view;
     [SerializeField, UnityReadOnly] FishType _fishType;
     [SerializeField, UnityReadOnly] int _fishCount = 0;
 
     public void Init(int index)
     {
-        _view = CargoUI.instance.GetShipHoldUI(index);
+        _view = UILayoutInventory.instance.GetShipHoldUI(index);
         _view.Refresh(this);
     }
 
@@ -70,5 +70,10 @@ public class ShipHold : MonoBehaviour
     void RefreshShipHoldView()
     {
         _view.Refresh(this);
+    }
+
+    void IShipLocation.OnClick()
+    {
+        RemoveAll();
     }
 }
