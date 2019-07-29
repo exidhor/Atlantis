@@ -15,7 +15,7 @@ public class CrewLocation : MonoBehaviour, IShipLocation
 
     public bool isEmpty
     {
-        get { return false; }
+        get { return _current == null; }
     }
 
     Crew _current = null;
@@ -25,12 +25,20 @@ public class CrewLocation : MonoBehaviour, IShipLocation
     {
         _current = crew;
 
-        if (current != null)
+        //if (current != null)
+        //{
+        //    current.transform.SetParent(transform, false);
+        //    _view = UILayoutInventory.instance.GetCrewViewUI(index);
+        //    _view.Refresh(this);
+        //}
+
+        if(current != null)
         {
             current.transform.SetParent(transform, false);
-            _view = UILayoutInventory.instance.GetCrewViewUI(index);
-            _view.Refresh(this);
         }
+
+        _view = UILayoutInventory.instance.GetCrewViewUI(index);
+        _view.Refresh(this);
     }
 
     public void OnClick()

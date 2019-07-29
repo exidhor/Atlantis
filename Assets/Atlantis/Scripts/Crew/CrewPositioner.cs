@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Tools;
 
 public class CrewPositioner : MonoBehaviour
 {
@@ -8,14 +9,28 @@ public class CrewPositioner : MonoBehaviour
         get { return _freePositions; }
     }
 
-    [SerializeField] 
+    [SerializeField]
+    List<CrewLocation> _poolPositions = new List<CrewLocation>();
+
+    [SerializeField, UnityReadOnly] 
     List<CrewLocation> _positions = new List<CrewLocation>();
 
     int _freePositions;
 
-    void Awake()
+    //void Awake()
+    //{
+    //    _freePositions = _positions.Count;
+    //}
+
+    public void SetPositionCount(int count)
     {
-        _freePositions = _positions.Count;
+        _freePositions = count;
+
+        for(int i = 0; i < count; i++)
+        {
+            _poolPositions[i].SetCurrent(null, i);
+            _positions.Add(_poolPositions[i]);
+        }
     }
 
     public Transform SetPosition(Crew crew)

@@ -12,6 +12,7 @@ public class CrewShipManager : MonoBehaviour
     }
 
     [Header("Starting")]
+    [SerializeField] int _maxShipSize = 4;
     [SerializeField]
     List<StartingCrew> _startingCrews = new List<StartingCrew>();
 
@@ -20,6 +21,8 @@ public class CrewShipManager : MonoBehaviour
 
     void Awake()
     {
+        _positioner.SetPositionCount(_maxShipSize);
+
         for(int i = 0; i < _startingCrews.Count; i++)
         {
             for(int c = 0; c < _startingCrews[i].count; c++)

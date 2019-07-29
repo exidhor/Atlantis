@@ -9,7 +9,7 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
     [SerializeField] uint _expand;
 
     [SerializeField] 
-    List<Crew> _models = new List<Crew>();
+    List<CrewInfo> _infos = new List<CrewInfo>();
 
     List<UnityPool> _poolByType = new List<UnityPool>();
 
@@ -20,15 +20,15 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
 
     void ConstructPools()
     {
-        _models.Sort((a, b) => a.type.CompareTo(b.type));
+        _infos.Sort((a, b) => a.model.type.CompareTo(b.model.type));
 
-        for(int i = 0; i < _models.Count; i++)
+        for(int i = 0; i < _infos.Count; i++)
         {
             GameObject go = new GameObject();
             go.transform.parent = transform;
 
             UnityPool pool = go.AddComponent<UnityPool>();
-            pool.Construct(_models[i], _expand);
+            pool.Construct(_infos[i].model, _expand);
             pool.SetSize(_poolCapacity);
 
             _poolByType.Add(pool);
@@ -42,5 +42,10 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
         crew.transform.localPosition = Vector3.zero;
 
         return crew;
+    }
+
+    public CrewInfo GetInfo(CrewType type)
+    {
+        return _infos[(int)type];
     }
 }

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a4fb2d0d0f743c896c65847f8ff7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _positions:
+  _poolPositions:
   - {fileID: 4969616454309200156}
   - {fileID: 2052272940}
   - {fileID: 712119976}
@@ -184,6 +184,7 @@ MonoBehaviour:
   - {fileID: 258167539}
   - {fileID: 1531020688}
   - {fileID: 554644243}
+  _positions: []
 --- !u!1001 &3037517233267732541
 PrefabInstance:
   m_ObjectHideFlags: 0
