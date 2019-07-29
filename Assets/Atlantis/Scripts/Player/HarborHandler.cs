@@ -113,17 +113,15 @@ public class HarborHandler : MonoBehaviour
 
     public void AskForDeal()
     {
-        if (_harbor == null || !_isAtRange)
+         if (_harbor == null || !_isAtRange)
             return;
 
         bool done = _harbor.AskForDeal();
 
         if(done)
         {
-            //_window.Disappear();
             _window.SetCloseState(FishLibrary.instance.genericFishIcon);
             _harbor.Close();
-            //_harbor = null;
         }
     }
 }

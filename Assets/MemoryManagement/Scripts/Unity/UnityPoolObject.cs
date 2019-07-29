@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Tools;
 
 namespace MemoryManagement
 {
@@ -7,8 +8,9 @@ namespace MemoryManagement
     /// </summary>
     public class UnityPoolObject : MonoBehaviour
     {
-        public UnityPool Pool;
-        public int IndexInPool;
+        [Header("Pool Infos")]
+        [UnityReadOnly] public UnityPool Pool;
+        [UnityReadOnly] public int IndexInPool;
 
         void Awake()
         {

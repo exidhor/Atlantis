@@ -166,7 +166,8 @@ public class Fisherman : Crew
 
         Vector3 target = _fishZone.transform.position;
 
-        _floatPosition = new Vector3(shootPoint.x, target.y, shootPoint.z);
+        //_floatPosition = new Vector3(shootPoint.x, target.y, shootPoint.z);
+        _floatPosition = new Vector3(shootPoint.x, 0f, shootPoint.z);
         _fishingLine.Land(_floatPosition);
     }
 

@@ -72,11 +72,6 @@ public class FishingLine : MonoBehaviour
 
     Vector3[] _points;
 
-    //EvaluationCurve _distEndSpeedCurve;
-    //EvaluationCurve _zEndSpeedCurve;
-    //EvaluationCurve _amplitudeCurve;
-    //EvaluationCurve _amplitudeSpeedCurve;
-
     Vector3 _p0;
     Vector3 _p1;
     Vector3 _p2;
