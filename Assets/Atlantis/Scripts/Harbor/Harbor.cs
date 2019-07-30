@@ -2,7 +2,7 @@
 using System.Collections;
 using Tools;
 
-public class Harbor : QTCircleCollider
+public abstract class Harbor : QTCircleCollider
 {
     public float innerRadius
     {
@@ -13,7 +13,6 @@ public class Harbor : QTCircleCollider
     {
         get { return WorldConversion.ToVector2(_indicator.transform.position); }
     }
-
 
     public bool isOpen
     {
@@ -31,13 +30,12 @@ public class Harbor : QTCircleCollider
     [SerializeField] Gradient _colorInside;
     [SerializeField] CircleIndicator _indicator;
 
-    FishType _fishType;
-    Sprite _fishIcon;
-    int _fishPrice;
-    int _fishCount;
-
     bool _isOpen = true;
     float _closedTime;
+
+    protected abstract void Refresh();
+    public abstract void SetHarborWindow(HarborWindow window);
+    public abstract bool AskForDeal();
 
     void Awake()
     {
@@ -59,28 +57,6 @@ public class Harbor : QTCircleCollider
         }
     }
 
-    void Refresh()
-    {
-        FishInfo info = FishLibrary.instance.GetRandomFish();
-
-        _fishType = info.type;
-        _fishIcon = info.icon;
-        _fishPrice = info.GetRandomPrice();
-        _fishCount = info.GetRandomCount();
-    }
-
-    public void SetHarborWindow(HarborWindow window)
-    {
-        if(_isOpen)
-        {
-            window.SetOpenState(_fishIcon, _fishCount, _fishPrice * _fishCount);
-        }
-        else
-        {
-            window.SetCloseState(FishLibrary.instance.genericFishIcon);
-        }
-    }
-
     public void SetIndicatorVisibility(bool visible)
     {
         _indicator.SetVisible(visible);
@@ -89,18 +65,6 @@ public class Harbor : QTCircleCollider
     public void SetIndicatorState(bool playerNear)
     {
         _indicator.SetColor(playerNear ? _colorInside : _colorOutside);
-    }
-
-    public bool AskForDeal()
-    {
-        if(Cargo.instance.CanPay(_fishType, _fishCount))
-        {
-            Cargo.instance.Pay(_fishType, _fishCount);
-            Cargo.instance.ReceiveCoins(_fishPrice * _fishCount);
-            return true;
-        }
-
-        return false;
     }
 
     public void Close()

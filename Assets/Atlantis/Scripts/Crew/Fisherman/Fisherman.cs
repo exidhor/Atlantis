@@ -9,6 +9,11 @@ public class Fisherman : Crew
         get { return CrewType.Fisherman; } 
     }
 
+    public override float progress01
+    {
+        get { return _currentFishTime / _fishTime; }
+    }
+
     [Header("Logic")]
     [SerializeField] float _maxSpeedToFish;
     [SerializeField] float _fishTime;
@@ -56,25 +61,6 @@ public class Fisherman : Crew
     {
         _fishingLine.StopFishing();
     }
-
-    // todo : opti this
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.layer == LayerType.instance.layerFish)
-    //    {
-    //        _fishZone = other.gameObject.GetComponent<FishZone>();
-    //    }
-    //}
-
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    if (_fishZone != null
-    //        && _fishZone.gameObject == other.gameObject)
-    //    {
-    //        _fishZone = null;
-    //        StopFishing();
-    //    }
-    //}
 
     void Update()
     {
@@ -166,7 +152,6 @@ public class Fisherman : Crew
 
         Vector3 target = _fishZone.transform.position;
 
-        //_floatPosition = new Vector3(shootPoint.x, target.y, shootPoint.z);
         _floatPosition = new Vector3(shootPoint.x, 0f, shootPoint.z);
         _fishingLine.Land(_floatPosition);
     }

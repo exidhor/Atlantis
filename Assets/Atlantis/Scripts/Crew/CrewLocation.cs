@@ -25,13 +25,6 @@ public class CrewLocation : MonoBehaviour, IShipLocation
     {
         _current = crew;
 
-        //if (current != null)
-        //{
-        //    current.transform.SetParent(transform, false);
-        //    _view = UILayoutInventory.instance.GetCrewViewUI(index);
-        //    _view.Refresh(this);
-        //}
-
         if(current != null)
         {
             current.transform.SetParent(transform, false);
@@ -41,8 +34,23 @@ public class CrewLocation : MonoBehaviour, IShipLocation
         _view.Refresh(this);
     }
 
+    void LateUpdate()
+    {
+        if(_current != null)
+        {
+            _view.Refresh(this);
+        }
+    }
+
     public void OnClick()
     {
-        // todo
+        RemoveCrew();
+    }
+
+    void RemoveCrew()
+    {
+        current.Release();
+        _current = null;
+        _view.Refresh(this);
     }
 }
