@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using Tools;
 
 [Serializable]
 public class CrewInfo
@@ -30,4 +31,12 @@ public class CrewInfo
     [SerializeField] Sprite _icon;
     [SerializeField] Color _frontColor;
     [SerializeField] Color _backgroundColor;
+
+    [Header("Game Logic")]
+    [SerializeField] Vector2i _priceRange;
+
+    public int GetRandomPrice()
+    {
+        return UnityEngine.Random.Range(_priceRange.x, _priceRange.y);
+    }
 }

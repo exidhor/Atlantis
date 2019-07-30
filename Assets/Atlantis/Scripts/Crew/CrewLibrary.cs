@@ -5,9 +5,19 @@ using MemoryManagement;
 
 public class CrewLibrary : MonoSingleton<CrewLibrary>
 {
+    public Sprite genericCrewIcon
+    {
+        get { return _genericCrewIcon; }
+    }
+
+    [Header("Generics")]
+    [SerializeField] Sprite _genericCrewIcon;
+
+    [Header("Pool Infos")]
     [SerializeField] uint _poolCapacity;
     [SerializeField] uint _expand;
 
+    [Header("Crew Infos")]
     [SerializeField] 
     List<CrewInfo> _infos = new List<CrewInfo>();
 

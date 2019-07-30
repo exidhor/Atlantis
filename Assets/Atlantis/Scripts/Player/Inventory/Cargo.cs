@@ -98,7 +98,7 @@ public class Cargo : MonoSingleton<Cargo>
         return false;
     }
 
-    public bool CanPay(FishType type, int count)
+    public bool CanPayFish(FishType type, int count)
     {
         int owned = 0;
 
@@ -113,7 +113,12 @@ public class Cargo : MonoSingleton<Cargo>
         return owned >= count;
     }
 
-    public void Pay(FishType type, int count)
+    public bool CanPayCoins(int count)
+    {
+        return count <= _coinCount;
+    }
+
+    public void PayFish(FishType type, int count)
     {
         int paid = 0;
 
@@ -135,6 +140,11 @@ public class Cargo : MonoSingleton<Cargo>
                 }
             }
         }
+    }
+
+    public void PayCoins(int count)
+    {
+        _coinCount -= count;
     }
 
     public void ReceiveCoins(int count)

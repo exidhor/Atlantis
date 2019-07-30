@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
+using Tools;
 
-public class CrewShipManager : MonoBehaviour
+public class CrewShipManager : MonoSingleton<CrewShipManager>
 {
     [Serializable]
     class StartingCrew
     {
         public CrewType type;
         public int count = 1;
+    }
+
+    public int freePositions
+    {
+        get { return _positioner.freePositions; }
     }
 
     [Header("Starting")]
@@ -27,9 +33,14 @@ public class CrewShipManager : MonoBehaviour
         {
             for(int c = 0; c < _startingCrews[i].count; c++)
             {
-                Crew crew = CrewLibrary.instance.GetFreeCrew(_startingCrews[i].type);
-                _positioner.SetPosition(crew);
+                AddCrew(_startingCrews[i].type);
             }
         }
+    }
+
+    public void AddCrew(CrewType type)
+    {
+        Crew crew = CrewLibrary.instance.GetFreeCrew(type);
+        _positioner.SetPosition(crew);
     }
 }

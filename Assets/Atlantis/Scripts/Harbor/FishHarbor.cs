@@ -32,9 +32,9 @@ public class FishHarbor : Harbor
 
     public override bool AskForDeal()
     {
-        if (Cargo.instance.CanPay(_fishType, _fishCount))
+        if (Cargo.instance.CanPayFish(_fishType, _fishCount))
         {
-            Cargo.instance.Pay(_fishType, _fishCount);
+            Cargo.instance.PayFish(_fishType, _fishCount);
             Cargo.instance.ReceiveCoins(_fishPrice * _fishCount);
             return true;
         }
