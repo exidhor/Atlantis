@@ -2,8 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using Tools;
 
-public class HarborWindow : MonoBehaviour
+public class HarborWindowManager : MonoSingleton<HarborWindowManager>
 {
     [Header("Panel Anims")]
     [SerializeField] string _inCurveName;

@@ -18,7 +18,7 @@ public class FishHarbor : Harbor
         _fishCount = info.GetRandomCount();
     }
 
-    public override void SetHarborWindow(HarborWindow window)
+    public override void SetHarborWindow(HarborWindowManager window)
     {
         if (isOpen)
         {

@@ -19,7 +19,7 @@ public class HarborHandler : MonoBehaviour
     }
 
     [Header("Harbor Handler")] 
-    [SerializeField] HarborWindow _window;
+    [SerializeField] HarborWindowManager _window;
 
     QTCircleCollider _collider;
     Harbor _harbor;
