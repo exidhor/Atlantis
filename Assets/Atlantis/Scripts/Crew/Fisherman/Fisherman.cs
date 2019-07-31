@@ -202,6 +202,7 @@ public class Fisherman : Crew
             return;
         }
 
+        _currentFishTime = 0f;
         _isFishing = false;
         _fishingLine.StopFishing();
     }
