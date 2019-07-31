@@ -34,7 +34,7 @@ public abstract class Harbor : QTCircleCollider
     float _closedTime;
 
     protected abstract void Refresh();
-    public abstract void SetHarborWindow(HarborWindow window);
+    public abstract void SetHarborWindow(HarborWindowManager window);
     public abstract bool AskForDeal();
 
     void Awake()

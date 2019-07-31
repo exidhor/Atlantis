@@ -17,7 +17,7 @@ public class CrewHarbor : Harbor
         _crewIcon = info.icon;
     }
 
-    public override void SetHarborWindow(HarborWindow window)
+    public override void SetHarborWindow(HarborWindowManager window)
     {
         if (isOpen)
         {
