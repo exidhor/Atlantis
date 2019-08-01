@@ -112,6 +112,10 @@ ModelImporter:
     100212: tavern_wall_window_01_grp5
     100214: tavern_wall_window_01_grp6
     100216: tavern_walls_01
+    100218: expandable_lantern_01_grp1
+    100220: expandable_lantern_01_grp2
+    100222: expandable_lantern_01_grp3
+    100224: expandable_lantern_01_grp4
     400000: //RootNode
     400002: dcr_fishing_port_02
     400004: expandable_lantern_01_grp
@@ -221,7 +225,12 @@ ModelImporter:
     400212: tavern_wall_window_01_grp5
     400214: tavern_wall_window_01_grp6
     400216: tavern_walls_01
+    400218: expandable_lantern_01_grp1
+    400220: expandable_lantern_01_grp2
+    400222: expandable_lantern_01_grp3
+    400224: expandable_lantern_01_grp4
     2100000: lambert1
+    2100002: lambert2
     2300000: lantern_lamp_01
     2300002: lantern_lamp_01 1
     2300004: lantern_lamp_01 2
@@ -495,6 +504,8 @@ ModelImporter:
     4300176: tavern_roof_support_010
     4300178: tavern_roof_support_011
     4300180: tavern_roof_support_012
+    7400000: crew_port_01_inrange_01
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -515,14 +526,42 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: crew_port_01_inrange_01
+      takeName: Take 001
+      firstFrame: 45
+      lastFrame: 79
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -548,7 +587,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -575,7 +614,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
