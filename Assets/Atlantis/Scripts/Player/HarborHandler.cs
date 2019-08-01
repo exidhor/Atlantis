@@ -138,5 +138,9 @@ public class HarborHandler : MonoBehaviour
             _harbor.Close();
             HarborWindowManager.instance.SetCloseInfo(_harbor);
         }
+        else
+        {
+            HarborWindowManager.instance.OnRejectDeal();
+        }
     }
 }

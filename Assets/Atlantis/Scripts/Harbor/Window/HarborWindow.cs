@@ -10,6 +10,7 @@ public abstract class HarborWindow : MonoBehaviour
     [SerializeField] Canvas _openCanvas;
     [SerializeField] Canvas _closeCanvas;
     [SerializeField] Slider _reloadSlider;
+    [SerializeField] Vibrator _vibrator;
 
     EvaluationCurve _inCurve;
     EvaluationCurve _outCurve;
@@ -106,5 +107,10 @@ public abstract class HarborWindow : MonoBehaviour
             transform.position = _posOut;
             _globalCanvas.enabled = false;
         }
+    }
+
+    public void OnRejectDeal()
+    {
+        _vibrator.Vibrate();
     }
 }

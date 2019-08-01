@@ -200,4 +200,9 @@ public class HarborWindowManager : MonoSingleton<HarborWindowManager>
         //    SetVisible(_current == _inCurve);
         //}
     }
+
+    public void OnRejectDeal()
+    {
+        _currentWindow.OnRejectDeal();
+    }
 }
