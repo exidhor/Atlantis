@@ -18,6 +18,7 @@ public class ShipHoldUI : InventoryCellUI
     protected override void OnSetEmpty()
     {
         _fishCount.enabled = false;
+        _fullIndicator.enabled = false;
     }
 
     protected override void OnCloseState(bool state)
@@ -25,6 +26,9 @@ public class ShipHoldUI : InventoryCellUI
         _fishCount.enabled = !state
                     && location != null
                     && !location.isEmpty;
+
+        _fullIndicator.enabled = !state
+                                && (_filled.fillAmount == 1f);
     }
 
     protected override void SetInformation(IShipLocation location)
