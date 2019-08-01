@@ -5,9 +5,14 @@ public class CrewHarbor : Harbor
 {
     #region Infos
 
+    public override string rewardName
+    {
+        get { return _crewName; }
+    }
+
     public override Sprite genericIcon
     {
-        get { return CrewLibrary.instance.genericCrewIcon; }
+        get { throw new System.NotImplementedException(); }
     }
 
     public override Sprite priceIcon
@@ -32,6 +37,7 @@ public class CrewHarbor : Harbor
 
     #endregion
 
+    string _crewName;
     CrewType _crewType;
     Sprite _crewIcon;
     int _crewPrice;
@@ -42,6 +48,7 @@ public class CrewHarbor : Harbor
         _crewType = CrewType.Fisherman;
 
         CrewInfo info = CrewLibrary.instance.GetInfo(_crewType);
+        _crewName = info.name;
         _crewPrice = info.GetRandomPrice();
         _crewIcon = info.icon;
     }

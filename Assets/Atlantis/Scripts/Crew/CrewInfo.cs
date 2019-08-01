@@ -5,6 +5,11 @@ using Tools;
 [Serializable]
 public class CrewInfo
 {
+    public string name
+    {
+        get { return _name; }
+    }
+
     public Crew model
     {
         get { return _model; }
@@ -25,6 +30,7 @@ public class CrewInfo
         get { return _backgroundColor; }
     }
 
+    [SerializeField] string _name;
     [SerializeField] Crew _model;
 
     [Header("UIs")]

@@ -43,11 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75afa0eb5cd104dd3877cc7de926e95e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _genericCrewIcon: {fileID: 0}
   _poolCapacity: 10
   _expand: 5
   _infos:
-  - _model: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
+  - _name: Fisherman
+    _model: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
       type: 3}
     _icon: {fileID: 21300000, guid: 37e0411ee58f048e187b0c75cba6c6f5, type: 3}
     _frontColor: {r: 0, g: 0.93424654, b: 1, a: 0.5882353}
     _backgroundColor: {r: 0, g: 0.0940752, b: 1, a: 1}
+    _priceRange:
+      x: 0
+      y: 0

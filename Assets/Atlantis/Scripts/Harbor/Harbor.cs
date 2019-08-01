@@ -6,6 +6,11 @@ public abstract class Harbor : QTCircleCollider
 {
     #region Infos
 
+    public abstract string rewardName
+    {
+        get;
+    }
+
     public abstract Sprite genericIcon
     {
         get;

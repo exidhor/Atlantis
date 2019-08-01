@@ -5,6 +5,11 @@ public class FishHarbor : Harbor
 {
     #region Infos
 
+    public override string rewardName
+    {
+        get { throw new System.NotImplementedException(); }
+    }
+
     public override Sprite genericIcon
     {
         get { return FishLibrary.instance.genericFishIcon; }
