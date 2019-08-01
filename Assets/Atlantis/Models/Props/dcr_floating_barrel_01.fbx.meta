@@ -1,61 +1,31 @@
 fileFormatVersion: 2
-guid: 965a8e0047054714a87c6f5e51841b66
+guid: dfc6e17925e0c2e4b9afbd5207ac46d9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: fish_shak1
-    100004: pCube137
-    100006: pCube138
-    100008: pCube139
-    100010: pCube140
-    100012: pCube141
-    100014: pCube142
-    100016: pCube143
-    100018: polySurface1
-    100020: polySurface2
+    100002: flag_01
+    100004: flag_pole_01
+    100006: dcr_floating_barrel_01
     400000: //RootNode
-    400002: fish_shak1
-    400004: pCube137
-    400006: pCube138
-    400008: pCube139
-    400010: pCube140
-    400012: pCube141
-    400014: pCube142
-    400016: pCube143
-    400018: polySurface1
-    400020: polySurface2
+    400002: flag_01
+    400004: flag_pole_01
+    400006: dcr_floating_barrel_01
     2100000: lambert1
-    2300000: fish_shak1
-    2300002: pCube137
-    2300004: pCube138
-    2300006: pCube139
-    2300008: pCube140
-    2300010: pCube141
-    2300012: pCube142
-    2300014: pCube143
-    2300016: polySurface1
-    2300018: polySurface2
-    3300000: fish_shak1
-    3300002: pCube137
-    3300004: pCube138
-    3300006: pCube139
-    3300008: pCube140
-    3300010: pCube141
-    3300012: pCube142
-    3300014: pCube143
-    3300016: polySurface1
-    3300018: polySurface2
-    4300000: pCube142
-    4300002: pCube141
-    4300004: pCube143
-    4300006: pCube139
-    4300008: pCube140
-    4300010: pCube137
-    4300012: fish_shak1
-    4300014: pCube138
-    4300016: polySurface2
-    4300018: polySurface1
+    2100002: lambert2
+    2300000: //RootNode
+    2300002: flag_01
+    2300004: flag_pole_01
+    2300006: dcr_floating_barrel_01
+    3300000: //RootNode
+    3300002: flag_01
+    3300004: flag_pole_01
+    3300006: dcr_floating_barrel_01
+    4300000: dcr_floating_barrel_01
+    4300002: flag_pole_01
+    4300004: flag_01
+    7400000: Take 001
+    11100000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -83,7 +53,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 60
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -136,7 +134,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
