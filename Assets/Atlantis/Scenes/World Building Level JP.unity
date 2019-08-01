@@ -2973,6 +2973,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AGENT TEST
       objectReference: {fileID: 0}
+    - target: {fileID: 7299497999858823713, guid: 6a17ab4941ca34252acac877eccd9e3f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7299497999858823727, guid: 6a17ab4941ca34252acac877eccd9e3f,
         type: 3}
       propertyPath: m_LocalPosition.x
