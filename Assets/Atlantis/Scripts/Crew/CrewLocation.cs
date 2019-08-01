@@ -21,7 +21,7 @@ public class CrewLocation : MonoBehaviour, IShipLocation
     Crew _current = null;
     InventoryCellUI _view;
 
-    public void SetCurrent(Crew crew, int index)
+    public void SetCurrent(Crew crew, int index, bool doAnim)
     {
         _current = crew;
 
@@ -32,6 +32,18 @@ public class CrewLocation : MonoBehaviour, IShipLocation
 
         _view = UILayoutInventory.instance.GetCrewViewUI(index);
         _view.Refresh(this);
+
+        if(doAnim)
+        {
+            if(current != null)
+            {
+                _view.DoGrowAnim();
+            }
+            else
+            {
+                _view.DoReduceAnim();
+            }
+        }
     }
 
     void LateUpdate()
@@ -52,5 +64,7 @@ public class CrewLocation : MonoBehaviour, IShipLocation
         current.Release();
         _current = null;
         _view.Refresh(this);
+
+        _view.DoReduceAnim();
     }
 }

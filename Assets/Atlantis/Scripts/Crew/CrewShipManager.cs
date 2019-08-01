@@ -33,14 +33,14 @@ public class CrewShipManager : MonoSingleton<CrewShipManager>
         {
             for(int c = 0; c < _startingCrews[i].count; c++)
             {
-                AddCrew(_startingCrews[i].type);
+                AddCrew(_startingCrews[i].type, false);
             }
         }
     }
 
-    public void AddCrew(CrewType type)
+    public void AddCrew(CrewType type, bool doAnim = true)
     {
         Crew crew = CrewLibrary.instance.GetFreeCrew(type);
-        _positioner.SetPosition(crew);
+        _positioner.SetPosition(crew, doAnim);
     }
 }

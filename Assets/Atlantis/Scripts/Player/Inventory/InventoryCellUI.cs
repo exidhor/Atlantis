@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
+using Tools;
 
 public abstract class InventoryCellUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -14,6 +15,7 @@ public abstract class InventoryCellUI : MonoBehaviour, IPointerEnterHandler, IPo
     [SerializeField] protected Image _background;
     [SerializeField] protected Image _filled;
     [SerializeField] protected Image _icon;
+    [SerializeField] ScaleAnim _scaleAnim;
 
     [Header("Close Part")]
     [SerializeField] Image _closeOuterCircle;
@@ -111,5 +113,15 @@ public abstract class InventoryCellUI : MonoBehaviour, IPointerEnterHandler, IPo
         _location.OnClick();
         Refresh(_location);
         SetCloseState(false);
+    }
+
+    public void DoGrowAnim()
+    {
+        _scaleAnim.Grow();
+    }
+
+    public void DoReduceAnim()
+    {
+        _scaleAnim.Reduce();
     }
 }

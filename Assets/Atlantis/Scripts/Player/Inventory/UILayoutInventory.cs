@@ -27,6 +27,9 @@ public class UILayoutInventory : MonoSingleton<UILayoutInventory>
 
     void Awake()
     {
+        _orderedHolds.Reverse();
+        _orderedCrewViews.Reverse();
+
         for(int i = 0; i < _orderedCrewViews.Count; i++)
         {
             _orderedHolds[i].Hide();

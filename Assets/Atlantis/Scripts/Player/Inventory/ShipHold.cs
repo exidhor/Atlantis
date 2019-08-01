@@ -46,6 +46,8 @@ public class ShipHold : MonoBehaviour, IShipLocation
         _fishCount += count;
 
         RefreshShipHoldView();
+
+        _view.DoGrowAnim();
     }
 
     public bool Contains(FishType type)
@@ -58,6 +60,8 @@ public class ShipHold : MonoBehaviour, IShipLocation
         _fishCount -= count;
 
         RefreshShipHoldView();
+
+        _view.DoReduceAnim();
     }
 
     public void RemoveAll()

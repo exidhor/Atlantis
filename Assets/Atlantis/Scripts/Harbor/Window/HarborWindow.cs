@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using Tools;
 
 public abstract class HarborWindow : MonoBehaviour
 {

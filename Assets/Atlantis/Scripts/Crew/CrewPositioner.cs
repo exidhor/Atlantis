@@ -28,19 +28,19 @@ public class CrewPositioner : MonoBehaviour
 
         for(int i = 0; i < count; i++)
         {
-            _poolPositions[i].SetCurrent(null, i);
+            _poolPositions[i].SetCurrent(null, i, false);
             _positions.Add(_poolPositions[i]);
         }
     }
 
-    public Transform SetPosition(Crew crew)
+    public Transform SetPosition(Crew crew, bool doAnim)
     {
         for(int i = 0; i < _positions.Count; i++)
         {
             if(_positions[i].available)
             {
                 _freePositions--;
-                _positions[i].SetCurrent(crew, i);
+                _positions[i].SetCurrent(crew, i, doAnim);
 
                 return _positions[i].transform;
             }
@@ -56,7 +56,7 @@ public class CrewPositioner : MonoBehaviour
             if(_positions[i].current == crew)
             {
                 _freePositions++;
-                _positions[i].SetCurrent(null, i);
+                _positions[i].SetCurrent(null, i, true);
                 return;
             }
         }
