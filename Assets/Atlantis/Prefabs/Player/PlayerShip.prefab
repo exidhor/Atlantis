@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ec1f84516bb4049b991d5990fdbd1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _acceleration: 15
+  _acceleration: 20
   _accelerationCurve:
     serializedVersion: 2
     m_Curve:
@@ -73,17 +73,17 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _decceleration: -0.1
-  _breakSpeed: -0.3
+  _decceleration: -0.2
+  _breakSpeed: -0.6
   _maxSpeed: 40
   _minAngularSpeed: 1
   _angularSpeed: 100
-  _maxAngularSpeed: 140
+  _maxAngularSpeed: 150
   _speedAffectAngular: 0.2
   _disableAngularAcceleration: 0
-  _angularVariation: 2
+  _angularVariation: 1.5
   _slideStrength: 0
-  _swingStrength: 5
+  _swingStrength: 6
   _speedText: {fileID: 0}
   _shipModel: {fileID: 5027850862280469951}
   _body: {fileID: 0}
