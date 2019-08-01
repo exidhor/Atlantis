@@ -129,7 +129,7 @@ public class HarborHandler : MonoBehaviour
          if (_harbor == null || !_isAtRange)
             return;
 
-        bool done = _harbor.AskForDeal();
+        bool done = _harbor.isOpen && _harbor.AskForDeal();
 
         if(done)
         {
