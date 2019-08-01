@@ -145,6 +145,9 @@ public class Cargo : MonoSingleton<Cargo>
     public void PayCoins(int count)
     {
         _coinCount -= count;
+
+        UILayoutInventory.instance.RefreshCoins(_coinCount);
+        UILayoutInventory.instance.ReduceAnimCoins();
     }
 
     public void ReceiveCoins(int count)
@@ -152,5 +155,6 @@ public class Cargo : MonoSingleton<Cargo>
         _coinCount += count;
 
         UILayoutInventory.instance.RefreshCoins(_coinCount);
+        UILayoutInventory.instance.GrowAnimCoins();
     }
 }

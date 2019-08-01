@@ -20,6 +20,7 @@ public class UILayoutInventory : MonoSingleton<UILayoutInventory>
 
     [Header("Linking")]
     [SerializeField] TextMeshProUGUI _coinsText;
+    [SerializeField] ScaleAnim _coinsScaleAnim;
     [SerializeField] List<ShipHoldUI> _orderedHolds = new List<ShipHoldUI>();
     [SerializeField] List<CrewViewUI> _orderedCrewViews = new List<CrewViewUI>();
 
@@ -65,5 +66,15 @@ public class UILayoutInventory : MonoSingleton<UILayoutInventory>
     public void RefreshCoins(int value)
     {
         _coinsText.text = value.ToString();
+    }
+
+    public void ReduceAnimCoins()
+    {
+        _coinsScaleAnim.Reduce();
+    }
+
+    public void GrowAnimCoins()
+    {
+        _coinsScaleAnim.Grow();
     }
 }
