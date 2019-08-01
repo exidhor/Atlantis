@@ -35,6 +35,14 @@ public class FishInfo
     [SerializeField] Color _holdFrontColor;
     [SerializeField] Color _holdBackgroundColor;
 
+    Material _flagMaterial;
+
+    public void Init()
+    {
+        _flagMaterial = new Material(Shader.Find("Shader Graphs/Flag_horizontal"));
+        //_flagMaterial.SetTexture("")
+    }
+
     public int GetRandomCount()
     {
         return UnityEngine.Random.Range(_questRange.x, _questRange.y);
