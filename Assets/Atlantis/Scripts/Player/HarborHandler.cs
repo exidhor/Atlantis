@@ -81,11 +81,10 @@ public class HarborHandler : MonoBehaviour
             else if(!_isAtRange && maxDistance > distance)
             {
                 _isAtRange = true;
-                HarborWindowManager.instance.Appear(HarborType.Fish);
+                HarborWindowManager.instance.Appear(_harbor.type);
                 SetInfo(_harbor);
                 _harbor.SetIndicatorState(true);
                 HarborWindowManager.instance.SetIsOpen(_harbor.isOpen);
-                //HarborWindowManager.instance.Appear(HarborType.Fish);
             }
         }
     }
@@ -134,7 +133,6 @@ public class HarborHandler : MonoBehaviour
 
         if(done)
         {
-            //_window.SetCloseState(FishLibrary.instance.genericFishIcon);
             _harbor.Close();
             HarborWindowManager.instance.SetCloseInfo(_harbor);
         }

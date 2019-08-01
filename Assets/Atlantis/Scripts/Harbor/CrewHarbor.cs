@@ -37,6 +37,11 @@ public class CrewHarbor : Harbor
 
     #endregion
 
+    public override HarborType type
+    {
+        get { return HarborType.Crew; }
+    }
+
     string _crewName;
     CrewType _crewType;
     Sprite _crewIcon;

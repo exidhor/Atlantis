@@ -12,7 +12,7 @@ public class HarborWindowCrew : HarborWindow
     public override void SetOpenInfo(Harbor harbor)
     {
         _crewName.text = harbor.rewardName;
-        _crewIcon.sprite = harbor.priceIcon;
+        _crewIcon.sprite = harbor.rewardIcon;
         _crewPrice.text = "-" + harbor.priceCount.ToString();
     }
 }

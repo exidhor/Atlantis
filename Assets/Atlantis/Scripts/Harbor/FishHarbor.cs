@@ -37,6 +37,11 @@ public class FishHarbor : Harbor
 
     #endregion
 
+    public override HarborType type
+    {
+        get { return HarborType.Fish; }
+    }
+
     FishType _fishType;
     Sprite _fishIcon;
     int _fishPrice;

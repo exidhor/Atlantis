@@ -59,6 +59,11 @@ public abstract class Harbor : QTCircleCollider
         get { return _closedTime / _closeDuration; }
     }
 
+    public abstract HarborType type
+    {
+        get;
+    }
+
     [Header("Harbor")]
     [SerializeField] float _closeDuration = 30;
     [SerializeField] Gradient _colorOutside;
