@@ -1,0 +1,583 @@
+fileFormatVersion: 2
+guid: 0965399782d1d7940a165a06562fa4bc
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: dcr_fishing_port_02
+    100004: expandable_lantern_01_grp
+    100006: expandable_lantern_02_grp
+    100008: expandable_lantern_03_grp
+    100010: expandable_lantern_04_grp
+    100012: expandable_lantern_05_grp
+    100014: fish_platform_01
+    100016: lantern_lamp_01
+    100018: lantern_lamp_01 1
+    100020: lantern_lamp_01 2
+    100022: lantern_lamp_01 3
+    100024: lantern_lamp_01 4
+    100026: lantern_lamp_supsension_01
+    100028: lantern_lamp_supsension_01 1
+    100030: lantern_lamp_supsension_01 2
+    100032: lantern_lamp_supsension_01 3
+    100034: lantern_lamp_supsension_01 4
+    100036: lantern_pole_01
+    100038: lantern_pole_01 1
+    100040: lantern_pole_01 2
+    100042: lantern_pole_01 3
+    100044: lantern_pole_01 4
+    100046: lantern_wall_support_01
+    100048: lantern_wall_support_01 1
+    100050: lantern_wall_support_01 2
+    100052: lantern_wall_support_01 3
+    100054: lantern_wall_support_01 4
+    100056: pCube154
+    100058: pCube155
+    100060: pCube156
+    100062: pCube157
+    100064: pCube158
+    100066: pCube159
+    100068: pCube160
+    100070: pCube161
+    100072: pCube172
+    100074: pCube172 1
+    100076: pCube172 2
+    100078: pCube172 3
+    100080: pCube172 4
+    100082: pCube172 5
+    100084: pCube172 6
+    100086: pCube173
+    100088: pCube173 1
+    100090: pCube173 2
+    100092: pCube173 3
+    100094: pCube173 4
+    100096: pCube173 5
+    100098: pCube173 6
+    100100: pCube174
+    100102: pCube174 1
+    100104: pCube174 2
+    100106: pCube174 3
+    100108: pCube174 4
+    100110: pCube174 5
+    100112: pCube174 6
+    100114: pCube175
+    100116: pCube175 1
+    100118: pCube175 2
+    100120: pCube175 3
+    100122: pCube175 4
+    100124: pCube175 5
+    100126: pCube175 6
+    100128: polySurface10
+    100130: polySurface11
+    100132: polySurface12
+    100134: polySurface13
+    100136: polySurface14
+    100138: polySurface3
+    100140: polySurface4
+    100142: polySurface5
+    100144: polySurface6
+    100146: polySurface7
+    100148: polySurface8
+    100150: polySurface9
+    100152: tavern_door_01
+    100154: tavern_handle_01
+    100156: tavern_handle_01_grp
+    100158: tavern_handle_support_01
+    100160: tavern_handle_support_02
+    100162: tavern_roof_01
+    100164: tavern_roof_gloabl_grp
+    100166: tavern_roof_support_01
+    100168: tavern_roof_support_010
+    100170: tavern_roof_support_011
+    100172: tavern_roof_support_012
+    100174: tavern_roof_support_02
+    100176: tavern_roof_support_03
+    100178: tavern_roof_support_04
+    100180: tavern_roof_support_05
+    100182: tavern_roof_support_06
+    100184: tavern_roof_support_07
+    100186: tavern_roof_support_08
+    100188: tavern_roof_support_09
+    100190: tavern_roof_support_big_01
+    100192: Tavern_roof_support_grp
+    100194: tavern_roof_window_01
+    100196: tavern_roof_window_02
+    100198: tavern_roof_window_03
+    100200: tavern_roof_window_04
+    100202: tavern_wall_window_01_grp
+    100204: tavern_wall_window_01_grp1
+    100206: tavern_wall_window_01_grp2
+    100208: tavern_wall_window_01_grp3
+    100210: tavern_wall_window_01_grp4
+    100212: tavern_wall_window_01_grp5
+    100214: tavern_wall_window_01_grp6
+    100216: tavern_walls_01
+    400000: //RootNode
+    400002: dcr_fishing_port_02
+    400004: expandable_lantern_01_grp
+    400006: expandable_lantern_02_grp
+    400008: expandable_lantern_03_grp
+    400010: expandable_lantern_04_grp
+    400012: expandable_lantern_05_grp
+    400014: fish_platform_01
+    400016: lantern_lamp_01
+    400018: lantern_lamp_01 1
+    400020: lantern_lamp_01 2
+    400022: lantern_lamp_01 3
+    400024: lantern_lamp_01 4
+    400026: lantern_lamp_supsension_01
+    400028: lantern_lamp_supsension_01 1
+    400030: lantern_lamp_supsension_01 2
+    400032: lantern_lamp_supsension_01 3
+    400034: lantern_lamp_supsension_01 4
+    400036: lantern_pole_01
+    400038: lantern_pole_01 1
+    400040: lantern_pole_01 2
+    400042: lantern_pole_01 3
+    400044: lantern_pole_01 4
+    400046: lantern_wall_support_01
+    400048: lantern_wall_support_01 1
+    400050: lantern_wall_support_01 2
+    400052: lantern_wall_support_01 3
+    400054: lantern_wall_support_01 4
+    400056: pCube154
+    400058: pCube155
+    400060: pCube156
+    400062: pCube157
+    400064: pCube158
+    400066: pCube159
+    400068: pCube160
+    400070: pCube161
+    400072: pCube172
+    400074: pCube172 1
+    400076: pCube172 2
+    400078: pCube172 3
+    400080: pCube172 4
+    400082: pCube172 5
+    400084: pCube172 6
+    400086: pCube173
+    400088: pCube173 1
+    400090: pCube173 2
+    400092: pCube173 3
+    400094: pCube173 4
+    400096: pCube173 5
+    400098: pCube173 6
+    400100: pCube174
+    400102: pCube174 1
+    400104: pCube174 2
+    400106: pCube174 3
+    400108: pCube174 4
+    400110: pCube174 5
+    400112: pCube174 6
+    400114: pCube175
+    400116: pCube175 1
+    400118: pCube175 2
+    400120: pCube175 3
+    400122: pCube175 4
+    400124: pCube175 5
+    400126: pCube175 6
+    400128: polySurface10
+    400130: polySurface11
+    400132: polySurface12
+    400134: polySurface13
+    400136: polySurface14
+    400138: polySurface3
+    400140: polySurface4
+    400142: polySurface5
+    400144: polySurface6
+    400146: polySurface7
+    400148: polySurface8
+    400150: polySurface9
+    400152: tavern_door_01
+    400154: tavern_handle_01
+    400156: tavern_handle_01_grp
+    400158: tavern_handle_support_01
+    400160: tavern_handle_support_02
+    400162: tavern_roof_01
+    400164: tavern_roof_gloabl_grp
+    400166: tavern_roof_support_01
+    400168: tavern_roof_support_010
+    400170: tavern_roof_support_011
+    400172: tavern_roof_support_012
+    400174: tavern_roof_support_02
+    400176: tavern_roof_support_03
+    400178: tavern_roof_support_04
+    400180: tavern_roof_support_05
+    400182: tavern_roof_support_06
+    400184: tavern_roof_support_07
+    400186: tavern_roof_support_08
+    400188: tavern_roof_support_09
+    400190: tavern_roof_support_big_01
+    400192: Tavern_roof_support_grp
+    400194: tavern_roof_window_01
+    400196: tavern_roof_window_02
+    400198: tavern_roof_window_03
+    400200: tavern_roof_window_04
+    400202: tavern_wall_window_01_grp
+    400204: tavern_wall_window_01_grp1
+    400206: tavern_wall_window_01_grp2
+    400208: tavern_wall_window_01_grp3
+    400210: tavern_wall_window_01_grp4
+    400212: tavern_wall_window_01_grp5
+    400214: tavern_wall_window_01_grp6
+    400216: tavern_walls_01
+    2100000: lambert1
+    2300000: lantern_lamp_01
+    2300002: lantern_lamp_01 1
+    2300004: lantern_lamp_01 2
+    2300006: lantern_lamp_01 3
+    2300008: lantern_lamp_01 4
+    2300010: lantern_lamp_supsension_01
+    2300012: lantern_lamp_supsension_01 1
+    2300014: lantern_lamp_supsension_01 2
+    2300016: lantern_lamp_supsension_01 3
+    2300018: lantern_lamp_supsension_01 4
+    2300020: lantern_pole_01
+    2300022: lantern_pole_01 1
+    2300024: lantern_pole_01 2
+    2300026: lantern_pole_01 3
+    2300028: lantern_pole_01 4
+    2300030: lantern_wall_support_01
+    2300032: lantern_wall_support_01 1
+    2300034: lantern_wall_support_01 2
+    2300036: lantern_wall_support_01 3
+    2300038: lantern_wall_support_01 4
+    2300040: pCube154
+    2300042: pCube155
+    2300044: pCube156
+    2300046: pCube157
+    2300048: pCube158
+    2300050: pCube159
+    2300052: pCube160
+    2300054: pCube161
+    2300056: pCube172
+    2300058: pCube172 1
+    2300060: pCube172 2
+    2300062: pCube172 3
+    2300064: pCube172 4
+    2300066: pCube172 5
+    2300068: pCube172 6
+    2300070: pCube173
+    2300072: pCube173 1
+    2300074: pCube173 2
+    2300076: pCube173 3
+    2300078: pCube173 4
+    2300080: pCube173 5
+    2300082: pCube173 6
+    2300084: pCube174
+    2300086: pCube174 1
+    2300088: pCube174 2
+    2300090: pCube174 3
+    2300092: pCube174 4
+    2300094: pCube174 5
+    2300096: pCube174 6
+    2300098: pCube175
+    2300100: pCube175 1
+    2300102: pCube175 2
+    2300104: pCube175 3
+    2300106: pCube175 4
+    2300108: pCube175 5
+    2300110: pCube175 6
+    2300112: polySurface10
+    2300114: polySurface11
+    2300116: polySurface12
+    2300118: polySurface13
+    2300120: polySurface14
+    2300122: polySurface3
+    2300124: polySurface4
+    2300126: polySurface5
+    2300128: polySurface6
+    2300130: polySurface7
+    2300132: polySurface8
+    2300134: polySurface9
+    2300136: tavern_door_01
+    2300138: tavern_handle_01
+    2300140: tavern_handle_support_01
+    2300142: tavern_handle_support_02
+    2300144: tavern_roof_01
+    2300146: tavern_roof_support_01
+    2300148: tavern_roof_support_010
+    2300150: tavern_roof_support_011
+    2300152: tavern_roof_support_012
+    2300154: tavern_roof_support_02
+    2300156: tavern_roof_support_03
+    2300158: tavern_roof_support_04
+    2300160: tavern_roof_support_05
+    2300162: tavern_roof_support_06
+    2300164: tavern_roof_support_07
+    2300166: tavern_roof_support_08
+    2300168: tavern_roof_support_09
+    2300170: tavern_roof_support_big_01
+    2300172: tavern_roof_window_01
+    2300174: tavern_roof_window_02
+    2300176: tavern_roof_window_03
+    2300178: tavern_roof_window_04
+    2300180: tavern_walls_01
+    3300000: lantern_lamp_01
+    3300002: lantern_lamp_01 1
+    3300004: lantern_lamp_01 2
+    3300006: lantern_lamp_01 3
+    3300008: lantern_lamp_01 4
+    3300010: lantern_lamp_supsension_01
+    3300012: lantern_lamp_supsension_01 1
+    3300014: lantern_lamp_supsension_01 2
+    3300016: lantern_lamp_supsension_01 3
+    3300018: lantern_lamp_supsension_01 4
+    3300020: lantern_pole_01
+    3300022: lantern_pole_01 1
+    3300024: lantern_pole_01 2
+    3300026: lantern_pole_01 3
+    3300028: lantern_pole_01 4
+    3300030: lantern_wall_support_01
+    3300032: lantern_wall_support_01 1
+    3300034: lantern_wall_support_01 2
+    3300036: lantern_wall_support_01 3
+    3300038: lantern_wall_support_01 4
+    3300040: pCube154
+    3300042: pCube155
+    3300044: pCube156
+    3300046: pCube157
+    3300048: pCube158
+    3300050: pCube159
+    3300052: pCube160
+    3300054: pCube161
+    3300056: pCube172
+    3300058: pCube172 1
+    3300060: pCube172 2
+    3300062: pCube172 3
+    3300064: pCube172 4
+    3300066: pCube172 5
+    3300068: pCube172 6
+    3300070: pCube173
+    3300072: pCube173 1
+    3300074: pCube173 2
+    3300076: pCube173 3
+    3300078: pCube173 4
+    3300080: pCube173 5
+    3300082: pCube173 6
+    3300084: pCube174
+    3300086: pCube174 1
+    3300088: pCube174 2
+    3300090: pCube174 3
+    3300092: pCube174 4
+    3300094: pCube174 5
+    3300096: pCube174 6
+    3300098: pCube175
+    3300100: pCube175 1
+    3300102: pCube175 2
+    3300104: pCube175 3
+    3300106: pCube175 4
+    3300108: pCube175 5
+    3300110: pCube175 6
+    3300112: polySurface10
+    3300114: polySurface11
+    3300116: polySurface12
+    3300118: polySurface13
+    3300120: polySurface14
+    3300122: polySurface3
+    3300124: polySurface4
+    3300126: polySurface5
+    3300128: polySurface6
+    3300130: polySurface7
+    3300132: polySurface8
+    3300134: polySurface9
+    3300136: tavern_door_01
+    3300138: tavern_handle_01
+    3300140: tavern_handle_support_01
+    3300142: tavern_handle_support_02
+    3300144: tavern_roof_01
+    3300146: tavern_roof_support_01
+    3300148: tavern_roof_support_010
+    3300150: tavern_roof_support_011
+    3300152: tavern_roof_support_012
+    3300154: tavern_roof_support_02
+    3300156: tavern_roof_support_03
+    3300158: tavern_roof_support_04
+    3300160: tavern_roof_support_05
+    3300162: tavern_roof_support_06
+    3300164: tavern_roof_support_07
+    3300166: tavern_roof_support_08
+    3300168: tavern_roof_support_09
+    3300170: tavern_roof_support_big_01
+    3300172: tavern_roof_window_01
+    3300174: tavern_roof_window_02
+    3300176: tavern_roof_window_03
+    3300178: tavern_roof_window_04
+    3300180: tavern_walls_01
+    4300000: polySurface3
+    4300002: polySurface4
+    4300004: polySurface5
+    4300006: polySurface6
+    4300008: polySurface7
+    4300010: polySurface8
+    4300012: polySurface9
+    4300014: polySurface10
+    4300016: polySurface11
+    4300018: polySurface12
+    4300020: polySurface13
+    4300022: polySurface14
+    4300024: pCube154
+    4300026: pCube155
+    4300028: pCube157
+    4300030: pCube156
+    4300032: pCube158
+    4300034: pCube159
+    4300036: pCube161
+    4300038: pCube160
+    4300040: tavern_walls_01
+    4300042: tavern_handle_01
+    4300044: tavern_handle_support_01
+    4300046: tavern_handle_support_02
+    4300048: tavern_door_01
+    4300050: lantern_pole_01
+    4300052: lantern_lamp_01
+    4300054: lantern_lamp_supsension_01
+    4300056: lantern_wall_support_01
+    4300058: lantern_pole_01
+    4300060: lantern_lamp_01
+    4300062: lantern_lamp_supsension_01
+    4300064: lantern_wall_support_01
+    4300066: lantern_pole_01
+    4300068: lantern_lamp_01
+    4300070: lantern_lamp_supsension_01
+    4300072: lantern_wall_support_01
+    4300074: lantern_pole_01
+    4300076: lantern_lamp_01
+    4300078: lantern_lamp_supsension_01
+    4300080: lantern_wall_support_01
+    4300082: lantern_pole_01
+    4300084: lantern_lamp_01
+    4300086: lantern_lamp_supsension_01
+    4300088: lantern_wall_support_01
+    4300090: pCube172
+    4300092: pCube175
+    4300094: pCube174
+    4300096: pCube173
+    4300098: pCube172
+    4300100: pCube175
+    4300102: pCube174
+    4300104: pCube173
+    4300106: pCube172
+    4300108: pCube175
+    4300110: pCube174
+    4300112: pCube173
+    4300114: pCube172
+    4300116: pCube175
+    4300118: pCube174
+    4300120: pCube173
+    4300122: pCube172
+    4300124: pCube175
+    4300126: pCube174
+    4300128: pCube173
+    4300130: pCube172
+    4300132: pCube175
+    4300134: pCube174
+    4300136: pCube173
+    4300138: pCube172
+    4300140: pCube175
+    4300142: pCube174
+    4300144: pCube173
+    4300146: tavern_roof_01
+    4300148: tavern_roof_window_01
+    4300150: tavern_roof_window_04
+    4300152: tavern_roof_window_03
+    4300154: tavern_roof_window_02
+    4300156: tavern_roof_support_big_01
+    4300158: tavern_roof_support_01
+    4300160: tavern_roof_support_02
+    4300162: tavern_roof_support_03
+    4300164: tavern_roof_support_04
+    4300166: tavern_roof_support_05
+    4300168: tavern_roof_support_06
+    4300170: tavern_roof_support_07
+    4300172: tavern_roof_support_08
+    4300174: tavern_roof_support_09
+    4300176: tavern_roof_support_010
+    4300178: tavern_roof_support_011
+    4300180: tavern_roof_support_012
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
