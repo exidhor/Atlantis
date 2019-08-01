@@ -16,6 +16,11 @@ public class FishLibrary : MonoSingleton<FishLibrary>
     void Awake()
     {
         _fishes.Sort((a, b) => a.type.CompareTo(b.type));
+
+        //for(int i = 0; i < _fishes.Count; i++)
+        //{
+        //    _fishes[i].Init();
+        //}
     }
 
     public FishInfo GetFishInfo(FishType type)

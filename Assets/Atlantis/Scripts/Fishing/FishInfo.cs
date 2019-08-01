@@ -25,6 +25,11 @@ public class FishInfo
         get { return _holdBackgroundColor; }
     }
 
+    //public Material flagMaterial
+    //{
+    //    get { return _flagMaterial; }
+    //}
+
     [Header("Game Design Values")]
     [SerializeField] FishType _type;
     [SerializeField] Vector2i _questRange;
@@ -35,13 +40,13 @@ public class FishInfo
     [SerializeField] Color _holdFrontColor;
     [SerializeField] Color _holdBackgroundColor;
 
-    Material _flagMaterial;
+    //Material _flagMaterial;
 
-    public void Init()
-    {
-        _flagMaterial = new Material(Shader.Find("Shader Graphs/Flag_horizontal"));
-        //_flagMaterial.SetTexture("")
-    }
+    //public void Init()
+    //{
+    //    _flagMaterial = new Material(Shader.Find("Shader Graphs/Flag_horizontal"));
+    //    _flagMaterial.SetTexture("Texture2D_D003A093", _icon.texture);
+    //}
 
     public int GetRandomCount()
     {
