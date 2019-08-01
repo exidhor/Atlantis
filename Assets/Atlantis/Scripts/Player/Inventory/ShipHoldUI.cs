@@ -28,6 +28,7 @@ public class ShipHoldUI : InventoryCellUI
                     && !location.isEmpty;
 
         _fullIndicator.enabled = !state
+                                && _filled.enabled
                                 && (_filled.fillAmount == 1f);
     }
 

@@ -6,7 +6,7 @@ public class Fisherman : Crew
 {
     public override CrewType type 
     { 
-        get { return CrewType.Fisherman; } 
+        get { return _type; } 
     }
 
     public override float progress01
@@ -15,6 +15,7 @@ public class Fisherman : Crew
     }
 
     [Header("Logic")]
+    [SerializeField] CrewType _type;
     [SerializeField] float _maxSpeedToFish;
     [SerializeField] float _fishTime;
     [SerializeField] float _extendCoef = 1.5f;

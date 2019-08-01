@@ -61,4 +61,9 @@ public class CrewPositioner : MonoBehaviour
             }
         }
     }
+
+    public void VirtualRelease()
+    {
+        _freePositions++;
+    }
 }

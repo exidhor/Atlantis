@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5161354125149482103}
   - component: {fileID: 1575134146115846400}
   m_Layer: 10
-  m_Name: Fisherman
+  m_Name: Fisherman0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,8 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pool: {fileID: 0}
   IndexInPool: 0
+  _type: 0
   _maxSpeedToFish: 15
-  _fishTime: 1
+  _fishTime: 3
   _extendCoef: 1.2
   _minLineLength: 5
   _restartAfterCatching: 0
