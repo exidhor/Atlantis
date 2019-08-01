@@ -121,11 +121,18 @@ public class Fisherman : Crew
         }
         else
         {
-            if(!canFish || !Cargo.instance.CanStore(_fishZone.fishType))
+            if(!canFish 
+                || !Cargo.instance.CanStore(_fishZone.fishType))
             {
                 // Debug.Log("There is not anymore the condition to fish -- STOP --");
                 StopFishing();
                 return;
+            }
+
+            if(!_fishZone.isEnable)
+            {
+                StopFishing();
+                _fishZone = null;
             }
 
             _currentFishTime += dt;

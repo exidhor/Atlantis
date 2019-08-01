@@ -99,18 +99,6 @@ public abstract class Harbor : QTCircleCollider
         }
     }
 
-    //public void SetHarborWindow(HarborWindowManager window)
-    //{
-    //    if (isOpen)
-    //    {
-    //        HarborWindowManager.instance.SetOpenInfo(this);
-    //    }
-    //    else
-    //    {
-    //        HarborWindowManager.instance.SetCloseInfo(this);
-    //    }
-    //}
-
     public void SetIndicatorVisibility(bool visible)
     {
         _indicator.SetVisible(visible);
@@ -135,6 +123,7 @@ public abstract class Harbor : QTCircleCollider
         _isOpen = true;
 
         Refresh();
+
         OnOpen();
     }
 }
