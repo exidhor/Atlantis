@@ -37,11 +37,11 @@ public class CrewLocation : MonoBehaviour, IShipLocation
         {
             if(current != null)
             {
-                _view.DoGrowAnim();
+                _view.DoGrowAnim(true);
             }
             else
             {
-                _view.DoReduceAnim();
+                _view.DoReduceAnim(false);
             }
         }
     }
@@ -65,6 +65,6 @@ public class CrewLocation : MonoBehaviour, IShipLocation
         _current = null;
         _view.Refresh(this);
 
-        _view.DoReduceAnim();
+        _view.DoReduceAnim(false);
     }
 }

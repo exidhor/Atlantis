@@ -15,12 +15,26 @@ public class UILayoutInventory : MonoSingleton<UILayoutInventory>
         get { return _playerOnShipHold; }
     }
 
+    public float delayReceiving
+    {
+        get { return _delayReceiving; }
+    }
+
+    public float delayPaying
+    {
+        get { return _delayPaying; }
+    }
+
     [Header("Values")]
     [SerializeField] Color _emptyHoldColor;
 
+    [Header("Coins Anim")]
+    [SerializeField] float _delayReceiving = 0.3f;
+    [SerializeField] float _delayPaying = 0f;
+    [SerializeField] ScaleAnim _coinsScaleAnim;
+
     [Header("Linking")]
     [SerializeField] TextMeshProUGUI _coinsText;
-    [SerializeField] ScaleAnim _coinsScaleAnim;
     [SerializeField] List<ShipHoldUI> _orderedHolds = new List<ShipHoldUI>();
     [SerializeField] List<CrewViewUI> _orderedCrewViews = new List<CrewViewUI>();
 
@@ -70,11 +84,11 @@ public class UILayoutInventory : MonoSingleton<UILayoutInventory>
 
     public void ReduceAnimCoins()
     {
-        _coinsScaleAnim.Reduce();
+        _coinsScaleAnim.Reduce(_delayPaying);
     }
 
     public void GrowAnimCoins()
     {
-        _coinsScaleAnim.Grow();
+        _coinsScaleAnim.Grow(_delayReceiving);
     }
 }

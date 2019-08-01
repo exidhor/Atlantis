@@ -115,13 +115,13 @@ public abstract class InventoryCellUI : MonoBehaviour, IPointerEnterHandler, IPo
         SetCloseState(false);
     }
 
-    public void DoGrowAnim()
+    public void DoGrowAnim(bool doDelay = true)
     {
-        _scaleAnim.Grow();
+        _scaleAnim.Grow(doDelay ? UILayoutInventory.instance.delayReceiving : 0f);
     }
 
-    public void DoReduceAnim()
+    public void DoReduceAnim(bool doDelay = true)
     {
-        _scaleAnim.Reduce();
+        _scaleAnim.Reduce(doDelay ? UILayoutInventory.instance.delayPaying : 0f);
     }
 }

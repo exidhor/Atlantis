@@ -1923,8 +1923,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _emptyHoldColor: {r: 0.1882353, g: 0.1882353, b: 0.1882353, a: 0.72156864}
-  _coinsText: {fileID: 135510365}
+  _delayReceiving: 0
+  _delayPaying: 0
   _coinsScaleAnim: {fileID: 680954940}
+  _coinsText: {fileID: 135510365}
   _orderedHolds:
   - {fileID: 8188327945417885743}
   - {fileID: 8686580476220784617}

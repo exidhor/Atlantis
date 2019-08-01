@@ -14,18 +14,24 @@ namespace Tools
         bool _started;
         bool _grow;
 
-        public void Grow()
+        float _delay;
+
+        public void Grow(float delay = 0f)
         {
             _started = true;
             _grow = true;
             _time = 0f;
+
+            _delay = delay;
         }
 
-        public void Reduce()
+        public void Reduce(float delay = 0f)
         {
             _started = true;
             _grow = false;
             _time = 0f;
+
+            _delay = delay;
         }
 
         void Update()
@@ -34,13 +40,18 @@ namespace Tools
             {
                 _time += Time.deltaTime;
 
-                if (_time >= _duration)
+                if(_time < _delay)
                 {
-                    _started = false;
-                    _time = _duration;
+                    return;
                 }
 
-                float ct = _curve.Evaluate(_time / _duration);
+                if (_time >= _duration + _delay)
+                {
+                    _started = false;
+                    _time = _delay + _duration;
+                }
+
+                float ct = _curve.Evaluate((_time - _delay) / _duration);
 
                 float s = Mathf.LerpUnclamped(1f, _grow ? _targetGrowScale : _targetReduceScale, ct);
                 transform.localScale = Vector3.one * s;
