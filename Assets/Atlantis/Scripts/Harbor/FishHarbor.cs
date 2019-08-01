@@ -42,6 +42,8 @@ public class FishHarbor : Harbor
         get { return HarborType.Fish; }
     }
 
+    [SerializeField] MeshRenderer _flagRenderer;
+
     [Header("Fish Anims")]
     [SerializeField] Animator _animator;
 
@@ -58,6 +60,7 @@ public class FishHarbor : Harbor
         _fishIcon = info.icon;
         _fishPrice = info.GetRandomPrice();
         _fishCount = info.GetRandomCount();
+        _flagRenderer.material.SetTexture("Texture2D_D003A093", _fishIcon.texture);
     }
 
     public override bool AskForDeal()

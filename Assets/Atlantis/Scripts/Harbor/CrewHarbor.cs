@@ -42,6 +42,8 @@ public class CrewHarbor : Harbor
         get { return HarborType.Crew; }
     }
 
+    [SerializeField] MeshRenderer _flagRenderer;
+
     string _crewName;
     CrewType _crewType;
     Sprite _crewIcon;
@@ -55,6 +57,7 @@ public class CrewHarbor : Harbor
         _crewName = info.name;
         _crewPrice = info.GetRandomPrice();
         _crewIcon = info.icon;
+        _flagRenderer.material.SetTexture("Texture2D_D003A093", _crewIcon.texture);
     }
 
     public override bool AskForDeal()
