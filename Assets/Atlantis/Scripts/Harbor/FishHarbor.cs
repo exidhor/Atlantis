@@ -42,6 +42,9 @@ public class FishHarbor : Harbor
         get { return HarborType.Fish; }
     }
 
+    [Header("Fish Anims")]
+    [SerializeField] Animator _animator;
+
     FishType _fishType;
     Sprite _fishIcon;
     int _fishPrice;
@@ -67,5 +70,10 @@ public class FishHarbor : Harbor
         }
 
         return false;
+    }
+
+    protected override void OnPlayerRange(bool atRange)
+    {
+        _animator.SetTrigger("Open");
     }
 }

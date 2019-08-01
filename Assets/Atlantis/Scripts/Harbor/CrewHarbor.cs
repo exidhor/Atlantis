@@ -70,4 +70,9 @@ public class CrewHarbor : Harbor
 
         return false;
     }
+
+    protected override void OnPlayerRange(bool atRange)
+    {
+        // todo
+    }
 }

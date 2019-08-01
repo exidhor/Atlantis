@@ -75,6 +75,7 @@ public abstract class Harbor : QTCircleCollider
 
     protected abstract void Refresh();
     public abstract bool AskForDeal();
+    protected abstract void OnPlayerRange(bool atRange);
 
     void Awake()
     {
@@ -116,6 +117,7 @@ public abstract class Harbor : QTCircleCollider
     public void SetIndicatorState(bool playerNear)
     {
         _indicator.SetColor(playerNear ? _colorInside : _colorOutside);
+        OnPlayerRange(playerNear);
     }
 
     public void Close()
