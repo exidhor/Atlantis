@@ -148,6 +148,11 @@ MonoBehaviour:
   _enable: 1
   _manual: 0
   _fishType: 2
+  _depthEnable: 0
+  _depthDisable: -10
+  _enableDurationRange: {x: 60, y: 90}
+  _disableDurationRange: {x: 60, y: 90}
+  _movingDuration: 0.5
 --- !u!111 &8402678121616347063
 Animation:
   m_ObjectHideFlags: 0

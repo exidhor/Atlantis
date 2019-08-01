@@ -68,6 +68,11 @@ MonoBehaviour:
   _enable: 1
   _manual: 0
   _fishType: 1
+  _depthEnable: 0
+  _depthDisable: -10
+  _enableDurationRange: {x: 10, y: 30}
+  _disableDurationRange: {x: 10, y: 30}
+  _movingDuration: 0.5
 --- !u!1 &8387660745867445926
 GameObject:
   m_ObjectHideFlags: 0
