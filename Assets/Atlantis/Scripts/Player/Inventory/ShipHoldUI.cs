@@ -8,6 +8,7 @@ public class ShipHoldUI : InventoryCellUI
 {
     [Header("Ship Hold Variables")]
     [SerializeField] TextMeshProUGUI _fishCount;
+    [SerializeField] Image _fullIndicator;
 
     ShipHold hold
     {
@@ -35,6 +36,7 @@ public class ShipHoldUI : InventoryCellUI
         _background.color = info.holdBackgroundColor;
         _filled.color = info.holdFrontColor;
         _filled.fillAmount = hold.fishCount / (float)hold.capacity;
+        _fullIndicator.enabled = (_filled.fillAmount == 1f);
         _fishCount.text = hold.fishCount.ToString();
         _icon.sprite = info.icon;
     }
