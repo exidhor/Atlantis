@@ -1,0 +1,322 @@
+fileFormatVersion: 2
+guid: 8fdc71c25fc66bc4e9b2933bdca17967
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: eye_window_01
+    100004: eye_window_02
+    100006: eye_window_bar_01
+    100008: eye_window_bar_01 1
+    100010: eye_window_bar_02
+    100012: eye_window_bar_02 1
+    100014: eye_window_frame_01
+    100016: eye_window_frame_01 1
+    100018: fish_house_roof_01
+    100020: fish_platform_01
+    100022: fish_point_01
+    100024: fish_point_010
+    100026: fish_point_02
+    100028: fish_point_03
+    100030: fish_point_04
+    100032: fish_point_05
+    100034: fish_point_06
+    100036: fish_point_07
+    100038: fish_point_08
+    100040: fish_point_09
+    100042: fish_roof_grp
+    100044: fishing_port_skeleton_01
+    100046: pCube154
+    100048: pCube155
+    100050: pCube156
+    100052: pCube157
+    100054: pCube158
+    100056: pCube159
+    100058: pCube160
+    100060: pCube161
+    100062: polySurface10
+    100064: polySurface11
+    100066: polySurface12
+    100068: polySurface13
+    100070: polySurface14
+    100072: polySurface3
+    100074: polySurface4
+    100076: polySurface5
+    100078: polySurface6
+    100080: polySurface7
+    100082: polySurface8
+    100084: polySurface9
+    400000: //RootNode
+    400002: eye_window_01
+    400004: eye_window_02
+    400006: eye_window_bar_01
+    400008: eye_window_bar_01 1
+    400010: eye_window_bar_02
+    400012: eye_window_bar_02 1
+    400014: eye_window_frame_01
+    400016: eye_window_frame_01 1
+    400018: fish_house_roof_01
+    400020: fish_platform_01
+    400022: fish_point_01
+    400024: fish_point_010
+    400026: fish_point_02
+    400028: fish_point_03
+    400030: fish_point_04
+    400032: fish_point_05
+    400034: fish_point_06
+    400036: fish_point_07
+    400038: fish_point_08
+    400040: fish_point_09
+    400042: fish_roof_grp
+    400044: fishing_port_skeleton_01
+    400046: pCube154
+    400048: pCube155
+    400050: pCube156
+    400052: pCube157
+    400054: pCube158
+    400056: pCube159
+    400058: pCube160
+    400060: pCube161
+    400062: polySurface10
+    400064: polySurface11
+    400066: polySurface12
+    400068: polySurface13
+    400070: polySurface14
+    400072: polySurface3
+    400074: polySurface4
+    400076: polySurface5
+    400078: polySurface6
+    400080: polySurface7
+    400082: polySurface8
+    400084: polySurface9
+    2100000: lambert2
+    2300000: eye_window_bar_01
+    2300002: eye_window_bar_01 1
+    2300004: eye_window_bar_02
+    2300006: eye_window_bar_02 1
+    2300008: eye_window_frame_01
+    2300010: eye_window_frame_01 1
+    2300012: fish_house_roof_01
+    2300014: fish_point_01
+    2300016: fish_point_010
+    2300018: fish_point_02
+    2300020: fish_point_03
+    2300022: fish_point_04
+    2300024: fish_point_05
+    2300026: fish_point_06
+    2300028: fish_point_07
+    2300030: fish_point_08
+    2300032: fish_point_09
+    2300034: fishing_port_skeleton_01
+    2300036: pCube154
+    2300038: pCube155
+    2300040: pCube156
+    2300042: pCube157
+    2300044: pCube158
+    2300046: pCube159
+    2300048: pCube160
+    2300050: pCube161
+    2300052: polySurface10
+    2300054: polySurface11
+    2300056: polySurface12
+    2300058: polySurface13
+    2300060: polySurface14
+    2300062: polySurface3
+    2300064: polySurface4
+    2300066: polySurface5
+    2300068: polySurface6
+    2300070: polySurface7
+    2300072: polySurface8
+    2300074: polySurface9
+    3300000: eye_window_bar_01
+    3300002: eye_window_bar_01 1
+    3300004: eye_window_bar_02
+    3300006: eye_window_bar_02 1
+    3300008: eye_window_frame_01
+    3300010: eye_window_frame_01 1
+    3300012: fish_house_roof_01
+    3300014: fish_point_01
+    3300016: fish_point_010
+    3300018: fish_point_02
+    3300020: fish_point_03
+    3300022: fish_point_04
+    3300024: fish_point_05
+    3300026: fish_point_06
+    3300028: fish_point_07
+    3300030: fish_point_08
+    3300032: fish_point_09
+    3300034: fishing_port_skeleton_01
+    3300036: pCube154
+    3300038: pCube155
+    3300040: pCube156
+    3300042: pCube157
+    3300044: pCube158
+    3300046: pCube159
+    3300048: pCube160
+    3300050: pCube161
+    3300052: polySurface10
+    3300054: polySurface11
+    3300056: polySurface12
+    3300058: polySurface13
+    3300060: polySurface14
+    3300062: polySurface3
+    3300064: polySurface4
+    3300066: polySurface5
+    3300068: polySurface6
+    3300070: polySurface7
+    3300072: polySurface8
+    3300074: polySurface9
+    4300000: polySurface3
+    4300002: polySurface4
+    4300004: polySurface5
+    4300006: polySurface6
+    4300008: polySurface7
+    4300010: polySurface8
+    4300012: polySurface9
+    4300014: polySurface10
+    4300016: polySurface11
+    4300018: polySurface12
+    4300020: polySurface13
+    4300022: polySurface14
+    4300024: pCube154
+    4300026: pCube155
+    4300028: pCube157
+    4300030: pCube156
+    4300032: pCube158
+    4300034: pCube159
+    4300036: pCube161
+    4300038: pCube160
+    4300040: fish_house_roof_01
+    4300042: fish_point_01
+    4300044: eye_window_frame_01
+    4300046: eye_window_bar_02
+    4300048: eye_window_bar_01
+    4300050: eye_window_frame_01
+    4300052: eye_window_bar_02
+    4300054: eye_window_bar_01
+    4300056: fish_point_02
+    4300058: fish_point_03
+    4300060: fish_point_04
+    4300062: fish_point_05
+    4300064: fish_point_06
+    4300066: fish_point_07
+    4300068: fish_point_08
+    4300070: fish_point_09
+    4300072: fish_point_010
+    4300074: fishing_port_skeleton_01
+    7400000: Fish_port_01_open_01
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fish_port_01_open_01
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
