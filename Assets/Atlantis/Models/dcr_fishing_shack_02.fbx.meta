@@ -206,6 +206,7 @@ ModelImporter:
     4300074: fishing_port_skeleton_01
     7400000: Fish_port_01_open_01
     7400002: Fish_port_01_close_01
+    7400004: Fish_port_01_inrange_01
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -268,6 +269,34 @@ ModelImporter:
       takeName: Take 001
       firstFrame: 23
       lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fish_port_01_inrange_01
+      takeName: Take 001
+      firstFrame: 45
+      lastFrame: 64
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
