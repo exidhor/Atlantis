@@ -1,61 +1,31 @@
 fileFormatVersion: 2
-guid: 965a8e0047054714a87c6f5e51841b66
+guid: d34065218743d3f4c88764e9d92b9fd5
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: fish_shak1
-    100004: pCube137
-    100006: pCube138
-    100008: pCube139
-    100010: pCube140
-    100012: pCube141
-    100014: pCube142
-    100016: pCube143
-    100018: polySurface1
-    100020: polySurface2
-    400000: //RootNode
-    400002: fish_shak1
-    400004: pCube137
-    400006: pCube138
-    400008: pCube139
-    400010: pCube140
-    400012: pCube141
-    400014: pCube142
-    400016: pCube143
-    400018: polySurface1
-    400020: polySurface2
+    100000: dcr_fishing_shack_01
+    100002: //RootNode
+    100004: pCube144
+    100006: pCube145
+    100008: pCube167
+    400000: dcr_fishing_shack_01
+    400002: //RootNode
+    400004: pCube144
+    400006: pCube145
+    400008: pCube167
     2100000: lambert1
-    2300000: fish_shak1
-    2300002: pCube137
-    2300004: pCube138
-    2300006: pCube139
-    2300008: pCube140
-    2300010: pCube141
-    2300012: pCube142
-    2300014: pCube143
-    2300016: polySurface1
-    2300018: polySurface2
-    3300000: fish_shak1
-    3300002: pCube137
-    3300004: pCube138
-    3300006: pCube139
-    3300008: pCube140
-    3300010: pCube141
-    3300012: pCube142
-    3300014: pCube143
-    3300016: polySurface1
-    3300018: polySurface2
-    4300000: pCube142
-    4300002: pCube141
-    4300004: pCube143
-    4300006: pCube139
-    4300008: pCube140
-    4300010: pCube137
-    4300012: fish_shak1
-    4300014: pCube138
-    4300016: polySurface2
-    4300018: polySurface1
+    2300000: dcr_fishing_shack_01
+    2300002: pCube144
+    2300004: pCube145
+    2300006: pCube167
+    3300000: dcr_fishing_shack_01
+    3300002: pCube144
+    3300004: pCube145
+    3300006: pCube167
+    4300000: pCube144
+    4300002: pCube145
+    4300004: dcr_fishing_shack_01
+    4300006: pCube167
   externalObjects: {}
   materials:
     importMaterials: 1
