@@ -43,7 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758c31390afec40d488f878159c5ac4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxShipSize: 6
   _startingCrews:
   - type: 0
-    count: 3
+    count: 1
   _positioner: {fileID: 0}
