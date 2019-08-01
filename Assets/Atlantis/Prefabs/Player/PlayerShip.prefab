@@ -80,6 +80,7 @@ MonoBehaviour:
   _angularSpeed: 100
   _maxAngularSpeed: 150
   _speedAffectAngular: 0.2
+  _angularReduceSpeed: 0.05
   _disableAngularAcceleration: 0
   _angularVariation: 1.5
   _slideStrength: 0
