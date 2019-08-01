@@ -3,6 +3,35 @@ using System.Collections;
 
 public class FishHarbor : Harbor
 {
+    #region Infos
+
+    public override Sprite genericIcon
+    {
+        get { return FishLibrary.instance.genericFishIcon; }
+    }
+
+    public override Sprite priceIcon
+    {
+        get { return _fishIcon; }
+    }
+
+    public override int priceCount
+    {
+        get { return _fishCount; }
+    }
+
+    public override Sprite rewardIcon
+    {
+        get { throw new System.NotImplementedException(); }
+    }
+
+    public override int rewardCount
+    {
+        get { return _fishPrice * _fishCount; }
+    }
+
+    #endregion
+
     FishType _fishType;
     Sprite _fishIcon;
     int _fishPrice;
@@ -16,18 +45,6 @@ public class FishHarbor : Harbor
         _fishIcon = info.icon;
         _fishPrice = info.GetRandomPrice();
         _fishCount = info.GetRandomCount();
-    }
-
-    public override void SetHarborWindow(HarborWindowManager window)
-    {
-        if (isOpen)
-        {
-            window.SetOpenState(_fishIcon, _fishCount, _fishPrice * _fishCount);
-        }
-        else
-        {
-            window.SetCloseState(FishLibrary.instance.genericFishIcon);
-        }
     }
 
     public override bool AskForDeal()

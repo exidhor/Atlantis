@@ -4,6 +4,36 @@ using Tools;
 
 public abstract class Harbor : QTCircleCollider
 {
+    #region Infos
+
+    public abstract Sprite genericIcon
+    {
+        get;
+    }
+
+    public abstract Sprite priceIcon
+    {
+        get;
+    }
+
+    public abstract int priceCount
+    {
+        get;
+    }
+
+    public abstract Sprite rewardIcon
+    {
+        get;
+    }
+
+    public abstract int rewardCount
+    {
+        get;
+    }
+
+    #endregion
+
+
     public float innerRadius
     {
         get { return _indicator.radius; }
@@ -34,7 +64,6 @@ public abstract class Harbor : QTCircleCollider
     float _closedTime;
 
     protected abstract void Refresh();
-    public abstract void SetHarborWindow(HarborWindowManager window);
     public abstract bool AskForDeal();
 
     void Awake()
@@ -56,6 +85,18 @@ public abstract class Harbor : QTCircleCollider
             }
         }
     }
+
+    //public void SetHarborWindow(HarborWindowManager window)
+    //{
+    //    if (isOpen)
+    //    {
+    //        HarborWindowManager.instance.SetOpenInfo(this);
+    //    }
+    //    else
+    //    {
+    //        HarborWindowManager.instance.SetCloseInfo(this);
+    //    }
+    //}
 
     public void SetIndicatorVisibility(bool visible)
     {

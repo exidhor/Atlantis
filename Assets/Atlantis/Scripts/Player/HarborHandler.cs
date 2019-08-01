@@ -18,8 +18,8 @@ public class HarborHandler : MonoBehaviour
         }
     }
 
-    [Header("Harbor Handler")] 
-    [SerializeField] HarborWindowManager _window;
+    //[Header("Harbor Handler")] 
+    //[SerializeField] HarborWindowManager _window;
 
     QTCircleCollider _collider;
     Harbor _harbor;
@@ -39,17 +39,30 @@ public class HarborHandler : MonoBehaviour
         {
             if(!_harbor.isOpen)
             {
-                _window.ActualizeCloseState(_harbor.amountTimeLeft01);
+                HarborWindowManager.instance.ActualizeCloseState(_harbor.amountTimeLeft01);
                 
             }
             else
             {
-                if(_window.CheckOpenState())
+                if (HarborWindowManager.instance.CheckOpenState())
                 {
-                    _harbor.SetHarborWindow(_window);
-                    _window.SetIsOpen(_harbor.isOpen);
+                    SetInfo(_harbor);
+
+                    HarborWindowManager.instance.SetIsOpen(_harbor.isOpen);
                 }
             }
+        }
+    }
+
+    void SetInfo(Harbor harbor)
+    {
+        if (_harbor.isOpen)
+        {
+            HarborWindowManager.instance.SetOpenInfo(_harbor);
+        }
+        else
+        {
+            HarborWindowManager.instance.SetCloseInfo(_harbor);
         }
     }
 
@@ -63,15 +76,16 @@ public class HarborHandler : MonoBehaviour
             {
                 _isAtRange = false;
                 _harbor.SetIndicatorState(false);
-                _window.Disappear();
+                HarborWindowManager.instance.Disappear();
             }
             else if(!_isAtRange && maxDistance > distance)
             {
                 _isAtRange = true;
-                _harbor.SetHarborWindow(_window);
+                HarborWindowManager.instance.Appear(HarborType.Fish);
+                SetInfo(_harbor);
                 _harbor.SetIndicatorState(true);
-                _window.SetIsOpen(_harbor.isOpen);
-                _window.Appear();
+                HarborWindowManager.instance.SetIsOpen(_harbor.isOpen);
+                //HarborWindowManager.instance.Appear(HarborType.Fish);
             }
         }
     }
@@ -120,8 +134,9 @@ public class HarborHandler : MonoBehaviour
 
         if(done)
         {
-            _window.SetCloseState(FishLibrary.instance.genericFishIcon);
+            //_window.SetCloseState(FishLibrary.instance.genericFishIcon);
             _harbor.Close();
+            HarborWindowManager.instance.SetCloseInfo(_harbor);
         }
     }
 }
