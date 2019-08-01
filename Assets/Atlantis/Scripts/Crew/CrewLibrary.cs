@@ -10,8 +10,14 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
         get { return _genericCrewIcon; }
     }
 
+    public Sprite genericCloseIcon
+    {
+        get { return _genericCloseIcon; }
+    }
+
     [Header("Generics")]
     [SerializeField] Sprite _genericCrewIcon;
+    [SerializeField] Sprite _genericCloseIcon;
 
     [Header("Pool Infos")]
     [SerializeField] uint _poolCapacity;

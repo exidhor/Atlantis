@@ -85,6 +85,7 @@ public class CrewHarbor : Harbor
 
     protected override void OnClose()
     {
-        // todo
+        _flagRenderer.material.SetTexture("Texture2D_D003A093",
+                                          CrewLibrary.instance.genericCloseIcon.texture);
     }
 }
