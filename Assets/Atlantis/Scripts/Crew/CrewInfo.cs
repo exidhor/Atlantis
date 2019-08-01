@@ -30,6 +30,11 @@ public class CrewInfo
         get { return _backgroundColor; }
     }
 
+    public float rate
+    {
+        get { return _rate; }
+    }
+
     [SerializeField] string _name;
     [SerializeField] Crew _model;
 
@@ -40,6 +45,7 @@ public class CrewInfo
 
     [Header("Game Logic")]
     [SerializeField] Vector2i _priceRange;
+    [SerializeField, Range(0f, 1f)] float _rate; 
 
     public int GetRandomPrice()
     {

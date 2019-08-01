@@ -23,6 +23,8 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
 
     List<UnityPool> _poolByType = new List<UnityPool>();
 
+    float _totalRate;
+
     void Awake()
     {
         ConstructPools();
@@ -32,7 +34,9 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
     {
         _infos.Sort((a, b) => a.model.type.CompareTo(b.model.type));
 
-        for(int i = 0; i < _infos.Count; i++)
+        _totalRate = 0f;
+
+        for (int i = 0; i < _infos.Count; i++)
         {
             GameObject go = new GameObject();
             go.transform.parent = transform;
@@ -42,6 +46,8 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
             pool.SetSize(_poolCapacity);
 
             _poolByType.Add(pool);
+
+            _totalRate += _infos[i].rate;
         }
     }
 
@@ -52,6 +58,24 @@ public class CrewLibrary : MonoSingleton<CrewLibrary>
         crew.transform.localPosition = Vector3.zero;
 
         return crew;
+    }
+
+    public CrewInfo GetRandomInfo()
+    {
+        float rand = Random.Range(0f, _totalRate);
+        float sum = 0f;
+
+        for(int i = 0; i < _infos.Count; i++)
+        {
+            sum += _infos[i].rate;
+
+            if (rand <= sum)
+            {
+                return _infos[i];
+            }
+        }
+
+        return _infos[_infos.Count - 1];
     }
 
     public CrewInfo GetInfo(CrewType type)

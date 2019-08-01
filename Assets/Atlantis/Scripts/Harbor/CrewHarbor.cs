@@ -49,10 +49,9 @@ public class CrewHarbor : Harbor
 
     protected override void Refresh()
     {
-        // tmp
-        _crewType = CrewType.Fisherman;
+        CrewInfo info = CrewLibrary.instance.GetRandomInfo();
 
-        CrewInfo info = CrewLibrary.instance.GetInfo(_crewType);
+        _crewType = info.model.type;
         _crewName = info.name;
         _crewPrice = info.GetRandomPrice();
         _crewIcon = info.icon;

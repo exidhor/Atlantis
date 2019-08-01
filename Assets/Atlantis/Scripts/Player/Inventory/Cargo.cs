@@ -12,6 +12,7 @@ public class Cargo : MonoSingleton<Cargo>
     }
 
     [SerializeField] int _holdCount = 4;
+    [SerializeField] int _startingCoins = 0;
 
     [SerializeField]
     List<ShipHold> _poolHolds = new List<ShipHold>();
@@ -36,6 +37,9 @@ public class Cargo : MonoSingleton<Cargo>
                 _poolHolds[i].gameObject.SetActive(false);
             }
         }
+
+        _coinCount = _startingCoins;
+        UILayoutInventory.instance.RefreshCoins(_coinCount);
     }
 
     public void AddFish(FishType type, int count)
