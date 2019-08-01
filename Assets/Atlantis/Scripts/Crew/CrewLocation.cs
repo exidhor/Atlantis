@@ -66,5 +66,7 @@ public class CrewLocation : MonoBehaviour, IShipLocation
         _view.Refresh(this);
 
         _view.DoReduceAnim(false);
+
+        CrewShipManager.instance.RemoveCrew();
     }
 }

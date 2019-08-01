@@ -43,4 +43,9 @@ public class CrewShipManager : MonoSingleton<CrewShipManager>
         Crew crew = CrewLibrary.instance.GetFreeCrew(type);
         _positioner.SetPosition(crew, doAnim);
     }
+
+    public void RemoveCrew()
+    {
+        _positioner.VirtualRelease();
+    }
 }
