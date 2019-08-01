@@ -75,4 +75,14 @@ public class CrewHarbor : Harbor
     {
         // todo
     }
+
+    protected override void OnOpen()
+    {
+        // todo
+    }
+
+    protected override void OnClose()
+    {
+        // todo
+    }
 }

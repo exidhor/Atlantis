@@ -76,11 +76,21 @@ public class FishHarbor : Harbor
     {
         if(atRange)
         {
-            _animator.SetTrigger("Open");
+            _animator.SetTrigger("In");
         }
         else
         {
-            _animator.SetTrigger("Close"); 
+            _animator.SetTrigger("Out"); 
         }
+    }
+
+    protected override void OnOpen()
+    {
+        _animator.SetTrigger("Open");
+    }
+
+    protected override void OnClose()
+    {
+        _animator.SetTrigger("Close");
     }
 }

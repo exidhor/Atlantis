@@ -350,7 +350,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     - serializedVersion: 16
       name: Fish_port_01_open_idle_01
       takeName: Take 001
@@ -382,8 +382,8 @@ ModelImporter:
     - serializedVersion: 16
       name: TakFishport_01_close_idle_01
       takeName: Take 001
-      firstFrame: 22
-      lastFrame: 22
+      firstFrame: 44
+      lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -406,7 +406,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []

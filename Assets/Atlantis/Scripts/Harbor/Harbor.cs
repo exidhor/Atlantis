@@ -76,6 +76,8 @@ public abstract class Harbor : QTCircleCollider
     protected abstract void Refresh();
     public abstract bool AskForDeal();
     protected abstract void OnPlayerRange(bool atRange);
+    protected abstract void OnOpen();
+    protected abstract void OnClose();
 
     void Awake()
     {
@@ -124,14 +126,15 @@ public abstract class Harbor : QTCircleCollider
     {
         _isOpen = false;
         _closedTime = 0f;
-        //_enable = false;
+
+        OnClose();
     }
 
     public void Open()
     {
         _isOpen = true;
-        //_enable = true;
 
         Refresh();
+        OnOpen();
     }
 }
