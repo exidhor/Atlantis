@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7492440913651972944}
   - component: {fileID: 7492440913652775806}
   - component: {fileID: 7492440913653873086}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: turret_pillar_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50cc861e73704e8468f56fbf93020ec4, type: 3}
+  - {fileID: 2100000, guid: e0990906f52a6df44b7b91c5249ad8fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7492440913651972946}
   - component: {fileID: 7492440913652775792}
   - component: {fileID: 7492440913653873072}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: turret_pillar_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50cc861e73704e8468f56fbf93020ec4, type: 3}
+  - {fileID: 2100000, guid: e0990906f52a6df44b7b91c5249ad8fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 7492440913651972948}
   - component: {fileID: 7492440913652775794}
   - component: {fileID: 7492440913653873074}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: turret_pillar_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50cc861e73704e8468f56fbf93020ec4, type: 3}
+  - {fileID: 2100000, guid: e0990906f52a6df44b7b91c5249ad8fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -241,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7492440913651972952}
   - component: {fileID: 7970408844029803857}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: dcr_turret_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 7492440913651972954}
   - component: {fileID: 7492440913652775800}
   - component: {fileID: 7492440913653873080}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: turre_roof_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50cc861e73704e8468f56fbf93020ec4, type: 3}
+  - {fileID: 2100000, guid: e0990906f52a6df44b7b91c5249ad8fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 7492440913651972956}
   - component: {fileID: 7492440913652775802}
   - component: {fileID: 7492440913653873082}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: turret_base_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50cc861e73704e8468f56fbf93020ec4, type: 3}
+  - {fileID: 2100000, guid: b4536708906d340489b6219488def507, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 7492440913651972958}
   - component: {fileID: 7492440913652775804}
   - component: {fileID: 7492440913653873084}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: turret_pillar_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50cc861e73704e8468f56fbf93020ec4, type: 3}
+  - {fileID: 2100000, guid: e0990906f52a6df44b7b91c5249ad8fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -520,10 +520,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7492440913651972952}
     m_Modifications:
-    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
-      propertyPath: m_Name
-      value: dcr_big_flag_01 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05255127
@@ -580,6 +576,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7717055
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
+      propertyPath: m_Name
+      value: dcr_big_flag_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -588,6 +592,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 04efb384d97c7004bbb10598ddb0276c, type: 2}
+    - target: {fileID: 100002, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
 --- !u!4 &7492440913801792981 stripped

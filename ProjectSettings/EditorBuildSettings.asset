@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Atlantis/Scenes/World Building Level JP Sander.unity
+    guid: 8b1939b329a99c24a97b2f9dfc7aa188
+  - enabled: 0
+    path: Assets/Atlantis/Scenes/Void.unity
+    guid: c375d4db1211d49d697a30658d0303c2
   - enabled: 1
-    path: Assets/Atlantis/Scenes/MainLevel Islands JP Normal.unity
-    guid: 0a70a53e63cad4d82868c15debeecbce
+    path: Assets/Atlantis/Scenes/World Building Level JP.unity
+    guid: 6c87b01082ab64ebaa054de5ad5eedd7
   m_configObjects: {}
