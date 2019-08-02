@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5585884518524125159}
   - component: {fileID: 310176905630941141}
-  - component: {fileID: 432515709}
+  - component: {fileID: 5371293596493336231}
   m_Layer: 11
   m_Name: PlayerCollider
   m_TagString: Untagged
@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30da017ad9dca486db0c2e64f69f57ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minRepulseSpeed: 15
-  _correctorCoef: 0
-  _angularCoef: 0
---- !u!65 &432515709
-BoxCollider:
+  _minRepulseSpeed: 3
+  _correctorCoef: 0.3
+  _angularCoef: 0.5
+--- !u!64 &5371293596493336231
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -57,6 +57,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.0836487, y: 4.1768684, z: 5.443078}
-  m_Center: {x: 0.0795517, y: 1.3096313, z: -0.1171813}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: efc3632c2bf9aa046ab692447092f055, type: 3}

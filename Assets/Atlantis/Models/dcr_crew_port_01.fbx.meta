@@ -116,6 +116,7 @@ ModelImporter:
     100220: expandable_lantern_01_grp2
     100222: expandable_lantern_01_grp3
     100224: expandable_lantern_01_grp4
+    100226: tavern_building_01_grp
     400000: //RootNode
     400002: dcr_fishing_port_02
     400004: expandable_lantern_01_grp
@@ -229,6 +230,7 @@ ModelImporter:
     400220: expandable_lantern_01_grp2
     400222: expandable_lantern_01_grp3
     400224: expandable_lantern_01_grp4
+    400226: tavern_building_01_grp
     2100000: lambert1
     2100002: lambert2
     2300000: lantern_lamp_01
@@ -505,6 +507,11 @@ ModelImporter:
     4300178: tavern_roof_support_011
     4300180: tavern_roof_support_012
     7400000: crew_port_01_inrange_01
+    7400002: crew_port_01_outrange_01
+    7400004: crew_port_01_close_01
+    7400006: crew_port_01_open_01
+    7400008: crew_port_01_close_idle_01
+    7400010: crew_port_01_open_idle_01
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -538,7 +545,7 @@ ModelImporter:
       name: crew_port_01_inrange_01
       takeName: Take 001
       firstFrame: 45
-      lastFrame: 79
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -561,7 +568,147 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 22.8
+    - serializedVersion: 16
+      name: crew_port_01_outrange_01
+      takeName: Take 001
+      firstFrame: 80
+      lastFrame: 96.96
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 22.8
+    - serializedVersion: 16
+      name: crew_port_01_close_01
+      takeName: Take 001
+      firstFrame: 23
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 22.8
+    - serializedVersion: 16
+      name: crew_port_01_open_01
+      takeName: Take 001
+      firstFrame: 23
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 22.8
+    - serializedVersion: 16
+      name: crew_port_01_close_idle_01
+      takeName: Take 001
+      firstFrame: 43
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 22.8
+    - serializedVersion: 16
+      name: crew_port_01_open_idle_01
+      takeName: Take 001
+      firstFrame: 22.8
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 22.8
     isReadable: 1
   meshes:
     lODScreenPercentages: []
