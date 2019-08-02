@@ -75,3 +75,23 @@ MonoBehaviour:
     _icon: {fileID: 21300000, guid: ca5da2bf71ecb80409c623f0024b2958, type: 3}
     _holdFrontColor: {r: 1, g: 0.5424528, b: 0.9447789, a: 0.5882353}
     _holdBackgroundColor: {r: 0.5377358, g: 0, b: 0.50016475, a: 1}
+  - _type: 3
+    _questRange:
+      x: 1
+      y: 20
+    _oneFishPriceRange:
+      x: 4
+      y: 10
+    _icon: {fileID: 21300000, guid: fcbf7deb251c7344089839ed129adb5b, type: 3}
+    _holdFrontColor: {r: 1, g: 0.89669305, b: 0.5411765, a: 0.5882353}
+    _holdBackgroundColor: {r: 0.5372549, g: 0.19428842, b: 0, a: 1}
+  - _type: 4
+    _questRange:
+      x: 1
+      y: 20
+    _oneFishPriceRange:
+      x: 4
+      y: 10
+    _icon: {fileID: 21300000, guid: 3e4837702a4f5694eb4fe870ab76388b, type: 3}
+    _holdFrontColor: {r: 0.5411765, g: 1, b: 0.88520956, a: 0.5882353}
+    _holdBackgroundColor: {r: 0, g: 0.5372549, b: 0.38169953, a: 1}

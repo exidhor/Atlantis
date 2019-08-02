@@ -6,4 +6,6 @@ public enum FishType
     littleFish,
     bigFish,
     octopus,
+    pufferfish,
+    eelfish,
 }
