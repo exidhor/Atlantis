@@ -9371,8 +9371,8 @@ MonoBehaviour:
   _fishType: 0
   _depthEnable: 0
   _depthDisable: -10
-  _enableDurationRange: {x: 3, y: 5}
-  _disableDurationRange: {x: 3, y: 5}
+  _enableDurationRange: {x: 10, y: 15}
+  _disableDurationRange: {x: 30, y: 60}
   _movingDuration: 0.5
 --- !u!1 &4785580307678363629
 GameObject:

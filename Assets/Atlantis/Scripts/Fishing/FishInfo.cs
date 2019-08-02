@@ -15,6 +15,11 @@ public class FishInfo
         get { return _icon; }
     }
 
+    public Texture flagTexture
+    {
+        get { return _flagTexture; }
+    }
+
     public Color holdFrontColor
     {
         get { return _holdFrontColor; }
@@ -37,6 +42,7 @@ public class FishInfo
 
     [Header("UIs")]
     [SerializeField] Sprite _icon;
+    [SerializeField] Texture _flagTexture;
     [SerializeField] Color _holdFrontColor;
     [SerializeField] Color _holdBackgroundColor;
 

@@ -48,21 +48,23 @@ MonoBehaviour:
   - _type: 0
     _questRange:
       x: 3
-      y: 10
+      y: 7
     _oneFishPriceRange:
-      x: 4
-      y: 6
+      x: 5
+      y: 8
     _icon: {fileID: 21300000, guid: 7dfd9b3576a00984babd39f4f3a2acc5, type: 3}
+    _flagTexture: {fileID: 2800000, guid: 792b8cf984fa6e5439af0af5cc94a23d, type: 3}
     _holdFrontColor: {r: 1, g: 0.57096726, b: 0, a: 0.5882353}
     _holdBackgroundColor: {r: 0.4528302, g: 0.32157284, b: 0.16447133, a: 1}
   - _type: 1
     _questRange:
-      x: 3
-      y: 10
-    _oneFishPriceRange:
       x: 10
-      y: 15
+      y: 20
+    _oneFishPriceRange:
+      x: 8
+      y: 12
     _icon: {fileID: 21300000, guid: bc57e09ed8a64e24c996b87340ceb84b, type: 3}
+    _flagTexture: {fileID: 2800000, guid: d5a3d2272aeadcf4aae41ca9ea2ad498, type: 3}
     _holdFrontColor: {r: 0, g: 0.54663897, b: 1, a: 0.5882353}
     _holdBackgroundColor: {r: 0, g: 0.07759515, b: 0.43529412, a: 1}
   - _type: 2
@@ -70,9 +72,10 @@ MonoBehaviour:
       x: 1
       y: 20
     _oneFishPriceRange:
-      x: 4
+      x: 1
       y: 10
     _icon: {fileID: 21300000, guid: ca5da2bf71ecb80409c623f0024b2958, type: 3}
+    _flagTexture: {fileID: 2800000, guid: 50711191e37992047a620a1acf046c38, type: 3}
     _holdFrontColor: {r: 1, g: 0.5424528, b: 0.9447789, a: 0.5882353}
     _holdBackgroundColor: {r: 0.5377358, g: 0, b: 0.50016475, a: 1}
   - _type: 3
@@ -80,18 +83,20 @@ MonoBehaviour:
       x: 1
       y: 20
     _oneFishPriceRange:
-      x: 4
+      x: 1
       y: 10
     _icon: {fileID: 21300000, guid: fcbf7deb251c7344089839ed129adb5b, type: 3}
+    _flagTexture: {fileID: 2800000, guid: 6e332ea5db3ecfb4e91089434bd96ba5, type: 3}
     _holdFrontColor: {r: 1, g: 0.89669305, b: 0.5411765, a: 0.5882353}
     _holdBackgroundColor: {r: 0.5372549, g: 0.19428842, b: 0, a: 1}
   - _type: 4
     _questRange:
-      x: 1
-      y: 20
+      x: 10
+      y: 30
     _oneFishPriceRange:
-      x: 4
+      x: 1
       y: 10
     _icon: {fileID: 21300000, guid: 3e4837702a4f5694eb4fe870ab76388b, type: 3}
+    _flagTexture: {fileID: 2800000, guid: af4a1b27de2f78445a9ca840761b43a0, type: 3}
     _holdFrontColor: {r: 0.5411765, g: 1, b: 0.88520956, a: 0.5882353}
     _holdBackgroundColor: {r: 0, g: 0.5372549, b: 0.38169953, a: 1}

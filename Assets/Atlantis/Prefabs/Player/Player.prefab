@@ -60,6 +60,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4970121389168812056}
     m_Modifications:
+    - target: {fileID: 4638597070216857363, guid: f7083bc0d3da748b49ec99e969d4ef5f,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerBody
+      objectReference: {fileID: 0}
     - target: {fileID: 4638597070216857362, guid: f7083bc0d3da748b49ec99e969d4ef5f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -115,11 +120,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4638597070216857363, guid: f7083bc0d3da748b49ec99e969d4ef5f,
-        type: 3}
-      propertyPath: m_Name
-      value: PlayerBody
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7083bc0d3da748b49ec99e969d4ef5f, type: 3}
 --- !u!4 &4969616455115698807 stripped
@@ -159,6 +159,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4970121389168812056}
     m_Modifications:
+    - target: {fileID: 5431404804665218251, guid: 2c44ca6528e8842e29490ae758be0b66,
+        type: 3}
+      propertyPath: m_Name
+      value: Main Camera
+      objectReference: {fileID: 0}
     - target: {fileID: 5437216291890883501, guid: 2c44ca6528e8842e29490ae758be0b66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -213,11 +218,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5431404804665218251, guid: 2c44ca6528e8842e29490ae758be0b66,
-        type: 3}
-      propertyPath: m_Name
-      value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5417195307834442155, guid: 2c44ca6528e8842e29490ae758be0b66,
         type: 3}
@@ -413,6 +413,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4970121389168812056}
     m_Modifications:
+    - target: {fileID: 5642331859964520901, guid: 49da6c038aa4f440a91ce6c2eb3b3218,
+        type: 3}
+      propertyPath: m_Name
+      value: CrewShipManager
+      objectReference: {fileID: 0}
     - target: {fileID: 4984945322518129724, guid: 49da6c038aa4f440a91ce6c2eb3b3218,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -467,11 +472,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5642331859964520901, guid: 49da6c038aa4f440a91ce6c2eb3b3218,
-        type: 3}
-      propertyPath: m_Name
-      value: CrewShipManager
       objectReference: {fileID: 0}
     - target: {fileID: 167336218699143127, guid: 49da6c038aa4f440a91ce6c2eb3b3218,
         type: 3}
