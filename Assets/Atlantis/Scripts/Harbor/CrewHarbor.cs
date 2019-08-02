@@ -58,7 +58,7 @@ public class CrewHarbor : Harbor
         _crewName = info.name;
         _crewPrice = info.GetRandomPrice();
         _crewIcon = info.icon;
-        _flagRenderer.material.SetTexture("Texture2D_D003A093", _crewIcon.texture);
+        _flagRenderer.material.SetTexture("Texture2D_D003A093", info.flagIcon);
     }
 
     public override bool AskForDeal()
@@ -94,7 +94,7 @@ public class CrewHarbor : Harbor
     protected override void OnClose()
     {
         _flagRenderer.material.SetTexture("Texture2D_D003A093",
-                                          CrewLibrary.instance.genericCloseIcon.texture);
+                                          CrewLibrary.instance.genericCloseIcon);
 
         _animator.SetTrigger("Close");
     }

@@ -60,7 +60,7 @@ public class FishHarbor : Harbor
         _fishIcon = info.icon;
         _fishPrice = info.GetRandomPrice();
         _fishCount = info.GetRandomCount();
-        _flagRenderer.material.SetTexture("Texture2D_D003A093", _fishIcon.texture);
+        _flagRenderer.material.SetTexture("Texture2D_D003A093", info.flagTexture);
     }
 
     public override bool AskForDeal()
@@ -95,7 +95,7 @@ public class FishHarbor : Harbor
     protected override void OnClose()
     {
         _flagRenderer.material.SetTexture("Texture2D_D003A093", 
-                                          CrewLibrary.instance.genericCloseIcon.texture);
+                                          CrewLibrary.instance.genericCloseIcon);
 
         _animator.SetTrigger("Close");
     }

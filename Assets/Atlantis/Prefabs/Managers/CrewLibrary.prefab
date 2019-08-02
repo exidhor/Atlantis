@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _genericCrewIcon: {fileID: 0}
-  _genericCloseIcon: {fileID: 21300000, guid: 462294947840b5c4daba53ebefdccd82, type: 3}
+  _genericCloseIcon: {fileID: 2800000, guid: 49ca99012bdd0d84385d084bd48964f5, type: 3}
   _poolCapacity: 10
   _expand: 5
   _infos:
@@ -52,6 +52,7 @@ MonoBehaviour:
     _model: {fileID: 5161354125149482103, guid: 67b83f7d1db714357b9ea09e71f3c773,
       type: 3}
     _icon: {fileID: 21300000, guid: 37e0411ee58f048e187b0c75cba6c6f5, type: 3}
+    _flagIcon: {fileID: 2800000, guid: 8a0bbd47767527d4596aa16bf82c85a2, type: 3}
     _frontColor: {r: 0, g: 0.93424654, b: 1, a: 0.5882353}
     _backgroundColor: {r: 0, g: 0.0940752, b: 1, a: 1}
     _priceRange:
@@ -62,6 +63,7 @@ MonoBehaviour:
     _model: {fileID: 2688160073202023576, guid: d3110f70249c5403c98484d0de9877f5,
       type: 3}
     _icon: {fileID: 21300000, guid: 45676b7a503436e40917292cbd80e1a7, type: 3}
+    _flagIcon: {fileID: 2800000, guid: d8ed3beba3b5eb54cbbb71070e725092, type: 3}
     _frontColor: {r: 1, g: 0.25, b: 0.78210056, a: 0.5882353}
     _backgroundColor: {r: 0.5282949, g: 0, b: 0.6509434, a: 1}
     _priceRange:
@@ -72,6 +74,7 @@ MonoBehaviour:
     _model: {fileID: 2688160073202023576, guid: cee7d62eaf40b4a5c96ad73b766ffc8e,
       type: 3}
     _icon: {fileID: 21300000, guid: b05b7dcc843a354479060a9c470e72af, type: 3}
+    _flagIcon: {fileID: 2800000, guid: da5f7f3217957984cb9bcfc4807ba5fb, type: 3}
     _frontColor: {r: 1, g: 0.4087868, b: 0.3537736, a: 0.5882353}
     _backgroundColor: {r: 0.6132076, g: 0.00867745, b: 0.15078218, a: 1}
     _priceRange:

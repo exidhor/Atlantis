@@ -20,6 +20,11 @@ public class CrewInfo
         get { return _icon; }
     }
 
+    public Texture flagIcon
+    {
+        get { return _flagIcon; }
+    }
+
     public Color frontColor
     {
         get { return _frontColor; }
@@ -40,6 +45,7 @@ public class CrewInfo
 
     [Header("UIs")]
     [SerializeField] Sprite _icon;
+    [SerializeField] Texture _flagIcon;
     [SerializeField] Color _frontColor;
     [SerializeField] Color _backgroundColor;
 
