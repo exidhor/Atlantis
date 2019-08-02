@@ -55845,16 +55845,6 @@ PrefabInstance:
       propertyPath: _speedText
       value: 
       objectReference: {fileID: 400676852}
-    - target: {fileID: 734311607633216469, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 734311607633216469, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d1c3b9e8ad34218968ce1636d62708, type: 3}
 --- !u!1001 &4970071639975786860
