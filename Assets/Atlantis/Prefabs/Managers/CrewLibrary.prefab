@@ -67,8 +67,8 @@ MonoBehaviour:
     _frontColor: {r: 1, g: 0.25, b: 0.78210056, a: 0.5882353}
     _backgroundColor: {r: 0.5282949, g: 0, b: 0.6509434, a: 1}
     _priceRange:
-      x: 40
-      y: 60
+      x: 30
+      y: 40
     _rate: 0.6
   - _name: Fisherman XXL
     _model: {fileID: 2688160073202023576, guid: cee7d62eaf40b4a5c96ad73b766ffc8e,
@@ -78,6 +78,6 @@ MonoBehaviour:
     _frontColor: {r: 1, g: 0.4087868, b: 0.3537736, a: 0.5882353}
     _backgroundColor: {r: 0.6132076, g: 0.00867745, b: 0.15078218, a: 1}
     _priceRange:
-      x: 60
-      y: 100
+      x: 50
+      y: 60
     _rate: 0.3

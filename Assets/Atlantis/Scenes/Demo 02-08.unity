@@ -31758,31 +31758,6 @@ PrefabInstance:
       propertyPath: _speedText
       value: 
       objectReference: {fileID: 400676852}
-    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _startingCrews.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _startingCrews.Array.data[1].count
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _startingCrews.Array.data[2].count
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _startingCrews.Array.data[1].type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
-        type: 3}
-      propertyPath: _startingCrews.Array.data[2].type
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d1c3b9e8ad34218968ce1636d62708, type: 3}
 --- !u!1001 &7906582155300881362
