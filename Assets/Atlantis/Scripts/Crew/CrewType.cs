@@ -12,4 +12,6 @@ public enum CrewType
     Fisherman6,
 
     // ...
+
+    Archer,
 }
