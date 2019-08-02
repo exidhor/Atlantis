@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4174,10 +4174,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2029893298}
     m_Modifications:
-    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
-      propertyPath: m_Name
-      value: dcr_big_flag_01 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -142.46571
@@ -4233,6 +4229,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.771701
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
+      propertyPath: m_Name
+      value: dcr_big_flag_01 (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5451,10 +5451,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2029893298}
     m_Modifications:
-    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
-      propertyPath: m_Name
-      value: dcr_big_flag_01 (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -217.44699
@@ -5510,6 +5506,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7862951
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
+      propertyPath: m_Name
+      value: dcr_big_flag_01 (4)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -12305,10 +12305,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2029893298}
     m_Modifications:
-    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
-      propertyPath: m_Name
-      value: dcr_big_flag_01 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -113.03208
@@ -12364,6 +12360,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.771701
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
+      propertyPath: m_Name
+      value: dcr_big_flag_01 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 39a8017927c88fb4687c767716deeaee, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -25544,6 +25544,31 @@ PrefabInstance:
       propertyPath: _speedText
       value: 
       objectReference: {fileID: 400676852}
+    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
+        type: 3}
+      propertyPath: _startingCrews.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
+        type: 3}
+      propertyPath: _startingCrews.Array.data[1].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
+        type: 3}
+      propertyPath: _startingCrews.Array.data[2].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
+        type: 3}
+      propertyPath: _startingCrews.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
+        type: 3}
+      propertyPath: _startingCrews.Array.data[2].type
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d1c3b9e8ad34218968ce1636d62708, type: 3}
 --- !u!1001 &7492440913697900427
