@@ -77,7 +77,9 @@ public class FishHarbor : Harbor
 
     protected override void OnPlayerRange(bool atRange)
     {
-        if(atRange)
+        if (!isOpen) return;
+
+        if (atRange)
         {
             _animator.SetTrigger("In");
         }

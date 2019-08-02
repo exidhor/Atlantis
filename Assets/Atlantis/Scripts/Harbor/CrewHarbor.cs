@@ -76,6 +76,8 @@ public class CrewHarbor : Harbor
 
     protected override void OnPlayerRange(bool atRange)
     {
+        if (!isOpen) return;
+
         if (atRange)
         {
             _animator.SetTrigger("In");
