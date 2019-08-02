@@ -399,6 +399,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   _indicator: {fileID: 5579263027120848670}
   _flagRenderer: {fileID: 166178661274713570}
+  _animator: {fileID: 8639295547753557337}
 --- !u!1001 &166178661276607872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,6 +575,12 @@ PrefabInstance:
 --- !u!4 &8639295547760444089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0965399782d1d7940a165a06562fa4bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8639295547760842809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8639295547753557337 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 0965399782d1d7940a165a06562fa4bc,
     type: 3}
   m_PrefabInstance: {fileID: 8639295547760842809}
   m_PrefabAsset: {fileID: 0}
