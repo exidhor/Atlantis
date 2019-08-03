@@ -38,6 +38,14 @@ public abstract class Harbor : QTCircleCollider
 
     #endregion
 
+    #region Animation Ids
+
+    static readonly int ANIM_OPEN_ID = Animator.StringToHash("Open");
+    static readonly int ANIM_CLOSE_ID = Animator.StringToHash("Close");
+    static readonly int ANIM_IN_ID = Animator.StringToHash("In");
+    static readonly int ANIM_OUT_ID = Animator.StringToHash("Out");
+
+    #endregion
 
     public float innerRadius
     {
@@ -69,6 +77,7 @@ public abstract class Harbor : QTCircleCollider
     [SerializeField] Gradient _colorOutside;
     [SerializeField] Gradient _colorInside;
     [SerializeField] CircleIndicator _indicator;
+    [SerializeField] Animator _animator;
 
     bool _isOpen = true;
     float _closedTime;
@@ -108,6 +117,17 @@ public abstract class Harbor : QTCircleCollider
     {
         _indicator.SetColor(playerNear ? _colorInside : _colorOutside);
         OnPlayerRange(playerNear);
+
+        if (!isOpen) return;
+
+        if (playerNear)
+        {
+            _animator.SetTrigger(ANIM_IN_ID);
+        }
+        else
+        {
+            _animator.SetTrigger(ANIM_OUT_ID);
+        }
     }
 
     public void Close()
@@ -115,6 +135,7 @@ public abstract class Harbor : QTCircleCollider
         _isOpen = false;
         _closedTime = 0f;
 
+        _animator.SetTrigger(ANIM_CLOSE_ID);
         OnClose();
     }
 
@@ -124,6 +145,7 @@ public abstract class Harbor : QTCircleCollider
 
         Refresh();
 
+        _animator.SetTrigger(ANIM_OPEN_ID);
         OnOpen();
     }
 }
