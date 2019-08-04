@@ -67,6 +67,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ff18c961aec4dfeaa58a4f03d235a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _edit: 1
+  _layer: 2
+  _offset: {x: 0, y: 3.440218}
+  _radius: 8.734886
+  _static: 0
+  _enable: 1
+  _manual: 0
   _agent: {fileID: 7299497999858823712}
 --- !u!1001 &7299497999396919155
 PrefabInstance:

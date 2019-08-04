@@ -22,6 +22,11 @@ public abstract class Bullet : UnityPoolObject
         get { return _duration; }
     }
 
+    protected float currentTime
+    {
+        get { return _currentTime; }
+    }
+
     Vector3 _startingPos;
     ITargetable _target;
 
@@ -29,6 +34,7 @@ public abstract class Bullet : UnityPoolObject
     float _duration;
     float _currentTime;
 
+    protected abstract void OnInit();
     protected abstract void Move(float dt);
 
     public void Init(Vector3 startingPos,
@@ -45,6 +51,8 @@ public abstract class Bullet : UnityPoolObject
         _duration = ComputeDuration(speed);
 
         _currentTime = 0f;
+
+        OnInit();
     }
 
     float ComputeDuration(float speed)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Tools;
 
+[RequireComponent(typeof(QTCircleCollider))]
 public class Fisherman : CrewWithRange<FishZone>
 {
     public override CrewType type 

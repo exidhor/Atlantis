@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Tools;
 
+[RequireComponent(typeof(QTCircleCollider))]
 public class Archer : CrewWithRange<Monster>
 {
     public override CrewType type
@@ -21,6 +22,7 @@ public class Archer : CrewWithRange<Monster>
 
     [Header("Logic")]
     [SerializeField] float _targetTime;
+    [SerializeField] Weapon _weapon;
 
     protected override bool CanDoAction()
     {
@@ -46,6 +48,8 @@ public class Archer : CrewWithRange<Monster>
 
     protected override void OnActionComplete()
     {
+        _weapon.Fire(zone);
+
         //Cargo.instance.AddFish(zone.fishType, 1);
 
         //if (_restartAfterCatching)
