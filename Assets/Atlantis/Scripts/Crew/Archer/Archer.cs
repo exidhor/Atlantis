@@ -20,5 +20,5 @@ public class Archer : Crew
     QTCircleCollider _collider;
     float _currentTime;
 
-    // todo
+
 }
