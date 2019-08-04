@@ -20,19 +20,19 @@ public class Arrow : Bullet
 
     protected override void OnInit()
     {
-        // todo
-    }
-
-    protected override void Move(float dt)
-    {
         Vector2 start2D = WorldConversion.ToVector2(start);
         Vector2 end2D = WorldConversion.ToVector2(end);
 
         float distance = Vector2.Distance(start2D, end2D);
 
-        float height = _heightTrajectory01 * distance;
+        _height = _heightTrajectory01 * distance;
+    }
 
-        Vector3 pos = MathHelper.Parabola(start, end, height, currentTime / duration);
+    protected override void Move(float dt)
+    {
+        Vector3 pos = MathHelper.Parabola(start, end, _height, currentTime / duration);
+
+        transform.rotation = Quaternion.LookRotation(pos - transform.position);
 
         transform.position = pos;
     }

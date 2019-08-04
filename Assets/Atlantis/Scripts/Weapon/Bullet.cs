@@ -14,7 +14,7 @@ public abstract class Bullet : UnityPoolObject
 
     protected Vector3 end
     {
-        get { return _target.transform.position; }
+        get { return _target.position; }
     }
 
     protected float duration
@@ -58,9 +58,9 @@ public abstract class Bullet : UnityPoolObject
     float ComputeDuration(float speed)
     {
         float distance = Vector2.Distance(WorldConversion.ToVector2(transform.position),
-                                          WorldConversion.ToVector2(_target.transform.position));
+                                          WorldConversion.ToVector2(_target.position));
 
-        return speed / distance;
+        return distance / speed;
     }
 
     void Update()

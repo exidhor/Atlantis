@@ -5,6 +5,11 @@ using Tools;
 
 public class Monster : QTCircleCollider, ITargetable
 {
+    Vector3 ITargetable.position
+    {
+        get { return new Vector3(center.x, transform.position.y, center.y); }
+    }
+
     [Header("Monster Specs")]
     [SerializeField] NavMeshAgent _agent;
 

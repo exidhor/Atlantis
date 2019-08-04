@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletType: 0
   _damage: 1
-  _speed: 3
+  _speed: 10
 --- !u!1 &360144421871804383
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pool: {fileID: 0}
   IndexInPool: 0
-  _targetTime: 2
+  _targetTime: 0.3
   _weapon: {fileID: 6661426940826537735}
 --- !u!114 &360144421871804382
 MonoBehaviour:

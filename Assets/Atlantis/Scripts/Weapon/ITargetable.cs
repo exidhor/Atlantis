@@ -3,7 +3,7 @@ using System.Collections;
 
 public interface ITargetable
 {
-    Transform transform { get; }
+    Vector3 position { get; }
 
     void DealDamage(int damage);
 }
