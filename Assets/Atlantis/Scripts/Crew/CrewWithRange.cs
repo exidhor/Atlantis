@@ -5,6 +5,21 @@ using Tools;
 public abstract class CrewWithRange<T> : Crew
     where T : QTCircleCollider
 {
+    public override float progress01
+    {
+        get { return _actionTime / actionDuration; }
+    }
+
+    protected T zone
+    {
+        get { return _zone; }
+    }
+
+    protected new QTCircleCollider collider
+    {
+        get { return _collider; }
+    }
+
     protected abstract float extendCoef { get; }
     protected abstract float actionDuration { get; }
 
@@ -14,7 +29,6 @@ public abstract class CrewWithRange<T> : Crew
     float _actionTime;
     bool _isInAction;
 
-    protected abstract bool CanStartAction();
     protected abstract void OnStartAction();
 
     protected abstract bool CanStopAction();
@@ -38,7 +52,7 @@ public abstract class CrewWithRange<T> : Crew
             }
             else if(!_isInAction)
             {
-                if(CanStartAction())
+                if(CanDoAction())
                 {
                     StartAction();
                 }
@@ -68,7 +82,7 @@ public abstract class CrewWithRange<T> : Crew
 
     void DoAction(float dt)
     {
-        if(CanDoAction())
+        if(!CanDoAction())
         {
             StopAction();
         }
@@ -84,7 +98,7 @@ public abstract class CrewWithRange<T> : Crew
         }
     }
 
-    void StartAction()
+    protected void StartAction()
     {
         _isInAction = true;
         _actionTime = 0f;
@@ -92,7 +106,7 @@ public abstract class CrewWithRange<T> : Crew
         OnStartAction();
     }
 
-    void StopAction()
+    protected void StopAction()
     {
         if (!CanStopAction()) return;
 
