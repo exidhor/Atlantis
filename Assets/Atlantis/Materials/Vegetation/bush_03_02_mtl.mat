@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon Water Good
-  m_Shader: {fileID: 4800000, guid: ebb2fb7a4733bdb4fa4ad853934161e5, type: 3}
-  m_ShaderKeywords: 
+  m_Name: bush_03_02_mtl
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _RECEIVE_SHADOWS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,10 +19,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_7AD80B52:
-        m_Texture: {fileID: 2800000, guid: f616cc4acd5f37c4eb306c0e3f5a02f4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -32,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: fbecdfac8867b0144b802f1d1976dad4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -43,57 +39,33 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_10C5A163_Texture:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_23362C27: 0.1
-    - Vector1_40DC2A8F: 0.01
-    - Vector1_44BEB8BC: 0
-    - Vector1_479D5413: -0.17
-    - Vector1_5D89A976: 1
-    - Vector1_6FE46416: 0.03
-    - Vector1_81D8B798: 50
-    - Vector1_85464B38: 0
-    - Vector1_8B6D970E: 0
-    - Vector1_AC5D6D74: 0
-    - Vector1_B200D678: -0.12
-    - Vector1_BE1B0D36: 0.5
-    - Vector1_D6C9161: -0.31
-    - Vector1_EC6AB09C: 0
-    - Vector1_FA770B01: 1
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _Blend: 0
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
+    - _GlossinessSource: 1
     - _GlossyReflections: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
+    - _Shininess: 0.5
     - _SmoothnessTextureChannel: 0
+    - _SpecSource: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_3E38D48F: {r: 0, g: 0.058962267, b: 0.14150941, a: 0}
-    - Color_618225B6: {r: 0, g: 0.16106094, b: 0.3584906, a: 0}
-    - Color_9044FB29: {r: 0, g: 0.40196466, b: 1, a: 0}
-    - Vector2_A0CAAD7A: {r: -100, g: -500, b: 0, a: 0}
-    - Vector2_B3F7C83E: {r: -15, g: 15, b: -1, a: 1}
-    - Vector2_BF9F28: {r: 20, g: 20, b: 1, a: 1}
-    - Vector2_D6F687D3: {r: 500, g: 500, b: 0, a: 0}
-    - Vector2_DCD5CF80: {r: 100, g: 100, b: 0, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
