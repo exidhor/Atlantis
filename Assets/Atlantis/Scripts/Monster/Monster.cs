@@ -18,12 +18,20 @@ public abstract class Monster : UnityPoolObject, ITargetable
         }
     }
 
+    protected new MonsterCollider collider
+    {
+        get { return _collider; }
+    }
+
     [Header("Monster Specs")]
-    [SerializeField] Transform _target;
+    [SerializeField] int _life = 10;
     [SerializeField] MonsterCollider _collider;
-    [SerializeField] NavMeshAgent _agent;
 
     MonsterZone _zone;
+
+    Vector3 _targetPos;
+
+    protected abstract void OnUpdate(float dt);
 
     public void SetZone(MonsterZone zone)
     {
@@ -32,13 +40,23 @@ public abstract class Monster : UnityPoolObject, ITargetable
 
     public void DealDamage(int damage)
     {
+        _life -= damage;
+
         // todo
     }
 
-    protected void Update()
+    void Update()
     {
+        OnUpdate(Time.deltaTime);
+
         //_agent.destination = PlayerShip.instance.transform.position;
 
-        _agent.destination = _target.transform.position;
+        //if (_targetPos != _target.transform.position)
+        //{
+        //    _targetPos = _target.transform.position;
+        //    bool result = _agent.SetDestination(_targetPos);
+
+        //    Debug.Log("Result angent = " + result + " Path Status " + _agent.pathStatus);
+        //}
     }
 }
