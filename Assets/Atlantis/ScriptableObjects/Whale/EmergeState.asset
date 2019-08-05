@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e77ef57122e2d45619111079958a5683, type: 3}
+  m_Name: EmergeState
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 19e63aa0b7b6a4b41a43a0858b3857c5, type: 2}
+  - {fileID: 11400000, guid: 7ffa7dd5b5c024055a0af490f7e4a3c7, type: 2}
+  transitions: []
+  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _maxTimeState: {fileID: 11400000, guid: be5f29cca42a64671bd55f334582fe97, type: 2}
+  _maxTime: 1

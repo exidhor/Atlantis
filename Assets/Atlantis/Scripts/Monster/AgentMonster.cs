@@ -18,16 +18,16 @@ public abstract class AgentMonster : Monster
 
     protected void SetSpeed(float speed)
     {
-        _agent.speed = speed;
+        //_agent.speed = speed;
     }
 
     protected void SetTargetAgent(Vector3 target)
     {
-        if (_target != target)
-        {
-            _agent.SetDestination(target);
-            _target = target;
-        }
+        //if (_target != target)
+        //{
+        //    _agent.SetDestination(target);
+        //    _target = target;
+        //}
     }
 
     protected override void OnUpdate(float dt)
