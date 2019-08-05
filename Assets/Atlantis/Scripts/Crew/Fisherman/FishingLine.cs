@@ -179,33 +179,16 @@ public class FishingLine : MonoBehaviour
 
         if (_time >= _currentAnimation.duration)
         {
-            //Debug.Log("auto correction");
             _p2 = _to;
         }
         else
         {
-            //float p2_distance01 = _currentAnimation.distEndSpeedCurve.Evaluate(time);
-            //Vector2 p2_pos2D = (_to - from) * p2_distance01 + from;
-
-            //float p2_z01 = _currentAnimation.zEndSpeedCurve.Evaluate(time);
-            //float p2_z = (_to.z - from.z) * z01 + from.z;
-
-            //_p2 = new Vector3(pos2D.x, pos2D.y, z);
-
             _p2 = ComputeControlPoint(_currentAnimation.xzLine,
                                       _currentAnimation.yLine,
                                       time,
                                       from,
                                       _to);
         }
-
-        //float p1_distance01 = _currentAnimation.amplitudeSpeedCurve.Evaluate(time);
-        //pos2D = (_p2 - from) * distance01 + from;
-
-        //z01 = _currentAnimation.amplitudeCurve.Evaluate(time);
-        //z = (_p2.z - from.z) * z01 + from.z;
-
-        //_p1 = new Vector3(pos2D.x, pos2D.y, z);
 
         _p1 = ComputeControlPoint(_currentAnimation.yCurve,
                                   _currentAnimation.xzCurve,
@@ -238,8 +221,6 @@ public class FishingLine : MonoBehaviour
         {
             _points[i] = GetPoint(i / (float)(_pointCount - 1));
         }
-
-        //_points[_pointCount - 1] = _end; 
 
         renderer.SetPositions(_points);
 

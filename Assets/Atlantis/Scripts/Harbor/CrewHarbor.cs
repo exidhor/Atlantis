@@ -43,7 +43,7 @@ public class CrewHarbor : Harbor
     }
 
     [SerializeField] MeshRenderer _flagRenderer;
-    [SerializeField] Animator _animator;
+    //[SerializeField] Animator _animator;
 
     string _crewName;
     CrewType _crewType;
@@ -76,21 +76,21 @@ public class CrewHarbor : Harbor
 
     protected override void OnPlayerRange(bool atRange)
     {
-        if (!isOpen) return;
+        //if (!isOpen) return;
 
-        if (atRange)
-        {
-            _animator.SetTrigger("In");
-        }
-        else
-        {
-            _animator.SetTrigger("Out");
-        }
+        //if (atRange)
+        //{
+        //    _animator.SetTrigger("In");
+        //}
+        //else
+        //{
+        //    _animator.SetTrigger("Out");
+        //}
     }
 
     protected override void OnOpen()
     {
-        _animator.SetTrigger("Open");
+        //_animator.SetTrigger("Open");
     }
 
     protected override void OnClose()
@@ -98,6 +98,6 @@ public class CrewHarbor : Harbor
         _flagRenderer.material.SetTexture("Texture2D_D003A093",
                                           CrewLibrary.instance.genericCloseIcon);
 
-        _animator.SetTrigger("Close");
+        //_animator.SetTrigger("Close");
     }
 }

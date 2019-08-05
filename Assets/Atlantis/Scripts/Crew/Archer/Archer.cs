@@ -2,23 +2,57 @@
 using System.Collections.Generic;
 using Tools;
 
-public class Archer : Crew
+[RequireComponent(typeof(QTCircleCollider))]
+public class Archer : CrewWithRange<MonsterCollider>
 {
     public override CrewType type
     {
         get { return CrewType.Archer; }
     }
 
-    public override float progress01
+    protected override float extendCoef
     {
-        get { return _currentTime / _targetTime; }
+        get { return 1f; }
+    }
+
+    protected override float actionDuration
+    {
+        get { return _targetTime; }
     }
 
     [Header("Logic")]
     [SerializeField] float _targetTime;
+    [SerializeField] Weapon _weapon;
 
-    QTCircleCollider _collider;
-    float _currentTime;
+    protected override bool CanDoAction()
+    {
+        return true;
+    }
 
-    // todo
+    protected override void OnStartAction()
+    {
+        Vector3 target = zone.transform.position;
+
+        // todo
+    }
+
+    protected override bool CanStopAction()
+    {
+        return true;
+    }
+
+    protected override void OnStopAction()
+    {
+        //_fishingLine.StopFishing();
+    }
+
+    protected override void OnActionComplete()
+    {
+        _weapon.Fire(zone.monster);
+
+        //Cargo.instance.AddFish(zone.fishType, 1);
+
+        //if (_restartAfterCatching)
+            //StopAction();
+    }
 }

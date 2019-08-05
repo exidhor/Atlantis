@@ -81,3 +81,13 @@ MonoBehaviour:
       x: 50
       y: 60
     _rate: 0.3
+  - _name: Archer
+    _model: {fileID: 360144421871804353, guid: 896cc400b41594f608540ac9af347140, type: 3}
+    _icon: {fileID: 21300000, guid: 80bceabb9b4c44d00b59fa02bbe77836, type: 3}
+    _flagIcon: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+    _frontColor: {r: 0.061918736, g: 1, b: 0, a: 0.5882353}
+    _backgroundColor: {r: 0.03177287, g: 0.3207547, b: 0.084668495, a: 1}
+    _priceRange:
+      x: 50
+      y: 60
+    _rate: 0.3
