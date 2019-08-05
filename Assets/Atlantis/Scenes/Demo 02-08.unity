@@ -35334,7 +35334,7 @@ PrefabInstance:
     - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
         type: 3}
       propertyPath: _startingCrews.Array.data[1].count
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
         type: 3}
@@ -35344,7 +35344,7 @@ PrefabInstance:
     - target: {fileID: 6405691934279272609, guid: 95d1c3b9e8ad34218968ce1636d62708,
         type: 3}
       propertyPath: _startingCrews.Array.data[0].count
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d1c3b9e8ad34218968ce1636d62708, type: 3}
