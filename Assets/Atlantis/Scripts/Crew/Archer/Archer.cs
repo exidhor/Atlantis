@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Tools;
 
 [RequireComponent(typeof(QTCircleCollider))]
-public class Archer : CrewWithRange<Monster>
+public class Archer : CrewWithRange<MonsterCollider>
 {
     public override CrewType type
     {
@@ -48,7 +48,7 @@ public class Archer : CrewWithRange<Monster>
 
     protected override void OnActionComplete()
     {
-        _weapon.Fire(zone);
+        _weapon.Fire(zone.monster);
 
         //Cargo.instance.AddFish(zone.fishType, 1);
 

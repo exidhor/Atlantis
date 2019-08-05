@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using Tools;
 using MemoryManagement;
-using System;
 
-public class BulletLibrary : MonoSingleton<BulletLibrary>
+public class MonsterLibrary : MonoSingleton<MonsterLibrary>
 {
     [Header("Pool Infos")]
     [SerializeField] uint _poolCapacity;
     [SerializeField] uint _expand;
 
     [Header("Infos")]
-    [SerializeField] List<BulletInfo> _infos = new List<BulletInfo>();
+    [SerializeField] List<MonsterInfo> _infos = new List<MonsterInfo>();
 
     List<UnityPool> _poolByType = new List<UnityPool>();
 
@@ -37,16 +36,16 @@ public class BulletLibrary : MonoSingleton<BulletLibrary>
         }
     }
 
-    public Bullet GetFreeBullet(BulletType type)
+    public Monster GetFreeMonster(MonsterType type)
     {
-        Bullet bullet = (Bullet)_poolByType[(int)type].GetFreeResource();
+        Monster monster = (Monster)_poolByType[(int)type].GetFreeResource();
 
-        bullet.transform.localPosition = Vector3.zero;
+        monster.transform.localPosition = Vector3.zero;
 
-        return bullet;
+        return monster;
     }
 
-    public BulletInfo GetInfo(BulletType type)
+    public MonsterInfo GetInfo(MonsterType type)
     {
         return _infos[(int)type];
     }

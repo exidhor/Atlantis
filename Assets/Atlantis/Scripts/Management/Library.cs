@@ -4,14 +4,18 @@ using Tools;
 using MemoryManagement;
 using System;
 
-public class BulletLibrary : MonoSingleton<BulletLibrary>
+public class Library<This, Info, Model> : MonoSingleton<This>
+    where This : Library<This, Info, Model>
+    where Info : LibraryInfo<Model>
+    where Model : UnityPoolObject, ILibraryModel
 {
     [Header("Pool Infos")]
     [SerializeField] uint _poolCapacity;
     [SerializeField] uint _expand;
 
     [Header("Infos")]
-    [SerializeField] List<BulletInfo> _infos = new List<BulletInfo>();
+    [SerializeField] 
+    List<LibraryInfo<Model>> _infos = new List<LibraryInfo<Model>>();
 
     List<UnityPool> _poolByType = new List<UnityPool>();
 
@@ -22,7 +26,7 @@ public class BulletLibrary : MonoSingleton<BulletLibrary>
 
     void ConstructPools()
     {
-        _infos.Sort((a, b) => a.model.type.CompareTo(b.model.type));
+        _infos.Sort((a, b) => a.model.enumValue.CompareTo(b.model.enumValue));
 
         for (int i = 0; i < _infos.Count; i++)
         {
@@ -37,17 +41,17 @@ public class BulletLibrary : MonoSingleton<BulletLibrary>
         }
     }
 
-    public Bullet GetFreeBullet(BulletType type)
+    public Model GetFreeObject(int enumValue)
     {
-        Bullet bullet = (Bullet)_poolByType[(int)type].GetFreeResource();
+        Model obj = (Model)_poolByType[enumValue].GetFreeResource();
 
-        bullet.transform.localPosition = Vector3.zero;
+        obj.transform.localPosition = Vector3.zero;
 
-        return bullet;
+        return obj;
     }
 
-    public BulletInfo GetInfo(BulletType type)
+    public LibraryInfo<Model> GetInfo(int enumValue)
     {
-        return _infos[(int)type];
+        return _infos[enumValue];
     }
 }
