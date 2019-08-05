@@ -26,6 +26,9 @@ public class Arrow : Bullet
         float distance = Vector2.Distance(start2D, end2D);
 
         _height = _heightTrajectory01 * distance;
+
+        Vector3 pos = MathHelper.Parabola(start, end, _height, duration * 0.01f / duration);
+        transform.rotation = Quaternion.LookRotation(pos - transform.position);
     }
 
     protected override void Move(float dt)
