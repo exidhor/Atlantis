@@ -15,6 +15,14 @@ namespace UnityAI
         [SerializeField] State _maxTimeState;
         [SerializeField] float _maxTime = 0f;
 
+        public void Init()
+        {
+            for(int i = 0; i < actions.Length; i++)
+            {
+                actions[i].Init();
+            }
+        }
+
         public void UpdateState(Steering steering)
         {
             DoActions(steering);
@@ -40,17 +48,6 @@ namespace UnityAI
             for (int i = 0; i < transitions.Length; i++)
             {
                 steering.SetState(transitions[i].FindNextState(steering));
-
-                //bool decisionSucceeded = transitions[i].decision.Decide(steering);
-
-                //if (decisionSucceeded)
-                //{
-                //    steering.SetState(transitions[i]._trueState);
-                //}
-                //else
-                //{
-                //    steering.SetState(transitions[i]._falseState);
-                //}
             }
         }
 

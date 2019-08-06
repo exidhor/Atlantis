@@ -51,14 +51,25 @@ namespace UnityAI
         NavMeshAgent _agent;
         Transform _controllerTransform;
         Transform _modelTransform;
+        MonsterCollider _collider;
 
         public void Init(NavMeshAgent agent, 
                          Transform controllerTransform,
-                         Transform modelTransform)
+                         Transform modelTransform,
+                         MonsterCollider collider)
         {
             _agent = agent;
             _controllerTransform = controllerTransform;
             _modelTransform = modelTransform;
+            _collider = collider;
+        }
+
+        public void SetColliderEnable(float depth)
+        {
+            if(_collider != null)
+            {
+                _collider.SetIsEnable(depth);
+            }
         }
 
         public void SetState(State state)

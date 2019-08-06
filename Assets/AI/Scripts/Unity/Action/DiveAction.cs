@@ -9,6 +9,11 @@ namespace UnityAI
         [SerializeField] float _diveDepth;
         [SerializeField] float _diveSpeed;
 
+        public override void Init()
+        {
+            // nothing yet
+        }
+
         public override void Act(Steering steering)
         {
             Dive(steering);
@@ -17,6 +22,8 @@ namespace UnityAI
         void Dive(Steering steering)
         {
             float currentDepth = steering.mondelTransform.position.y;
+
+            steering.SetColliderEnable(currentDepth);
 
             if(currentDepth < _diveDepth)
             {

@@ -7,6 +7,11 @@ namespace UnityAI
     [CreateAssetMenu(menuName = "PluggableAI/Actions/Attack")]
     public class AttackAction : Action
     {
+        public override void Init()
+        {
+            // nothing yet
+        }
+
         public override void Act(Steering steering)
         {
             Attack(steering);

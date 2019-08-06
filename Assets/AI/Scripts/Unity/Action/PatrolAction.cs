@@ -10,6 +10,11 @@ namespace UnityAI
         [SerializeField] float _arriveDistance = 3f;
         [SerializeField] PatrolPath _path;
 
+        public override void Init()
+        {
+            // nothing yet
+        }
+
         public override void Act(Steering steering)
         {
             Patrol(steering);

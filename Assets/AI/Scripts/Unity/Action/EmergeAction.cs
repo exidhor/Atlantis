@@ -8,6 +8,11 @@ namespace UnityAI
     {
         [SerializeField] float _emergeSpeed;
 
+        public override void Init()
+        {
+            // nothing yet
+        }
+
         public override void Act(Steering steering)
         {
             Emerge(steering);
@@ -16,6 +21,8 @@ namespace UnityAI
         void Emerge(Steering steering)
         {
             float currentDepth = steering.mondelTransform.position.y;
+
+            steering.SetColliderEnable(currentDepth);
 
             if (currentDepth >= 0f)
             {

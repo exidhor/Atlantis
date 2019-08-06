@@ -6,6 +6,7 @@ namespace UnityAI
 {
     public abstract class Action : ScriptableObject
     {
+        public abstract void Init();
         public abstract void Act(Steering steering);
     }
 }
