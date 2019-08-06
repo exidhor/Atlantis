@@ -46,4 +46,9 @@ public class MonsterZone : MonoBehaviour
 
         _monsters.Add(monster);
     }
+
+    public void Unregister(Monster monster)
+    {
+        _monsters.Remove(monster);
+    }
 }

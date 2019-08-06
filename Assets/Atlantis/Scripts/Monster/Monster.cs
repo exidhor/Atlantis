@@ -3,6 +3,7 @@ using UnityEngine.AI;
 using System.Collections;
 using MemoryManagement;
 using Tools;
+using UnityAI;
 
 public abstract class Monster : UnityPoolObject, ITargetable
 {
@@ -26,12 +27,9 @@ public abstract class Monster : UnityPoolObject, ITargetable
     [Header("Monster Specs")]
     [SerializeField] int _life = 10;
     [SerializeField] MonsterCollider _collider;
+    [SerializeField] StateController _ai;
 
     MonsterZone _zone;
-
-    Vector3 _targetPos;
-
-    protected abstract void OnUpdate(float dt);
 
     public void SetZone(MonsterZone zone)
     {
@@ -45,18 +43,20 @@ public abstract class Monster : UnityPoolObject, ITargetable
         // todo
     }
 
-    void Update()
+    protected internal override void OnPreUsing()
     {
-        OnUpdate(Time.deltaTime);
+        base.OnPreUsing();
 
-        //_agent.destination = PlayerShip.instance.transform.position;
+        _zone = null; 
+    }
 
-        //if (_targetPos != _target.transform.position)
-        //{
-        //    _targetPos = _target.transform.position;
-        //    bool result = _agent.SetDestination(_targetPos);
+    public override void OnRelease()
+    {
+        base.OnRelease();
 
-        //    Debug.Log("Result angent = " + result + " Path Status " + _agent.pathStatus);
-        //}
+        if(_zone != null)
+        {
+            _zone.Unregister(this);
+        }
     }
 }

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e77ef57122e2d45619111079958a5683, type: 3}
-  m_Name: PatrolUnderWaterState
+  m_Name: State - Dive
   m_EditorClassIdentifier: 
   actions:
   - {fileID: 11400000, guid: 19e63aa0b7b6a4b41a43a0858b3857c5, type: 2}
+  - {fileID: 11400000, guid: 3d3046c4991f643faa18fd1f02fd787a, type: 2}
   transitions: []
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  _maxTimeState: {fileID: 11400000, guid: 95abce5c122c344e5801250b38681a65, type: 2}
-  _maxTime: 10
+  _maxTimeState: {fileID: 11400000, guid: 2c023b81d836143d698cee3a84ca24cd, type: 2}
+  _maxTime: 1

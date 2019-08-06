@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Shark : ZonedMonster
+public class Shark : Monster
 {
     public override MonsterType type
     {
