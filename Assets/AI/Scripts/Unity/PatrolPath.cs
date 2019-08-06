@@ -18,6 +18,7 @@ namespace UnityAI
         }
 
         [SerializeField] bool _cycle;
+        [SerializeField] bool _spawnOnPoint;
         [SerializeField] List<Vector3> _points = new List<Vector3>();
 
         public void Next(Steering steering)

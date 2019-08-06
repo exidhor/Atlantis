@@ -13,6 +13,11 @@ namespace UnityAI
             // nothing yet
         }
 
+        public override void OnStart()
+        {
+            // nothing yet
+        }
+
         public override void Act(Steering steering)
         {
             Emerge(steering);
